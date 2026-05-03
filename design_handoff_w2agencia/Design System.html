@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w² Agência — Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: #F7F5F0; color: #0D0D0D; }
+
+    /* Layout */
+    .page { max-width: 1120px; margin: 0 auto; padding: 0 40px 120px; }
+
+    /* Cover */
+    .cover {
+      background: #0D0D0D; color: #F5C100;
+      padding: 80px 40px; margin-bottom: 80px;
+      position: relative; overflow: hidden;
+    }
+    .cover-inner { max-width: 1120px; margin: 0 auto; }
+    .cover-pre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(245,193,0,0.5);
+      margin-bottom: 20px; display: block;
+    }
+    .cover-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 100px; line-height: 0.9;
+      text-transform: uppercase; letter-spacing: -3px;
+    }
+    .cover-title sup { color: #E01A5A; font-size: 60px; vertical-align: super; line-height: 0; }
+    .cover-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 22px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.35);
+      margin-top: 16px; display: block;
+    }
+    .cover-meta {
+      font-family: 'Barlow', sans-serif; font-size: 13px;
+      color: rgba(255,255,255,0.2); margin-top: 48px; display: block;
+    }
+    .cover-wm {
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 280px; color: rgba(245,193,0,0.04); line-height: 1;
+      letter-spacing: -8px; pointer-events: none; user-select: none;
+    }
+
+    /* Section headers */
+    .section { margin-bottom: 80px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-bottom: 32px;
+    }
+    .section-num {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 13px; color: #E01A5A; letter-spacing: 0.1em;
+    }
+    .section-title-text {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 32px; text-transform: uppercase; letter-spacing: -0.5px;
+      color: #0D0D0D;
+    }
+    .rule { width: 100%; height: 3px; background: #0D0D0D; margin-bottom: 40px; }
+
+    /* Grid helpers */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+
+    /* Cards */
+    .card { border: 3px solid #0D0D0D; padding: 24px; background: #fff; }
+    .card-dark { border: 3px solid #0D0D0D; padding: 24px; background: #0D0D0D; }
+    .card-yellow { border: 3px solid #0D0D0D; padding: 24px; background: #F5C100; }
+
+    /* Color swatches */
+    .swatch { border: 3px solid #0D0D0D; }
+    .swatch-block { height: 120px; }
+    .swatch-info { padding: 14px 16px; background: #fff; }
+    .swatch-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; display: block; }
+    .swatch-hex { font-family: 'Barlow', sans-serif; font-size: 12px; color: #666; display: block; margin-top: 2px; }
+    .swatch-role { font-family: 'Barlow', sans-serif; font-size: 11px; color: #999; display: block; margin-top: 4px; line-height: 1.4; }
+
+    /* Typography specimens */
+    .type-specimen { border-top: 3px solid #0D0D0D; padding: 28px 0; }
+    .type-label { font-family: 'Barlow', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #999; margin-bottom: 8px; display: block; }
+    .type-meta { font-family: 'Barlow', sans-serif; font-size: 11px; color: #bbb; float: right; }
+
+    /* Logo demo */
+    .logo-demo { padding: 40px; display: flex; align-items: center; justify-content: center; }
+    .logo-mark {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 52px; line-height: 1; letter-spacing: -1px;
+    }
+    .logo-sup { color: #E01A5A; font-size: 30px; vertical-align: super; line-height: 0; }
+    .logo-sep { display: inline-block; width: 2px; height: 40px; vertical-align: middle; margin: 0 14px; }
+    .logo-ag {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 15px; letter-spacing: 0.25em; text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    /* Component tokens */
+    .token-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .token-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; width: 180px; flex-shrink: 0; }
+    .token-value { font-family: 'Barlow', sans-serif; font-size: 13px; color: #666; flex: 1; }
+    .token-demo { flex-shrink: 0; }
+
+    /* Texture demos */
+    .texture-demo { height: 140px; background: #F5C100; position: relative; overflow: hidden; }
+    .halftone { background-image: radial-gradient(circle, rgba(13,13,13,0.18) 1.5px, transparent 1.5px); background-size: 14px 14px; }
+    .grid-tex { background-image: linear-gradient(rgba(13,13,13,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(13,13,13,0.08) 1px,transparent 1px); background-size: 28px 28px; }
+    .scanlines { background-image: repeating-linear-gradient(0deg, rgba(13,13,13,0.06) 0px, rgba(13,13,13,0.06) 1px, transparent 1px, transparent 6px); }
+    .noise { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E"); }
+
+    /* Badge/stamp */
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0D0D0D; color: #F5C100; padding: 8px 16px;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    }
+    .badge-m { background: #E01A5A; color: #fff; }
+    .badge-y { background: #F5C100; color: #0D0D0D; border: 3px solid #0D0D0D; }
+    .stamp-demo {
+      width: 120px; height: 120px; border: 4px solid #E01A5A;
+      border-radius: 50%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      transform: rotate(-10deg); position: relative;
+    }
+    .stamp-demo-inner { position: absolute; inset: 5px; border: 2px dashed #E01A5A; border-radius: 50%; }
+
+    /* Editorial templates mini */
+    .post-mini {
+      aspect-ratio: 1; position: relative; overflow: hidden;
+      border: 3px solid #0D0D0D;
+    }
+    .story-mini {
+      aspect-ratio: 9/16; position: relative; overflow: hidden;
+      border: 3px solid #0D0D0D;
+    }
+
+    /* Annotation */
+    .ann {
+      font-family: 'Barlow', sans-serif; font-size: 12px;
+      color: rgba(0,0,0,0.4); margin-top: 10px; line-height: 1.5;
+    }
+    .ann strong { color: #0D0D0D; font-weight: 600; }
+
+    /* Do/Don't */
+    .do { border-top: 4px solid #00A86B; }
+    .dont { border-top: 4px solid #E01A5A; }
+    .verdict {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 8px 0 16px;
+    }
+    .verdict-do { color: #00A86B; }
+    .verdict-dont { color: #E01A5A; }
+
+    /* Callout */
+    .callout {
+      background: #F5C100; border: 3px solid #0D0D0D;
+      padding: 20px 24px; margin: 24px 0;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 17px; text-transform: uppercase; letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+    .callout-m { background: #E01A5A; color: #fff; }
+
+    /* Sidebar nav */
+    .sidebar {
+      position: fixed; left: 0; top: 0; bottom: 0; width: 56px;
+      background: #0D0D0D; z-index: 50;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 20px 0; gap: 4px;
+    }
+    .sidebar-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15);
+      cursor: pointer; transition: background 0.2s;
+    }
+    .sidebar-dot:hover, .sidebar-dot.active { background: #F5C100; }
+    .sidebar-logo {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+      font-size: 16px; color: #F5C100; writing-mode: vertical-rl;
+      text-orientation: mixed; transform: rotate(180deg);
+      letter-spacing: 0.1em; margin-bottom: 20px;
+    }
+    .sidebar-logo sup { color: #E01A5A; }
+
+    body { padding-left: 56px; }
+
+    /* Photo treatment demos */
+    .photo-demo {
+      height: 180px; background: #888;
+      background-image: radial-gradient(circle at 30% 40%, #ccc 0%, #555 100%);
+      position: relative; overflow: hidden;
+    }
+    .duotone { filter: sepia(1) hue-rotate(330deg) saturate(3); }
+    .bw { filter: grayscale(1) contrast(1.3); }
+    .bw-ht { filter: grayscale(1) contrast(1.6) brightness(1.1); }
+
+    /* Spacing scale */
+    .spacing-row { display: flex; align-items: center; gap: 20px; padding: 10px 0; }
+    .spacing-bar { background: #F5C100; border: 2px solid #0D0D0D; height: 24px; }
+    .spacing-label { font-family: 'Barlow', sans-serif; font-size: 12px; color: #666; min-width: 80px; }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr 1fr; }
+      .cover-title { font-size: 60px; }
+      .sidebar { display: none; }
+      body { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <span class="sidebar-logo">W<sup>²</sup></span>
+  <div class="sidebar-dot active" title="Início"></div>
+  <div class="sidebar-dot" title="Cores"></div>
+  <div class="sidebar-dot" title="Tipo"></div>
+  <div class="sidebar-dot" title="Logo"></div>
+  <div class="sidebar-dot" title="Elementos"></div>
+  <div class="sidebar-dot" title="Foto"></div>
+  <div class="sidebar-dot" title="Editorial"></div>
+</div>
+
+<!-- COVER -->
+<div class="cover" id="cover">
+  <div class="cover-inner">
+    <span class="cover-pre">Versão 1.0 · Abril 2026 · Opção C "Explosão"</span>
+    <div class="cover-title">W<sup>²</sup><br>AGÊNCIA</div>
+    <span class="cover-sub">Manual de Identidade Visual &amp; Sistema de Design</span>
+    <span class="cover-meta">Para uso interno, direção de arte e produção de conteúdo</span>
+  </div>
+  <div class="cover-wm">W²</div>
+</div>
+
+<div class="page">
+
+  <!-- ─── 01 CORES ─────────────────────────────────────────── -->
+  <section class="section" id="cores">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title-text">Paleta de Cores</span>
+    </div>
+    <div class="rule"></div>
+
+    <div class="grid-5">
+      <div class="swatch">
+        <div class="swatch-block" style="background: #F5C100;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Amarelo Elétrico</span>
+          <span class="swatch-hex">#F5C100</span>
+          <span class="swatch-role">Cor primária. Hero, fundos principais, logo sobre escuro.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #E01A5A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Magenta</span>
+          <span class="swatch-hex">#E01A5A</span>
+          <span class="swatch-role">Acento cirúrgico. O "²", itálicos em destaque, CTAs em fundo escuro.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #0D0D0D; border-bottom: 3px solid #333;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Preto Total</span>
+          <span class="swatch-hex">#0D0D0D</span>
+          <span class="swatch-role">Texto, bordas, superfícies escuras.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #1A1A1A; border-bottom: 3px solid #333;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Grafite</span>
+          <span class="swatch-hex">#1A1A1A</span>
+          <span class="swatch-role">Superfícies escuras secundárias. Navbar, seções de fundo.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #FFFFFF; border-bottom: 3px solid #eee;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Branco</span>
+          <span class="swatch-hex">#FFFFFF</span>
+          <span class="swatch-role">Fundos claros, espaço negativo, texto sobre preto.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px;">
+      <div class="callout">REGRA DE CONTRASTE: Amarelo sobre preto. Branco sobre preto. Amarelo sobre magenta. <em style="color:#E01A5A; font-style:italic;">NUNCA amarelo sobre branco.</em></div>
+    </div>
+
+    <!-- Contrast pairs -->
+    <div class="grid-4" style="margin-top: 24px;">
+      <div class="card do" style="padding: 0; overflow: hidden;">
+        <div style="background: #0D0D0D; padding: 24px; text-align: center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:32px; color:#F5C100;">AMARELO</span>
+        </div>
+        <div class="swatch-info"><span class="verdict verdict-do">✓ Correto</span><span class="swatch-role">Amarelo / Preto</span></div>
+      </div>
+      <div class="card do" style="padding: 0; overflow: hidden;">
+        <div style="background: #0D0D0D; padding: 24px; text-align: center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:32px; color:#fff;">BRANCO</span>
+        </div>
+        <div class="swatch-info"><span class="verdict verdict-do">✓ Correto</span><span class="swatch-role">Branco / Preto</span></div>
+      </div>
+      <div class="card do" style="padding: 0; overflow: hidden;">
+        <div style="background: #E01A5A; padding: 24px; text-align: center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:32px; color:#F5C100;">AMARELO</span>
+        </div>
+        <div class="swatch-info"><span class="verdict verdict-do">✓ Correto</span><span class="swatch-role">Amarelo / Magenta</span></div>
+      </div>
+      <div class="card dont" style="padding: 0; overflow: hidden;">
+        <div style="background: #fff; padding: 24px; text-align: center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:32px; color:#F5C100; opacity:0.6;">AMARELO</span>
+        </div>
+        <div class="swatch-info"><span class="verdict verdict-dont">✗ Errado</span><span class="swatch-role">Amarelo / Branco — ilegível</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02 TIPOGRAFIA ────────────────────────────────────── -->
+  <section class="section" id="tipo">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title-text">Tipografia</span>
+    </div>
+    <div class="rule"></div>
+
+    <div class="grid-2" style="margin-bottom: 32px;">
+      <div class="card">
+        <span class="type-label">Família principal</span>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:48px; line-height:1; text-transform:uppercase; letter-spacing:-1px;">Barlow Condensed</div>
+        <div style="margin-top:12px; font-family:'Barlow',sans-serif; font-size:13px; color:#666;">Usado em todos os títulos, headlines, labels e elementos de UI. Disponível no Google Fonts.</div>
+      </div>
+      <div class="card">
+        <span class="type-label">Família secundária</span>
+        <div style="font-family:'Barlow',sans-serif; font-weight:400; font-size:28px; line-height:1.2;">Barlow Regular</div>
+        <div style="margin-top:12px; font-family:'Barlow',sans-serif; font-size:13px; color:#666;">Usado em corpo de texto, legendas e parágrafos. Pesos 400, 500 e 600.</div>
+      </div>
+    </div>
+
+    <!-- Type scale -->
+    <div style="border: 3px solid #0D0D0D; overflow: hidden;">
+      <div style="background: #0D0D0D; padding: 14px 20px; display:flex; justify-content:space-between;">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#F5C100;">Escala tipográfica</span>
+        <span style="font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.35);">Barlow Condensed 900 · Uppercase</span>
+      </div>
+      <div class="type-specimen" style="padding: 20px 20px 12px;">
+        <span class="type-label">Display — 96px / LH 0.9 <span class="type-meta">Headlines de hero, capas de carrossel</span></span>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:96px; line-height:0.92; text-transform:uppercase; letter-spacing:-2px;">W² AGÊNCIA</div>
+      </div>
+      <div class="type-specimen" style="padding: 20px 20px 12px;">
+        <span class="type-label">Headline 1 — 64px / LH 0.95 <span class="type-meta">Títulos de seção, posts principais</span></span>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:64px; line-height:0.95; text-transform:uppercase; letter-spacing:-1px;">PRESENÇA DIGITAL</div>
+      </div>
+      <div class="type-specimen" style="padding: 20px 20px 12px;">
+        <span class="type-label">Headline 2 — 40px / LH 1.0 <span class="type-meta">Subtítulos, slides de carrossel</span></span>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:40px; line-height:1.0; text-transform:uppercase;">VOCÊ FALA COM QUEM FAZ.</div>
+      </div>
+      <div class="type-specimen" style="padding: 20px 20px 12px;">
+        <span class="type-label">Label — 13px / tracking 0.2em <span class="type-meta">Eyebrows, tags, rótulos de UI</span></span>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase;">Agência Digital · São Paulo</div>
+      </div>
+      <div class="type-specimen" style="padding: 20px 20px 12px;">
+        <span class="type-label">Itálico de destaque — Magenta <span class="type-meta">Uma palavra, um número, uma frase</span></span>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:40px; line-height:1.0; text-transform:uppercase;">ENTREGA<em style="font-style:italic; color:#E01A5A;"> RESULTADO.</em></div>
+      </div>
+      <div class="type-specimen" style="padding: 20px 20px 12px; border-bottom:none;">
+        <span class="type-label">Corpo de texto — Barlow 400/500 <span class="type-meta">Parágrafos, descrições, legendas</span></span>
+        <div style="font-family:'Barlow',sans-serif; font-size:16px; line-height:1.65; max-width:560px; color:rgba(13,13,13,0.72);">Para MEIs e pequenas empresas que querem aparecer, vender mais e não depender de agências que demoram meses para entregar.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 03 LOGO ──────────────────────────────────────────── -->
+  <section class="section" id="logo">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title-text">Logo</span>
+    </div>
+    <div class="rule"></div>
+
+    <div class="grid-2" style="margin-bottom: 24px;">
+      <div>
+        <!-- Dark version -->
+        <div class="card-dark" style="padding:0; margin-bottom: 16px;">
+          <div class="logo-demo" style="background: #0D0D0D;">
+            <div style="text-align:center;">
+              <span class="logo-mark" style="color: #F5C100;">W<sup class="logo-sup">²</sup></span>
+              <span class="logo-sep" style="background: rgba(255,255,255,0.25);"></span>
+              <span class="logo-ag" style="color: rgba(255,255,255,0.9);">AGÊNCIA</span>
+            </div>
+          </div>
+          <div style="padding: 12px 20px; border-top: 2px solid rgba(255,255,255,0.08);">
+            <span style="font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.35);">Versão Escuro — uso principal</span>
+          </div>
+        </div>
+        <!-- Light version -->
+        <div class="card" style="padding:0; margin-bottom: 16px;">
+          <div class="logo-demo" style="background: #fff;">
+            <div style="text-align:center;">
+              <span class="logo-mark" style="color: #0D0D0D;">W<sup class="logo-sup">²</sup></span>
+              <span class="logo-sep" style="background: rgba(0,0,0,0.2);"></span>
+              <span class="logo-ag" style="color: #0D0D0D;">AGÊNCIA</span>
+            </div>
+          </div>
+          <div style="padding: 12px 20px; border-top: 1px solid #eee;">
+            <span style="font-family:'Barlow',sans-serif; font-size:12px; color:#999;">Versão Claro — fundos brancos</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Yellow version -->
+        <div class="card-yellow" style="padding:0; margin-bottom: 16px;">
+          <div class="logo-demo" style="background: #F5C100;">
+            <div style="text-align:center;">
+              <span class="logo-mark" style="color: #0D0D0D;">W<sup class="logo-sup" style="color:#E01A5A;">²</sup></span>
+              <span class="logo-sep" style="background: rgba(0,0,0,0.2);"></span>
+              <span class="logo-ag" style="color: #0D0D0D;">AGÊNCIA</span>
+            </div>
+          </div>
+          <div style="padding: 12px 20px; border-top: 2px solid rgba(0,0,0,0.12);">
+            <span style="font-family:'Barlow',sans-serif; font-size:12px; color:rgba(0,0,0,0.45);">Versão Amarelo — hero, capas</span>
+          </div>
+        </div>
+        <!-- Avatar -->
+        <div class="card" style="padding:0; overflow:hidden;">
+          <div class="logo-demo" style="background: #0D0D0D; padding: 32px;">
+            <div style="width:96px; height:96px; background:#0D0D0D; border:3px solid #F5C100; display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:36px; line-height:1; color:#F5C100; letter-spacing:-1px;">W<sup style="color:#E01A5A; font-size:20px; vertical-align:super; line-height:0;">²</sup></span>
+            </div>
+          </div>
+          <div style="padding: 12px 20px; background:#0D0D0D; border-top: 2px solid rgba(255,255,255,0.08);">
+            <span style="font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.35);">Avatar / Ícone — redes sociais, favicon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">Zona de exclusão: espaço mínimo ao redor do logo equivale à altura da letra "W". Nunca distorcer, rotacionar ou alterar proporções.</div>
+  </section>
+
+  <!-- ─── 04 ELEMENTOS GRÁFICOS ────────────────────────────── -->
+  <section class="section" id="elementos">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title-text">Elementos Gráficos</span>
+    </div>
+    <div class="rule"></div>
+
+    <!-- Bordas -->
+    <div style="margin-bottom: 40px;">
+      <div class="type-label" style="margin-bottom: 16px;">BORDAS — princípio fundamental da marca</div>
+      <div class="grid-4">
+        <div>
+          <div style="border: 3px solid #0D0D0D; padding: 20px; background: #fff; text-align:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:20px; text-transform:uppercase;">3px sólido</div>
+          <p class="ann"><strong>Padrão:</strong> 3px solid #0D0D0D — cards, botões, separadores</p>
+        </div>
+        <div>
+          <div style="border: 4px solid #E01A5A; padding: 20px; background: #fff; text-align:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:20px; text-transform:uppercase; color:#E01A5A;">4px magenta</div>
+          <p class="ann"><strong>Destaque:</strong> 4px solid #E01A5A — selos, badges especiais</p>
+        </div>
+        <div>
+          <div style="border-top: 3px solid #F5C100; padding: 20px; background: #0D0D0D; text-align:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:20px; text-transform:uppercase; color:#F5C100;">Topo amarelo</div>
+          <p class="ann"><strong>Steps:</strong> Borda superior amarela — cards de processo, etapas</p>
+        </div>
+        <div>
+          <div style="border-bottom: 3px solid #F5C100; padding: 20px; background: #0D0D0D; text-align:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:20px; text-transform:uppercase; color:#F5C100;">Base amarela</div>
+          <p class="ann"><strong>Navbar:</strong> Borda inferior amarela — separação nav/hero</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Texturas -->
+    <div style="margin-bottom: 40px;">
+      <div class="type-label" style="margin-bottom: 16px;">TEXTURAS — adicionam artesanalidade ao digital</div>
+      <div class="grid-4">
+        <div>
+          <div class="texture-demo halftone"></div>
+          <p class="ann"><strong>Halftone</strong> — Dots 1.5px / 18px grid. Fundo amarelo primário.</p>
+        </div>
+        <div>
+          <div class="texture-demo grid-tex"></div>
+          <p class="ann"><strong>Grid</strong> — Linhas 1px / 28px. Fundo amarelo, variação B.</p>
+        </div>
+        <div>
+          <div class="texture-demo scanlines" style="background:#0D0D0D;"></div>
+          <p class="ann"><strong>Scanlines</strong> — Linhas horizontais. Sobre preto/grafite.</p>
+        </div>
+        <div>
+          <div class="texture-demo noise" style="background:#1A1A1A;"></div>
+          <p class="ann"><strong>Noise</strong> — Grão SVG. Toque artesanal sobre superfícies escuras.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges & Selos -->
+    <div style="margin-bottom: 40px;">
+      <div class="type-label" style="margin-bottom: 16px;">BADGES & SELOS</div>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 16px;">
+        <div class="badge">· Novidade</div>
+        <div class="badge badge-m">Destaque</div>
+        <div class="badge badge-y">A partir de R$ 890</div>
+        <div style="display:inline-flex; align-items:center; gap:8px; border:3px solid #0D0D0D; padding:6px 14px; background:#F5C100;">
+          <span style="width:8px; height:8px; background:#0D0D0D; display:inline-block; vertical-align:middle;"></span>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.2em; text-transform:uppercase;">Agência Digital · SP</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 32px; align-items: center;">
+        <div class="stamp-demo">
+          <div class="stamp-demo-inner"></div>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.15em; color:#E01A5A; text-transform:uppercase; display:block; position:relative;">DIAGNÓSTICO</span>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; line-height:1; color:#0D0D0D; display:block; position:relative; letter-spacing:-1px;">GRÁTIS</span>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:9px; letter-spacing:0.15em; color:rgba(13,13,13,0.4); text-transform:uppercase; display:block; position:relative;">Sem compromisso</span>
+        </div>
+        <p class="ann" style="max-width:280px;"><strong>Selos circulares</strong> — sempre inclinados -10° a -15°. Borda sólida 4px + tracejado interno. Apenas em magenta ou preto. Usados em posts e landing page para indicar ofertas, urgência ou diferenciais.</p>
+      </div>
+    </div>
+
+    <!-- Spacing -->
+    <div>
+      <div class="type-label" style="margin-bottom: 16px;">ESCALA DE ESPAÇAMENTO</div>
+      <div class="spacing-row"><div class="spacing-bar" style="width:4px;"></div><span class="spacing-label">4px — xs</span><span style="font-size:12px; color:#999;">Separadores internos, ícones</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width:8px;"></div><span class="spacing-label">8px — sm</span><span style="font-size:12px; color:#999;">Gap entre label e valor</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width:16px;"></div><span class="spacing-label">16px — md</span><span style="font-size:12px; color:#999;">Padding de badges, gap de colunas</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width:24px;"></div><span class="spacing-label">24px — lg</span><span style="font-size:12px; color:#999;">Padding de cards, gap de grid</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width:40px;"></div><span class="spacing-label">40px — xl</span><span style="font-size:12px; color:#999;">Padding lateral de seções</span></div>
+      <div class="spacing-row"><div class="spacing-bar" style="width:80px;"></div><span class="spacing-label">80px — 2xl</span><span style="font-size:12px; color:#999;">Padding vertical de seções</span></div>
+    </div>
+  </section>
+
+  <!-- ─── 05 TRATAMENTO DE IMAGEM ───────────────────────────── -->
+  <section class="section" id="foto">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title-text">Tratamento de Imagem</span>
+    </div>
+    <div class="rule"></div>
+
+    <div class="grid-4" style="margin-bottom: 24px;">
+      <div>
+        <div class="photo-demo bw-ht" style="background-image: linear-gradient(135deg, #ddd 0%, #888 50%, #444 100%);"></div>
+        <p class="ann"><strong>P&B + Alto contraste</strong> — Padrão para fotos de pessoas. filter: grayscale + contrast(1.6)</p>
+      </div>
+      <div>
+        <div class="photo-demo" style="background-image: linear-gradient(135deg, #F5C100 0%, #c47d00 100%); mix-blend-mode: multiply;"></div>
+        <p class="ann"><strong>Duotone Amarelo</strong> — Fotos integradas ao fundo amarelo. Blend mode multiply.</p>
+      </div>
+      <div>
+        <div class="photo-demo" style="background: #0D0D0D; background-image: radial-gradient(ellipse at 40% 40%, rgba(245,193,0,0.15) 0%, transparent 70%);"></div>
+        <p class="ann"><strong>Vinheta escura</strong> — Foto sobre preto com highlight sutil. Para posts dark.</p>
+      </div>
+      <div>
+        <div class="photo-demo" style="background: linear-gradient(135deg, #888 0%, #555 100%); background-image: radial-gradient(circle, rgba(13,13,13,0.25) 1.5px, transparent 1.5px); background-size: 10px 10px;"></div>
+        <p class="ann"><strong>Halftone sobre foto</strong> — Overlay de halftone para textura editorial. Opacidade 15–25%.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-m">REGRA: Fotos com rosto devem ser sempre em P&amp;B. Nunca usar fotos coloridas com baixa saturação — ou vai a fundo ou P&amp;B.</div>
+
+    <div class="grid-2" style="margin-top: 24px;">
+      <div class="card do" style="padding: 16px;">
+        <span class="verdict verdict-do">✓ Usar</span>
+        <ul style="font-family:'Barlow',sans-serif; font-size:13px; line-height:1.8; padding-left:16px; color:#444;">
+          <li>Fotos de pessoas com expressão direta, olhando pra câmera</li>
+          <li>Recortes sem fundo (cutout) sobre amarelo ou preto</li>
+          <li>Fotos de rua, cidade, ambiente urbano em P&B</li>
+          <li>Close em mãos, detalhe de trabalho, tela de computador</li>
+        </ul>
+      </div>
+      <div class="card dont" style="padding: 16px;">
+        <span class="verdict verdict-dont">✗ Evitar</span>
+        <ul style="font-family:'Barlow',sans-serif; font-size:13px; line-height:1.8; padding-left:16px; color:#444;">
+          <li>Fotos de banco de imagens com sorrisos forçados</li>
+          <li>Composições com muitas fotos simultâneas</li>
+          <li>Fotos coloridas com cores que conflitem com a paleta</li>
+          <li>Imagens decorativas que não têm função editorial</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 06 EDITORIAL DE PUBLICAÇÕES ──────────────────────── -->
+  <section class="section" id="editorial">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title-text">Editorial de Publicações</span>
+    </div>
+    <div class="rule"></div>
+
+    <div class="callout" style="margin-bottom: 32px;">PRINCÍPIO: Toda publicação deve ter uma intenção clara — provocar, informar, converter ou mostrar resultado. A tipografia faz o layout. A cor faz o clima. A cópia faz a venda.</div>
+
+    <!-- 6 tipos de post -->
+    <div class="grid-3" style="margin-bottom: 40px;">
+
+      <!-- Tipo 1: Provocação -->
+      <div class="card" style="padding: 20px;">
+        <div style="background: #0D0D0D; aspect-ratio:1; padding: 28px; display:flex; flex-direction:column; justify-content:flex-end; margin-bottom:14px; position:relative; overflow:hidden;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,193,0,0.4); margin-bottom:8px;">w² · provocação</span>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:36px; line-height:0.95; text-transform:uppercase; color:#F5C100; letter-spacing:-1px;">APAREÇA<br>OU SUMA.</div>
+          <div style="font-family:'Barlow',sans-serif; font-size:12px; color:rgba(255,255,255,0.4); margin-top:10px; line-height:1.5;">No digital, quem não aparece não existe. Simples assim.</div>
+          <div style="position:absolute; top:20px; right:20px; width:32px; height:32px; border:2px solid rgba(245,193,0,0.3);"></div>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.1em; display:block; margin-bottom:6px;">01. PROVOCAÇÃO</span>
+        <p class="ann">Fundo preto. Headline amarela massiva. Uma afirmação direta. Sem imagem — a tipografia é o visual.</p>
+      </div>
+
+      <!-- Tipo 2: Dado/Stat -->
+      <div class="card" style="padding: 20px;">
+        <div style="background: #F5C100; aspect-ratio:1; padding: 28px; display:flex; flex-direction:column; justify-content:flex-end; margin-bottom:14px; background-image: radial-gradient(circle, rgba(13,13,13,0.15) 1.5px, transparent 1.5px); background-size: 14px 14px;">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:80px; line-height:0.85; text-transform:uppercase; color:#0D0D0D; letter-spacing:-3px;">48H</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.05em; margin-top:6px; border-top:3px solid #0D0D0D; padding-top:10px;">Do briefing ao ar.</div>
+          <div style="font-family:'Barlow',sans-serif; font-size:12px; color:rgba(13,13,13,0.55); margin-top:6px;">Sua landing page no ar em 2 dias.</div>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.1em; display:block; margin-bottom:6px;">02. DADO / STAT</span>
+        <p class="ann">Fundo amarelo com halftone. Número gigante. Frase curta embaixo com separador. Impacto imediato.</p>
+      </div>
+
+      <!-- Tipo 3: Carrossel educativo -->
+      <div class="card" style="padding: 20px;">
+        <div style="background: #1A1A1A; aspect-ratio:1; padding: 28px; display:flex; flex-direction:column; justify-content:space-between; margin-bottom:14px;">
+          <div>
+            <div style="display:inline-flex; align-items:center; gap:8px; border:2px solid rgba(245,193,0,0.3); padding:4px 10px; margin-bottom:16px;">
+              <span style="width:6px; height:6px; background:#E01A5A; display:inline-block;"></span>
+              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5);">Carrossel · 1/4</span>
+            </div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:30px; line-height:0.95; text-transform:uppercase; color:#F5C100; letter-spacing:-0.5px;">3 RAZÕES<br>PRA SUA<br>EMPRESA<br>SUMIR<br><em style="font-style:italic; color:#E01A5A;">DO GOOGLE</em></div>
+          </div>
+          <div style="font-family:'Barlow',sans-serif; font-size:11px; color:rgba(255,255,255,0.3);">Arrasta pra ver →</div>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.1em; display:block; margin-bottom:6px;">03. CARROSSEL EDUCATIVO</span>
+        <p class="ann">Capa provoca com pergunta ou número. Slides internos ensinam. Fundo grafite, título amarelo, acento magenta.</p>
+      </div>
+
+      <!-- Tipo 4: Social proof -->
+      <div class="card" style="padding: 20px;">
+        <div style="background: #0D0D0D; aspect-ratio:1; padding: 24px; display:flex; flex-direction:column; justify-content:space-between; margin-bottom:14px; border:3px solid rgba(245,193,0,0.15);">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:48px; line-height:1; color:rgba(245,193,0,0.15);">"</div>
+          <div>
+            <p style="font-family:'Barlow',sans-serif; font-size:14px; line-height:1.6; color:rgba(255,255,255,0.75); margin-bottom:16px;">Em 2 dias minha página estava no ar. No primeiro mês, 3 clientes novos vieram direto do site.</p>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="width:36px; height:36px; background:#F5C100; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:16px; color:#0D0D0D;">M</div>
+              <div>
+                <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; color:#fff; text-transform:uppercase; display:block;">Marcela T.</span>
+                <span style="font-family:'Barlow',sans-serif; font-size:11px; color:rgba(255,255,255,0.3);">Studio de Estética · SP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.1em; display:block; margin-bottom:6px;">04. PROVA SOCIAL</span>
+        <p class="ann">Fundo preto, aspas em amarelo desbotado. Nome do cliente com avatar. Negócio e cidade em rodapé.</p>
+      </div>
+
+      <!-- Tipo 5: CTA direto -->
+      <div class="card" style="padding: 20px;">
+        <div style="background: #E01A5A; aspect-ratio:1; padding: 28px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; margin-bottom:14px; position:relative; overflow:hidden;">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; line-height:0.9; text-transform:uppercase; color:rgba(255,255,255,0.08); position:absolute; font-size:100px; letter-spacing:-3px; right:-15px; top:50%; transform:translateY(-50%);">W²</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:38px; line-height:0.92; text-transform:uppercase; color:#fff; letter-spacing:-1px; position:relative;">PRONTO<br>PRA<br><span style="color:#F5C100;">APARECER?</span></div>
+          <div style="background: #F5C100; color:#0D0D0D; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; padding:10px 20px; margin-top:20px; position:relative;">FALAR NO WHATSAPP</div>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.1em; display:block; margin-bottom:6px;">05. CTA DIRETO</span>
+        <p class="ann">Fundo magenta. Headline branca + amarela. Botão em amarelo sobre magenta. Watermark W² fantasma.</p>
+      </div>
+
+      <!-- Tipo 6: Nos bastidores -->
+      <div class="card" style="padding: 20px;">
+        <div style="background: #1A1A1A; aspect-ratio:1; padding: 24px; display:flex; flex-direction:column; justify-content:flex-end; margin-bottom:14px; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7) 100%);"></div>
+          <div style="position:absolute; top:16px; left:16px; background:#F5C100; padding:4px 10px;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#0D0D0D;">BASTIDORES</span>
+          </div>
+          <div style="position:relative;">
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; line-height:0.95; text-transform:uppercase; color:#F5C100;">COMO FIZEMOS<br>A IDENTIDADE<br>DO CLIENTE X</div>
+            <div style="font-family:'Barlow',sans-serif; font-size:11px; color:rgba(255,255,255,0.45); margin-top:8px;">Ver processo completo →</div>
+          </div>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; color:#0D0D0D; letter-spacing:0.1em; display:block; margin-bottom:6px;">06. BASTIDORES / CASE</span>
+        <p class="ann">Foto (ou fundo escuro) com overlay gradiente. Tag "BASTIDORES" em amarelo. Título sobre imagem.</p>
+      </div>
+    </div>
+
+    <!-- Frequência editorial -->
+    <div style="border: 3px solid #0D0D0D; overflow: hidden; margin-bottom: 40px;">
+      <div style="background: #0D0D0D; padding: 14px 24px;">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:#F5C100;">Cadência editorial semanal sugerida</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(7, 1fr); border-top: none;">
+        {['SEG','TER','QUA','QUI','SEX','SÁB','DOM'].map((d, i) => `
+          <div style="padding: 16px 12px; border-right: 1px solid rgba(0,0,0,0.08); text-align:center; ${i===6?'border-right:none;':''}">
+            <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; color:#0D0D0D; text-transform:uppercase;">${d}</div>
+            <div style="width:100%; height:4px; margin:8px 0; background:${['#F5C100','#0D0D0D','#F5C100','#E01A5A','#0D0D0D','#F5C100',''][i]||'transparent'};"></div>
+            <div style="font-family:'Barlow',sans-serif; font-size:10px; color:#999; line-height:1.4;">${['Provocação','Educativo','Dado/Stat','CTA direto','Case/Result.','Story','Off'][i]}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Copy rules -->
+    <div class="grid-2">
+      <div class="card" style="padding: 24px;">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; text-transform:uppercase; display:block; margin-bottom:16px; border-bottom:3px solid #0D0D0D; padding-bottom:12px;">Voz & Tom</span>
+        <ul style="font-family:'Barlow',sans-serif; font-size:14px; line-height:1.9; padding-left:16px; color:#444;">
+          <li><strong>Direto:</strong> Uma ideia por post. Frase curta vence frase longa.</li>
+          <li><strong>Sem jargão:</strong> "Apareça no Google" não "SEO otimizado"</li>
+          <li><strong>Sem floreio:</strong> Nunca "excelência em soluções digitais"</li>
+          <li><strong>Verdadeiro:</strong> Dados reais. Cases reais. Nomes reais.</li>
+          <li><strong>Irreverente:</strong> Pode provocar. Não pode ofender.</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; text-transform:uppercase; display:block; margin-bottom:16px; border-bottom:3px solid #0D0D0D; padding-bottom:12px;">Regras de Layout</span>
+        <ul style="font-family:'Barlow',sans-serif; font-size:14px; line-height:1.9; padding-left:16px; color:#444;">
+          <li><strong>Bordas:</strong> sempre 3–4px sólidas, nunca suaves</li>
+          <li><strong>Cantos:</strong> 0px — sem border-radius exceto avatares</li>
+          <li><strong>Sombras:</strong> Não usar — bordas fazem o trabalho</li>
+          <li><strong>Magenta:</strong> Máx. 1 elemento por post. Use com cirurgia.</li>
+          <li><strong>Grid:</strong> Quadrado 1080×1080. Story 1080×1920.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Cadência editorial — render manual
+  const cadDiv = document.querySelector('[style*="grid-template-columns: repeat(7, 1fr)"]');
+  if (cadDiv) {
+    const days = ['SEG','TER','QUA','QUI','SEX','SÁB','DOM'];
+    const types = ['Provocação','Educativo','Dado/Stat','CTA direto','Case/Result.','Story','Off'];
+    const colors = ['#F5C100','#0D0D0D','#F5C100','#E01A5A','#0D0D0D','#F5C100','transparent'];
+    cadDiv.innerHTML = days.map((d,i) => `
+      <div style="padding:16px 12px; border-right:${i<6?'1px solid rgba(0,0,0,0.08)':'none'}; text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; color:#0D0D0D; text-transform:uppercase;">${d}</div>
+        <div style="width:100%; height:4px; margin:8px 0; background:${colors[i]};"></div>
+        <div style="font-family:'Barlow',sans-serif; font-size:10px; color:#999; line-height:1.4;">${types[i]}</div>
+      </div>
+    `).join('');
+  }
+
+  // Sidebar active state
+  const sections = ['cover','cores','tipo','logo','elementos','foto','editorial'];
+  const dots = document.querySelectorAll('.sidebar-dot');
+  window.addEventListener('scroll', () => {
+    let active = 0;
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id) || document.querySelector('.cover');
+      if (el && window.scrollY >= el.offsetTop - 200) active = i;
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === active));
+  });
+  dots.forEach((d, i) => d.addEventListener('click', () => {
+    const el = document.getElementById(sections[i]) || document.querySelector('.cover');
+    if (el) window.scrollTo({top: el.offsetTop - 60, behavior: 'smooth'});
+  }));
+</script>
+</body>
+</html>

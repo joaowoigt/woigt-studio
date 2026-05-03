@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w² — Opção B: Manifesto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF8F3;
+      --surface: #F2EEE5;
+      --surface2: #E8E2D5;
+      --border: #DDD5C4;
+      --dark: #160D06;
+      --primary: #C0371A;
+      --primary-dim: rgba(192,55,26,0.09);
+      --gold: #B8892A;
+      --gold-dim: rgba(184,137,42,0.10);
+      --text: #1C1008;
+      --muted: #7C6854;
+      --muted-light: #A0876E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; }
+    .font-heading { font-family: 'DM Serif Display', Georgia, serif; }
+    .font-display { font-family: 'DM Serif Display', Georgia, serif; }
+
+    .swatch {
+      height: 88px;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-end;
+      padding: 10px 12px;
+    }
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      padding-bottom: 28px;
+    }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ornament-line::before,
+    .ornament-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRESENTATION HEADER -->
+  <div style="background: var(--dark); border-bottom: 1px solid #2A1A0A;">
+    <div class="max-w-5xl mx-auto px-8 py-7 flex items-start justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="px-2.5 py-1 rounded text-xs font-heading font-semibold tracking-wider" style="background: rgba(192,55,26,0.2); color: #E86444;">OPÇÃO B</div>
+          <div class="h-px w-8" style="background: #2A1A0A;"></div>
+        </div>
+        <h1 class="font-heading font-bold text-3xl tracking-tight" style="color: #FAF8F3;">Manifesto</h1>
+        <p class="mt-2 max-w-lg text-sm leading-relaxed" style="color: #9A8070;">
+          Editorial brasileiro, tipografia serif expressiva e calor humano. Para uma agência que tem opinião — e entrega mais do que o cliente imaginou pedir.
+        </p>
+      </div>
+      <div class="text-right hidden md:block pt-1">
+        <p class="text-xs" style="color: #4A3020; font-family: 'Outfit', sans-serif;">w² agência</p>
+        <p class="text-xs mt-1" style="color: #4A3020; font-family: 'Outfit', sans-serif;">Brand Presentation · 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-8 py-14 space-y-20">
+
+    <!-- ═══════════════════════════════════════ LOGO -->
+    <section>
+      <p class="section-label">Identidade — Logo</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+
+        <!-- Logo principal -->
+        <div class="md:col-span-3 card p-10 flex flex-col items-center justify-center gap-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1" style="background: var(--primary);"></div>
+          <p class="section-label" style="padding-bottom: 0;">Logo principal</p>
+
+          <svg viewBox="0 0 400 90" width="400" height="90" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+            <text x="0" y="80" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="80" fill="#160D06">w</text>
+            <text x="70" y="40" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="40" fill="#C0371A">2</text>
+            <!-- Divisor -->
+            <rect x="110" y="22" width="1.5" height="56" fill="#DDD5C4"/>
+            <!-- Wordmark -->
+            <text x="126" y="56" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="32" letter-spacing="2" fill="#160D06">agência</text>
+            <!-- Ornamento -->
+            <rect x="0" y="88" width="400" height="1.5" fill="#DDD5C4"/>
+            <rect x="0" y="88" width="100" height="1.5" fill="#C0371A"/>
+          </svg>
+
+          <p class="text-xs" style="color: var(--muted-light);">Marca + wordmark · fundo claro</p>
+        </div>
+
+        <!-- Ícone + Versão escura -->
+        <div class="md:col-span-2 flex flex-col gap-5">
+
+          <!-- Ícone compacto -->
+          <div class="card p-7 flex flex-col items-center justify-center gap-5 flex-1">
+            <p class="section-label" style="padding-bottom: 0;">Ícone / Avatar</p>
+            <svg viewBox="0 0 80 80" width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+              <rect width="80" height="80" rx="0" fill="#160D06"/>
+              <text x="8" y="64" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="60" fill="#FAF8F3">w</text>
+              <text x="56" y="28" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="28" fill="#C0371A">2</text>
+              <rect x="0" y="76" width="80" height="4" fill="#C0371A"/>
+            </svg>
+            <p class="text-xs" style="color: var(--muted-light);">@w2agencia</p>
+          </div>
+
+          <!-- Versão escura -->
+          <div class="p-6 flex flex-col items-center justify-center gap-4 rounded-2xl" style="background: var(--dark);">
+            <p class="section-label" style="padding-bottom: 0; color: #4A3020;">Versão escura</p>
+            <svg viewBox="0 0 140 60" width="140" height="60" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="54" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="56" fill="#FAF8F3">w</text>
+              <text x="48" y="24" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="28" fill="#E86444">2</text>
+              <rect x="0" y="58" width="140" height="1.5" fill="#2A1A0A"/>
+              <rect x="0" y="58" width="68" height="1.5" fill="#C0371A"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PALETA -->
+    <section>
+      <p class="section-label">Paleta de Cores</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div>
+          <div class="swatch" style="background: #C0371A;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.7); font-family: monospace;">#C0371A</span>
+          </div>
+          <p class="font-heading font-bold text-sm mt-2.5" style="color: var(--text);">Vermelho Terra</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-light);">Primária</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #B8892A;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.7); font-family: monospace;">#B8892A</span>
+          </div>
+          <p class="font-heading font-bold text-sm mt-2.5" style="color: var(--text);">Âmbar Dourado</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-light);">Accent</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #160D06;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">#160D06</span>
+          </div>
+          <p class="font-heading font-bold text-sm mt-2.5" style="color: var(--text);">Ébano</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-light);">Texto / Dark</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #FAF8F3; border: 1px solid #DDD5C4;">
+            <span style="font-size: 10px; color: #A0876E; font-family: monospace;">#FAF8F3</span>
+          </div>
+          <p class="font-heading font-bold text-sm mt-2.5" style="color: var(--text);">Creme</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-light);">Background</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #F2EEE5; border: 1px solid #DDD5C4;">
+            <span style="font-size: 10px; color: #A0876E; font-family: monospace;">#F2EEE5</span>
+          </div>
+          <p class="font-heading font-bold text-sm mt-2.5" style="color: var(--text);">Pergaminho</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-light);">Surface</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ TIPOGRAFIA -->
+    <section>
+      <p class="section-label">Tipografia</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="card p-8">
+          <p class="section-label" style="padding-bottom: 20px;">DM Serif Display — Títulos</p>
+          <div class="font-heading" style="color: var(--text);">
+            <p style="font-size: 64px; font-weight: 900; line-height: 1; font-style: italic; color: var(--dark);">Aa</p>
+            <p style="font-size: 30px; font-weight: 900; margin-top: 16px; line-height: 1.1;">Presença digital</p>
+            <p style="font-size: 22px; font-weight: 700; font-style: italic; margin-top: 8px; color: var(--primary);">que coloca no mapa</p>
+            <p style="font-size: 12px; font-weight: 700; margin-top: 18px; letter-spacing: 0.1em; color: var(--muted-light);">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+            <p style="font-size: 12px; margin-top: 4px; color: var(--muted-light);">abcdefghijklmnopqrstuvwxyz 0123</p>
+          </div>
+        </div>
+        <div class="card p-8">
+          <p class="section-label" style="padding-bottom: 20px;">Lora — Corpo de Texto</p>
+          <div style="color: var(--text);">
+            <p style="font-size: 18px; font-weight: 600; line-height: 1.4;">Você fala com quem faz.</p>
+            <p style="font-size: 14px; line-height: 1.75; margin-top: 12px; color: var(--muted);">
+              De MEI a pequena empresa — construímos sua identidade digital do zero, com velocidade e atenção personalizada que grandes agências simplesmente não conseguem oferecer.
+            </p>
+            <div style="margin-top: 20px; display: flex; gap: 12px; font-size: 12px; color: var(--muted-light);">
+              <span>400 Regular</span>
+              <span style="color: var(--border);">·</span>
+              <span style="font-weight: 600;">600 Semibold</span>
+              <span style="color: var(--border);">·</span>
+              <em>Itálico</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ MOCKUP LANDING PAGE -->
+    <section>
+      <p class="section-label">Mockup — Landing Page</p>
+      <div class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border);">
+
+        <!-- Navbar -->
+        <div class="px-8 py-4 flex items-center justify-between" style="background: var(--dark); border-bottom: 1px solid #2A1A0A;">
+          <svg viewBox="0 0 100 40" width="100" height="40" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="34" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="34" fill="#FAF8F3">w</text>
+            <text x="28" y="15" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="18" fill="#C0371A">2</text>
+          </svg>
+          <div class="hidden md:flex gap-7 text-sm" style="color: #6A4A30; font-family: 'Outfit', sans-serif;">
+            <span>Serviços</span><span>Cases</span><span>Sobre</span>
+          </div>
+          <button class="px-5 py-2.5 rounded-none text-sm font-bold" style="background: var(--primary); color: white; letter-spacing: 0.05em; font-family: 'Outfit', sans-serif;">Diagnóstico gratuito</button>
+        </div>
+
+        <!-- Hero -->
+        <div class="relative overflow-hidden" style="background: var(--dark);">
+          <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(to left, rgba(192,55,26,0.10), transparent);"></div>
+          <div style="position: absolute; top: 0; right: 72px; width: 4px; height: 100%; background: var(--primary); opacity: 0.55;"></div>
+          <div style="position: absolute; top: 48px; right: 90px; width: 52px; height: 52px; border: 2.5px solid rgba(192,55,26,0.22); transform: rotate(45deg);"></div>
+          <div class="px-12 py-20 relative">
+            <div class="ornament-line mb-8" style="max-width: 200px;">
+              <span style="font-size: 10px; letter-spacing: 0.25em; color: var(--primary); font-family: 'Outfit', sans-serif; font-weight: 600;">VOCÊ FALA COM QUEM FAZ</span>
+            </div>
+            <h1 class="font-heading font-black" style="font-size: clamp(36px, 5vw, 58px); line-height: 1.05; color: #FAF8F3; max-width: 580px;">
+              Presença digital que<br/>
+              <em style="color: var(--primary); font-style: italic;">coloca seu negócio</em><br/>
+              no mapa
+            </h1>
+            <p style="font-size: 15px; line-height: 1.75; margin-top: 24px; margin-bottom: 36px; color: #9A8070; max-width: 480px; font-family: 'Outfit', sans-serif;">
+              Branding, site e gestão de redes para MEIs e pequenas empresas. Entregamos em metade do prazo com atenção que grandes agências não têm.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button class="font-bold" style="padding: 14px 28px; background: var(--primary); color: white; font-size: 14px; letter-spacing: 0.03em; font-family: 'Outfit', sans-serif;">Agendar diagnóstico gratuito →</button>
+              <button class="font-heading font-bold" style="padding: 14px 28px; border: 1.5px solid #6A4A30; color: #C4A882; font-size: 14px; background: transparent;">Ver cases</button>
+            </div>
+
+            <!-- Stats -->
+            <div style="display: flex; gap: 40px; margin-top: 52px; padding-top: 32px; border-top: 1px solid #2A1A0A;">
+              <div>
+                <p class="font-heading font-bold" style="font-size: 28px; color: #FAF8F3;">100%</p>
+                <p style="font-size: 11px; letter-spacing: 0.1em; color: #6A4A30; margin-top: 4px; font-family: 'Outfit', sans-serif;">APROVAÇÃO</p>
+              </div>
+              <div style="width: 1px; background: #2A1A0A;"></div>
+              <div>
+                <p class="font-heading font-bold" style="font-size: 28px; color: var(--primary);">2×</p>
+                <p style="font-size: 11px; letter-spacing: 0.1em; color: #6A4A30; margin-top: 4px; font-family: 'Outfit', sans-serif;">MAIS RÁPIDO</p>
+              </div>
+              <div style="width: 1px; background: #2A1A0A;"></div>
+              <div>
+                <p class="font-heading font-bold" style="font-size: 28px; color: #FAF8F3;">Zero</p>
+                <p style="font-size: 11px; letter-spacing: 0.1em; color: #6A4A30; margin-top: 4px; font-family: 'Outfit', sans-serif;">RETRABALHO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="px-8 py-14" style="background: var(--bg);">
+          <div class="text-center mb-10">
+            <p style="font-size: 10px; letter-spacing: 0.22em; color: var(--muted-light); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; margin-bottom: 12px;">O que entregamos</p>
+            <h2 class="font-heading font-black" style="font-size: 32px; color: var(--dark);">Tudo que seu negócio precisa</h2>
+            <div style="width: 48px; height: 3px; background: var(--primary); margin: 14px auto 0;"></div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-6" style="background: white; border: 1px solid var(--border); border-top: 3px solid var(--primary);">
+              <p class="font-heading font-bold text-base mb-2" style="color: var(--dark);">Branding</p>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--muted); font-family: 'Outfit', sans-serif;">Naming, logo e identidade visual completa</p>
+            </div>
+            <div class="p-6" style="background: white; border: 1px solid var(--border); border-top: 3px solid #8B6420;">
+              <p class="font-heading font-bold text-base mb-2" style="color: var(--dark);">Landing Page</p>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--muted); font-family: 'Outfit', sans-serif;">Site que representa e converte</p>
+            </div>
+            <div class="p-6" style="background: white; border: 1px solid var(--border); border-top: 3px solid var(--primary);">
+              <p class="font-heading font-bold text-base mb-2" style="color: var(--dark);">Kit Digital</p>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--muted); font-family: 'Outfit', sans-serif;">WhatsApp Business + redes configuradas</p>
+            </div>
+            <div class="p-6" style="background: white; border: 1px solid var(--border); border-top: 3px solid #8B6420;">
+              <p class="font-heading font-bold text-base mb-2" style="color: var(--dark);">Gestão Mensal</p>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--muted); font-family: 'Outfit', sans-serif;">Conteúdo e presença mês a mês</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento -->
+        <div class="px-12 py-12" style="background: var(--surface); border-top: 1px solid var(--border);">
+          <p class="font-heading font-bold italic" style="font-size: 22px; color: var(--dark); max-width: 540px; line-height: 1.4;">
+            "Entregaram além do que eu esperava — e em metade do prazo que outra agência me deu."
+          </p>
+          <p style="margin-top: 16px; font-size: 12px; letter-spacing: 0.12em; color: var(--muted-light); font-family: 'Outfit', sans-serif;">— ANDREZA, ENTRELAÇADA CROCHÊ</p>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="px-10 py-12 flex items-center justify-between flex-wrap gap-6" style="background: var(--primary);">
+          <div>
+            <p class="font-heading font-bold italic" style="font-size: 28px; color: white; line-height: 1.2;">Pronto pra colocar seu negócio no mapa?</p>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 8px; font-family: 'Outfit', sans-serif;">Diagnóstico gratuito, sem compromisso. Você fala com quem faz.</p>
+          </div>
+          <button class="font-bold" style="padding: 14px 32px; background: var(--bg); color: var(--primary); font-size: 14px; white-space: nowrap; font-family: 'Outfit', sans-serif; letter-spacing: 0.02em;">Agendar agora →</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-8 py-5 flex items-center justify-between" style="background: var(--dark); border-top: 1px solid #2A1A0A;">
+          <span class="font-heading font-bold text-sm" style="color: #6A4A30;">w² agência</span>
+          <span style="font-size: 12px; color: #4A3020; font-family: 'Outfit', sans-serif;">© 2026 · contato@w2agencia.com.br</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ APLICAÇÕES -->
+    <section>
+      <p class="section-label">Aplicações</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- IG Avatar -->
+        <div class="card p-8 flex flex-col items-center gap-5">
+          <p class="section-label" style="padding-bottom: 0;">Avatar Instagram</p>
+          <div class="relative">
+            <div class="w-28 h-28 rounded-full flex items-center justify-center" style="background: var(--primary); padding: 3px;">
+              <div class="w-full h-full rounded-full flex items-center justify-center" style="background: var(--dark);">
+                <svg viewBox="0 0 58 40" width="46" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="34" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="34" fill="#FAF8F3">w</text>
+                  <text x="28" y="15" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="18" fill="#C0371A">2</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs" style="color: var(--muted-light);">@w2agencia · 200×200px</p>
+        </div>
+
+        <!-- IG Post -->
+        <div class="card p-8 flex flex-col items-center gap-5">
+          <p class="section-label" style="padding-bottom: 0;">Post Instagram</p>
+          <div style="width: 180px; height: 180px; background: var(--dark); position: relative; overflow: hidden; border: 1px solid #2A1A0A;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary);"></div>
+            <div style="padding: 16px;">
+              <svg viewBox="0 0 70 40" width="52" height="30" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="32" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="32" fill="#FAF8F3">w</text>
+                <text x="26" y="14" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="16" fill="#C0371A">2</text>
+              </svg>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 14px;">
+              <p class="font-heading font-black italic" style="font-size: 15px; color: #FAF8F3; line-height: 1.2;">Quem se diferencia<br/>vende mais.</p>
+              <p style="font-size: 10px; color: #6A4A30; margin-top: 8px; font-family: 'Outfit', sans-serif; letter-spacing: 0.1em;">W² AGÊNCIA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Favicon -->
+        <div class="card p-8 flex flex-col items-center gap-6">
+          <p class="section-label" style="padding-bottom: 0;">Favicon</p>
+          <div class="flex items-end gap-5">
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 48px; height: 48px; background: var(--dark); display: flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--primary);">
+                <svg viewBox="0 0 40 30" width="30" height="22" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="24" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="24" fill="#FAF8F3">w</text>
+                  <text x="19" y="10" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="12" fill="#C0371A">2</text>
+                </svg>
+              </div>
+              <p class="text-xs" style="color: var(--muted-light);">48px</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 32px; height: 32px; background: var(--dark); display: flex; align-items: center; justify-content: center; border-bottom: 3px solid var(--primary);">
+                <svg viewBox="0 0 40 30" width="20" height="15" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="24" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="24" fill="#FAF8F3">w</text>
+                  <text x="19" y="10" font-family="DM Serif Display, Georgia, serif" font-weight="700" font-size="12" fill="#C0371A">2</text>
+                </svg>
+              </div>
+              <p class="text-xs" style="color: var(--muted-light);">32px</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 16px; height: 16px; background: var(--primary); display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 40 30" width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="24" font-family="DM Serif Display, Georgia, serif" font-weight="900" font-size="24" fill="white">w</text>
+                </svg>
+              </div>
+              <p class="text-xs" style="color: var(--muted-light);">16px</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mood keywords -->
+    <div class="flex flex-wrap gap-3">
+      <span class="px-4 py-2 text-xs font-heading font-bold tracking-wider" style="background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(192,55,26,0.2);">Editorial</span>
+      <span class="px-4 py-2 text-xs font-heading font-bold tracking-wider" style="background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(192,55,26,0.2);">Consultivo</span>
+      <span class="px-4 py-2 text-xs font-heading font-bold tracking-wider" style="background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(184,137,42,0.2);">Sofisticado</span>
+      <span class="px-4 py-2 text-xs font-heading font-bold tracking-wider" style="background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(184,137,42,0.2);">Quente</span>
+      <span class="px-4 py-2 text-xs font-heading font-bold tracking-wider" style="background: white; color: var(--muted); border: 1px solid var(--border);">Confiante</span>
+    </div>
+
+  </div>
+</body>
+</html>

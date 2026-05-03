@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w² Agência — Social Media Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Barlow', sans-serif; }
+    .halftone { background-image: radial-gradient(circle, rgba(13,13,13,0.16) 1.5px, transparent 1.5px); background-size: 20px 20px; }
+    .halftone-w { background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.5px); background-size: 20px 20px; }
+    .grid-tex { background-image: linear-gradient(rgba(13,13,13,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(13,13,13,0.07) 1px,transparent 1px); background-size: 36px 36px; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel">
+
+const { useState } = React;
+
+const Y = '#F5C100';
+const M = '#E01A5A';
+const B = '#0D0D0D';
+const G = '#1A1A1A';
+const W = '#FFFFFF';
+
+const bc = (f) => ({ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, ...f });
+const bci = (f) => ({ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontStyle: 'italic', ...f });
+const bcl = (f) => ({ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, ...f });
+const bar = (f) => ({ fontFamily: "'Barlow', sans-serif", ...f });
+
+/* shared logo */
+function LogoMark({ variant = 'dark' }) {
+  const wc = variant === 'dark' ? Y : B;
+  const ac = variant === 'dark' ? 'rgba(255,255,255,0.8)' : B;
+  const sc = variant === 'dark' ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)';
+  return (
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+      <span style={bc({ fontSize: 18, color: wc, lineHeight: 1 })}>W<sup style={{ color: M, fontSize: 11, verticalAlign: 'super', lineHeight: 0 }}>²</sup></span>
+      <span style={{ width: 1, height: 14, background: sc, display: 'inline-block' }}></span>
+      <span style={bcl({ fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase', color: ac })}>AGÊNCIA</span>
+    </div>);
+
+}
+
+/* ── POST 01: Provocação ─────────────────────────────────── */
+function Post01() {
+  return (
+    <div style={{ width: 1080, height: 1080, background: B, position: 'relative', overflow: 'hidden' }}>
+      {/* Scanlines texture */}
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(0deg,rgba(255,255,255,0.02) 0px,rgba(255,255,255,0.02) 1px,transparent 1px,transparent 8px)', pointerEvents: 'none' }}></div>
+
+      {/* Top label */}
+      <div style={{ position: 'absolute', top: 48, left: 48, display: 'flex', alignItems: 'center', gap: 10 }}>
+        <span style={{ width: 8, height: 8, background: M, display: 'block' }}></span>
+        <span style={bcl({ fontSize: 20, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' })}>Provocação</span>
+      </div>
+
+      {/* Main headline */}
+      <div style={{ position: 'absolute', bottom: 160, left: 48, right: 48 }}>
+        <div style={bc({ fontSize: 168, lineHeight: 0.87, textTransform: 'uppercase', color: Y, letterSpacing: '-5px' })}>
+          <div>APAREÇA</div>
+          <div>OU <span style={{ color: M, fontStyle: 'italic' }}>SUMA.</span></div>
+        </div>
+      </div>
+
+      {/* Subtext */}
+      <div style={{ position: 'absolute', bottom: 80, left: 48, right: 48, borderTop: `3px solid rgba(245,193,0,0.2)`, paddingTop: 20 }}>
+        <span style={bar({ fontSize: 24, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.02em' })}>No digital, quem não aparece não existe. Simples assim.</span>
+      </div>
+
+      {/* Logo */}
+      <div style={{ position: 'absolute', top: 48, right: 48 }}><LogoMark /></div>
+
+      {/* Geometric accent */}
+      <div style={{ position: 'absolute', right: 48, bottom: 200, width: 80, height: 80, border: `4px solid rgba(245,193,0,0.15)` }}></div>
+      <div style={{ position: 'absolute', right: 72, bottom: 224, width: 80, height: 80, border: `2px solid rgba(245,193,0,0.08)` }}></div>
+    </div>);
+
+}
+
+/* ── POST 02: Dado / Stat ────────────────────────────────── */
+function Post02() {
+  return (
+    <div className="halftone" style={{ width: 1080, height: 1080, background: Y, position: 'relative', overflow: 'hidden' }}>
+      {/* Big number */}
+      <div style={{ position: 'absolute', top: 160, left: 48, right: 48 }}>
+        <div style={bc({ fontSize: 300, lineHeight: 0.8, textTransform: 'uppercase', color: B, letterSpacing: '-12px' })}>48H</div>
+      </div>
+
+      {/* Rule */}
+      <div style={{ position: 'absolute', bottom: 240, left: 48, right: 48, height: 4, background: B }}></div>
+
+      {/* Caption */}
+      <div style={{ position: 'absolute', bottom: 120, left: 48, right: 48 }}>
+        <div style={bc({ fontSize: 64, lineHeight: 0.95, textTransform: 'uppercase', color: B, letterSpacing: '-1px' })}>
+          DO BRIEFING<br /><em style={{ fontStyle: 'italic', color: M }}>AO AR.</em>
+        </div>
+        <div style={bar({ fontSize: 22, color: 'rgba(13,13,13,0.55)', marginTop: 14 })}>Sua landing page no ar em 2 dias. Sem enrolação.</div>
+      </div>
+
+      {/* Top bar */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 12, background: B }}></div>
+      <div style={{ position: 'absolute', top: 48, left: 48, right: 48, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <LogoMark variant="light" />
+        <div style={{ border: `3px solid ${B}`, padding: '6px 16px' }}>
+          <span style={bcl({ fontSize: 18, textTransform: 'uppercase', letterSpacing: '0.1em', color: B })}>Entrega garantida</span>
+        </div>
+      </div>
+    </div>);
+
+}
+
+/* ── POST 03: Carrossel — capa ───────────────────────────── */
+function Post03() {
+  return (
+    <div style={{ width: 1080, height: 1080, background: G, position: 'relative', overflow: 'hidden' }}>
+      {/* Halftone white */}
+      <div className="halftone-w" style={{ position: 'absolute', inset: 0 }}></div>
+
+      {/* Slide counter */}
+      <div style={{ position: 'absolute', top: 48, right: 48, display: 'flex', alignItems: 'center', gap: 8 }}>
+        <span style={bcl({ fontSize: 18, color: Y, letterSpacing: '0.1em' })}>1</span>
+        <span style={{ width: 24, height: 2, background: 'rgba(255,255,255,0.2)', display: 'block' }}></span>
+        <span style={bcl({ fontSize: 18, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' })}>5</span>
+      </div>
+
+      {/* Eyebrow */}
+      <div style={{ position: 'absolute', top: 48, left: 48, display: 'flex', alignItems: 'center', gap: 10, border: `2px solid rgba(245,193,0,0.3)`, padding: '6px 14px' }}>
+        <span style={{ width: 8, height: 8, background: M, display: 'block' }}></span>
+        <span style={bcl({ fontSize: 18, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' })}>Carrossel educativo</span>
+      </div>
+
+      {/* Headline */}
+      <div style={{ position: 'absolute', top: 160, left: 48, right: 120 }}>
+        <div style={bc({ fontSize: 136, lineHeight: 0.88, textTransform: 'uppercase', color: Y, letterSpacing: '-4px' })}>
+          <div>3 RAZÕES</div>
+          <div>PRA SUA</div>
+          <div>EMPRESA</div>
+          <div>SUMIR DO</div>
+          <div style={{ color: M, fontStyle: 'italic' }}>GOOGLE.</div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: B, padding: '20px 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={bar({ fontSize: 20, color: 'rgba(255,255,255,0.45)' })}>Arrasta para ver as razões →</span>
+        <LogoMark />
+      </div>
+    </div>);
+
+}
+
+/* ── POST 04: Carrossel — slide interno ─────────────────── */
+function Post04() {
+  return (
+    <div style={{ width: 1080, height: 1080, background: B, position: 'relative', overflow: 'hidden' }}>
+      {/* BG accent */}
+      <div style={{ position: 'absolute', right: -80, top: -80, width: 400, height: 400, border: `3px solid rgba(245,193,0,0.06)`, transform: 'rotate(15deg)' }}></div>
+      <div style={{ position: 'absolute', right: -40, top: -40, width: 400, height: 400, border: `3px solid rgba(245,193,0,0.04)`, transform: 'rotate(25deg)' }}></div>
+
+      {/* Slide # */}
+      <div style={{ position: 'absolute', top: 48, left: 48, display: 'flex', alignItems: 'center', gap: 8 }}>
+        <span style={bc({ fontSize: 72, color: Y, lineHeight: 1 })}>02</span>
+        <span style={{ width: 3, height: 64, background: M, display: 'block' }}></span>
+      </div>
+
+      {/* Content */}
+      <div style={{ position: 'absolute', top: 180, left: 48, right: 48 }}>
+        <div style={{ ...bc({ fontSize: 80, lineHeight: 0.9, textTransform: 'uppercase', color: Y, letterSpacing: '-2px', marginBottom: 24 }), color: "rgb(245, 0, 130)", textAlign: "right" }}>
+          VOCÊ NÃO<br /><em style={{ fontStyle: 'italic', color: W, fontFamily: "-apple-system" }}>EXISTE</em><br />NO MAPS.
+        </div>
+        <div style={{ width: 64, height: 4, background: M, marginBottom: 24 }}></div>
+        <p style={bar({ fontSize: 28, lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', maxWidth: 760 })}>
+          87% das pessoas pesquisam no Google Maps antes de visitar um negócio local. Se você não aparece, elas vão para o concorrente. Simples assim.
+        </p>
+        <div style={{ marginTop: 32, padding: '16px 20px', border: `3px solid rgba(245,193,0,0.2)`, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ width: 10, height: 10, background: M, display: 'block', flexShrink: 0 }}></span>
+          <span style={bcl({ fontSize: 20, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' })}>Kit Digital resolve isso em 48h</span>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: Y, padding: '18px 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={bar({ fontSize: 18, color: 'rgba(13,13,13,0.55)', fontWeight: 500 })}>← Razão 2 de 3</span>
+        <LogoMark variant="light" />
+      </div>
+    </div>);
+
+}
+
+/* ── POST 05: CTA Magenta ────────────────────────────────── */
+function Post05() {
+  return (
+    <div style={{ width: 1080, height: 1080, background: M, position: 'relative', overflow: 'hidden' }}>
+      {/* Watermark */}
+      <div style={{ position: 'absolute', right: -60, top: '50%', transform: 'translateY(-50%)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: 500, color: 'rgba(255,255,255,0.05)', lineHeight: 1, letterSpacing: -20, userSelect: 'none', pointerEvents: 'none' }}>W²</div>
+
+      {/* Content */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 80px', position: 'relative', zIndex: 1 }}>
+        <div style={{ border: `3px solid rgba(255,255,255,0.3)`, padding: '8px 18px', display: 'inline-flex', alignItems: 'center', gap: 10, alignSelf: 'flex-start', marginBottom: 32 }}>
+          <span style={{ width: 8, height: 8, background: Y, display: 'block' }}></span>
+          <span style={bcl({ fontSize: 20, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' })}>Oferta limitada</span>
+        </div>
+        <div style={bc({ fontSize: 168, lineHeight: 0.87, textTransform: 'uppercase', letterSpacing: '-6px', position: 'absolute', top: 160, left: 80, right: 80 })}>
+          <div style={{ color: W }}>PRONTO</div>
+          <div style={{ color: W }}>PRA</div>
+          <div style={{ color: Y }}>APARECER?</div>
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div style={{ position: 'absolute', bottom: 80, left: 80, right: 80 }}>
+        <div style={{ background: Y, display: 'inline-flex', alignItems: 'center', gap: 16, padding: '20px 36px', marginBottom: 20 }}>
+          <span style={bc({ fontSize: 28, textTransform: 'uppercase', letterSpacing: '0.08em', color: B })}>Diagnóstico Grátis</span>
+          <span style={{ width: 3, height: 28, background: 'rgba(13,13,13,0.2)', display: 'block' }}></span>
+          <span style={bar({ fontSize: 18, color: 'rgba(13,13,13,0.5)', fontWeight: 500 })}>Link na bio →</span>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={bar({ fontSize: 18, color: 'rgba(255,255,255,0.45)' })}>w2agencia.com.br</span>
+          <LogoMark />
+        </div>
+      </div>
+    </div>);
+
+}
+
+/* ── POST 06: Prova social ───────────────────────────────── */
+function Post06() {
+  return (
+    <div style={{ width: 1080, height: 1080, background: G, position: 'relative', overflow: 'hidden', border: `3px solid rgba(245,193,0,0.15)` }}>
+      {/* Big quote mark */}
+      <div style={{ position: 'absolute', top: 40, left: 48, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: 280, lineHeight: 1, color: 'rgba(245,193,0,0.08)', userSelect: 'none' }}>"</div>
+
+      {/* Content */}
+      <div style={{ position: 'absolute', top: 180, left: 72, right: 72 }}>
+        <p style={bar({ fontSize: 52, lineHeight: 1.35, color: W, fontWeight: 400, maxWidth: 860 })}>
+          "Em 2 dias minha página estava no ar. No primeiro mês,{' '}
+          <span style={{ background: Y, color: B, padding: '0 6px', fontWeight: 700 }}>3 clientes novos</span>{' '}
+          vieram direto do site."
+        </p>
+      </div>
+
+      {/* Attribution */}
+      <div style={{ position: 'absolute', bottom: 120, left: 72, right: 72, borderTop: `3px solid rgba(245,193,0,0.2)`, paddingTop: 28, display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div style={{ width: 72, height: 72, background: Y, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <span style={bc({ fontSize: 36, color: B })}>M</span>
+        </div>
+        <div>
+          <span style={bc({ fontSize: 36, color: W, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' })}>Marcela T.</span>
+          <span style={bar({ fontSize: 20, color: 'rgba(255,255,255,0.4)' })}>Studio de Estética · São Paulo, SP</span>
+        </div>
+        <div style={{ marginLeft: 'auto' }}>
+          <LogoMark />
+        </div>
+      </div>
+    </div>);
+
+}
+
+/* ── POST 07: Verdade incômoda ───────────────────────────── */
+function Post07() {
+  return (
+    <div className="grid-tex" style={{ width: 1080, height: 1080, background: Y, position: 'relative', overflow: 'hidden' }}>
+      {/* Top bar */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 10, background: B }}></div>
+
+      {/* Logo */}
+      <div style={{ position: 'absolute', top: 40, left: 48 }}><LogoMark variant="light" /></div>
+
+      {/* Big type block */}
+      <div style={{ position: 'absolute', top: 120, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 48px' }}>
+        <div style={bc({ fontSize: 136, lineHeight: 0.87, textTransform: 'uppercase', color: B, letterSpacing: '-4px' })}>
+          <div>PRESENÇA</div>
+          <div>DIGITAL</div>
+          <div>NÃO É</div>
+          <div>ESTÉTICA.</div>
+        </div>
+        <div style={{ width: '100%', height: 4, background: B, margin: '20px 0' }}></div>
+        <div style={bc({ fontSize: 96, lineHeight: 0.9, textTransform: 'uppercase', letterSpacing: '-2px' })}>
+          <span style={{ color: B }}>É </span>
+          <span style={{ color: M, fontStyle: 'italic' }}>RESULTADO.</span>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: B, padding: '16px 48px' }}>
+        <span style={bar({ fontSize: 20, color: 'rgba(255,255,255,0.4)' })}>Agência para quem quer aparecer, não para quem quer elogios.</span>
+      </div>
+    </div>);
+
+}
+
+/* ── STORY 01 ────────────────────────────────────────────── */
+function Story01() {
+  return (
+    <div className="halftone" style={{ width: 1080, height: 1920, background: Y, position: 'relative', overflow: 'hidden' }}>
+      {/* Top safe zone logo */}
+      <div style={{ position: 'absolute', top: 80, left: 48, right: 48, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <LogoMark variant="light" />
+        <div style={{ border: `3px solid ${B}`, padding: '6px 14px' }}>
+          <span style={bcl({ fontSize: 18, textTransform: 'uppercase', letterSpacing: '0.12em', color: B })}>w2agencia.com.br</span>
+        </div>
+      </div>
+
+      {/* Stamp */}
+      <div style={{ position: 'absolute', top: 320, right: 64, width: 200, height: 200, border: `6px solid ${M}`, borderRadius: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', transform: 'rotate(-12deg)' }}>
+        <div style={{ position: 'absolute', inset: 8, border: `3px dashed ${M}`, borderRadius: '50%' }}></div>
+        <span style={bcl({ fontSize: 18, letterSpacing: '0.12em', color: M, textTransform: 'uppercase', position: 'relative' })}>DIAGNÓSTICO</span>
+        <span style={bc({ fontSize: 52, lineHeight: 1, color: B, letterSpacing: '-2px', position: 'relative' })}>GRÁTIS</span>
+        <span style={bcl({ fontSize: 13, color: 'rgba(13,13,13,0.4)', textTransform: 'uppercase', letterSpacing: '0.12em', position: 'relative' })}>Sem compromisso</span>
+      </div>
+
+      {/* Main message */}
+      <div style={{ position: 'absolute', top: 560, left: 48, right: 48 }}>
+        <div style={bc({ fontSize: 172, lineHeight: 0.87, textTransform: 'uppercase', color: B, letterSpacing: '-6px' })}>
+          <div>VOCÊ</div>
+          <div>FALA</div>
+          <div>COM</div>
+          <div>QUEM</div>
+          <div style={{ color: M, fontStyle: 'italic' }}>FAZ.</div>
+        </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div style={{ position: 'absolute', bottom: 160, left: 48, right: 48 }}>
+        <div style={{ background: B, padding: '24px 32px', marginBottom: 16 }}>
+          <div style={bc({ fontSize: 28, textTransform: 'uppercase', letterSpacing: '0.08em', color: Y, marginBottom: 6 })}>Arrasta pra cima</div>
+          <div style={bar({ fontSize: 20, color: 'rgba(255,255,255,0.55)' })}>20 min. Sem vendedor. Sem compromisso.</div>
+        </div>
+        <div style={{ textAlign: 'center', borderTop: `3px solid ${B}`, paddingTop: 16 }}>
+          <span style={bar({ fontSize: 20, color: 'rgba(13,13,13,0.5)', fontWeight: 500 })}>↑ Swipe up · Link na bio</span>
+        </div>
+      </div>
+    </div>);
+
+}
+
+/* ── STORY 02: Dado rápido ───────────────────────────────── */
+function Story02() {
+  return (
+    <div style={{ width: 1080, height: 1920, background: B, position: 'relative', overflow: 'hidden' }}>
+      {/* Scanlines */}
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(0deg,rgba(255,255,255,0.015) 0px,rgba(255,255,255,0.015) 1px,transparent 1px,transparent 8px)', pointerEvents: 'none' }}></div>
+
+      {/* Logo */}
+      <div style={{ position: 'absolute', top: 80, left: 48 }}><LogoMark /></div>
+
+      {/* Top accent line */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 6, background: M }}></div>
+
+      {/* Stats stack */}
+      <div style={{ position: 'absolute', top: 220, left: 48, right: 48 }}>
+        {[
+        { num: '+200', label: 'Clientes ativos' },
+        { num: '48h', label: 'Para ir ao ar' },
+        { num: '3×', label: 'Mais leads em média' }].
+        map((s, i) =>
+        <div key={i} style={{ borderTop: i === 0 ? `3px solid ${Y}` : `1px solid rgba(245,193,0,0.15)`, padding: '40px 0', display: 'flex', alignItems: 'baseline', gap: 24 }}>
+            <span style={bc({ fontSize: 144, color: Y, lineHeight: 0.9, letterSpacing: '-4px' })}>{s.num}</span>
+            <span style={bar({ fontSize: 32, color: 'rgba(255,255,255,0.5)', fontWeight: 400 })}>{s.label}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom */}
+      <div style={{ position: 'absolute', bottom: 120, left: 48, right: 48, borderTop: `3px solid rgba(245,193,0,0.2)`, paddingTop: 24 }}>
+        <div style={bc({ fontSize: 40, textTransform: 'uppercase', color: Y, letterSpacing: '-1px', marginBottom: 6 })}>Quer fazer parte?</div>
+        <div style={bar({ fontSize: 24, color: 'rgba(255,255,255,0.4)' })}>Link na bio · Diagnóstico grátis</div>
+      </div>
+    </div>);
+
+}
+
+/* ── APP ─────────────────────────────────────────────────── */
+function App() {
+  return (
+    <DesignCanvas title="w² Agência — Social Media Kit">
+      <DCSection id="posts" title="Posts Quadrados (1080×1080)">
+        <DCArtboard id="p1" label="01 · Provocação" width={1080} height={1080}><Post01 /></DCArtboard>
+        <DCArtboard id="p2" label="02 · Dado / Stat" width={1080} height={1080}><Post02 /></DCArtboard>
+        <DCArtboard id="p3" label="03 · Carrossel capa" width={1080} height={1080}><Post03 /></DCArtboard>
+        <DCArtboard id="p4" label="04 · Carrossel slide" width={1080} height={1080}><Post04 /></DCArtboard>
+        <DCArtboard id="p5" label="05 · CTA Magenta" width={1080} height={1080}><Post05 /></DCArtboard>
+        <DCArtboard id="p6" label="06 · Prova Social" width={1080} height={1080}><Post06 /></DCArtboard>
+        <DCArtboard id="p7" label="07 · Verdade Incômoda" width={1080} height={1080}><Post07 /></DCArtboard>
+      </DCSection>
+      <DCSection id="stories" title="Stories (1080×1920)">
+        <DCArtboard id="s1" label="Story 01 · CTA Diagnóstico" width={1080} height={1920}><Story01 /></DCArtboard>
+        <DCArtboard id="s2" label="Story 02 · Dados &amp; Stats" width={1080} height={1920}><Story02 /></DCArtboard>
+      </DCSection>
+    </DesignCanvas>);
+
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

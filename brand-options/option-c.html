@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w² — Opção C: Explosão</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #F5C100;
+      --yellow-dark: #D4A800;
+      --black: #0D0D0D;
+      --black2: #1A1A1A;
+      --magenta: #E01A5A;
+      --magenta-dim: rgba(224,26,90,0.10);
+      --white: #FFFFFF;
+      --offwhite: #F9F9F9;
+      --muted-on-yellow: rgba(13,13,13,0.55);
+      --muted-on-dark: rgba(255,255,255,0.45);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #FFFFFF; color: var(--black); font-family: 'Barlow', sans-serif; }
+    .font-heading { font-family: 'Barlow Condensed', sans-serif; }
+
+    .swatch {
+      height: 88px;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-end;
+      padding: 10px 12px;
+    }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(13,13,13,0.4);
+      padding-bottom: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRESENTATION HEADER -->
+  <div style="background: var(--black); border-bottom: 4px solid var(--yellow);">
+    <div class="max-w-5xl mx-auto px-8 py-7 flex items-start justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="px-2.5 py-1 text-xs font-heading font-black tracking-widest" style="background: var(--yellow); color: var(--black);">OPÇÃO C</div>
+          <div class="h-px w-8" style="background: #2A2A2A;"></div>
+        </div>
+        <h1 class="font-heading font-black text-4xl tracking-tight" style="color: var(--yellow);">Explosão</h1>
+        <p class="mt-2 max-w-lg text-sm leading-relaxed" style="color: rgba(255,255,255,0.55); font-family: 'Barlow', sans-serif;">
+          Alto contraste, tipografia condensada bold e energia máxima. Para uma agência que não tem medo de ocupar espaço — e transforma o visual do cliente em arma de vendas.
+        </p>
+      </div>
+      <div class="text-right hidden md:block pt-1">
+        <p class="text-xs font-heading font-bold tracking-wider" style="color: #3A3A3A;">w² agência</p>
+        <p class="text-xs mt-1 font-heading" style="color: #3A3A3A;">Brand Presentation · 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-8 py-14 space-y-20">
+
+    <!-- ═══════════════════════════════════════ LOGO -->
+    <section>
+      <p class="section-label">Identidade — Logo</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+
+        <!-- Logo principal — col 3 -->
+        <div class="md:col-span-3 p-10 flex flex-col items-center justify-center gap-6" style="background: var(--white); border: 3px solid var(--black);">
+          <p class="section-label" style="padding-bottom: 0; color: var(--muted-on-yellow);">Logo principal</p>
+
+          <svg viewBox="0 0 420 90" width="420" height="90" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+            <text x="0" y="82" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="90" fill="#0D0D0D">W</text>
+            <text x="65" y="38" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="44" fill="#E01A5A">2</text>
+            <rect x="105" y="18" width="4" height="68" fill="#0D0D0D"/>
+            <text x="122" y="82" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="72" letter-spacing="3" fill="#0D0D0D">AGÊNCIA</text>
+          </svg>
+
+          <div style="width: 100%; height: 4px; background: var(--black);"></div>
+          <p class="text-xs font-heading font-bold tracking-wider" style="color: var(--muted-on-yellow); letter-spacing: 0.1em;">MARCA + WORDMARK · FUNDO CLARO</p>
+        </div>
+
+        <!-- Ícone + Dark -->
+        <div class="md:col-span-2 flex flex-col gap-5">
+
+          <!-- Ícone compacto -->
+          <div class="p-7 flex flex-col items-center justify-center gap-5 flex-1" style="background: var(--white); border: 3px solid var(--black);">
+            <p class="section-label" style="padding-bottom: 0; color: rgba(13,13,13,0.45);">Ícone / Avatar</p>
+            <svg viewBox="0 0 80 80" width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+              <rect width="80" height="80" fill="#0D0D0D"/>
+              <text x="4" y="70" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="72" fill="#F5C100">W</text>
+              <text x="52" y="34" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="36" fill="#E01A5A">2</text>
+            </svg>
+            <p class="text-xs font-heading font-bold tracking-wider" style="color: rgba(13,13,13,0.45); letter-spacing: 0.1em;">@W2AGENCIA</p>
+          </div>
+
+          <!-- Versão amarela / invertida -->
+          <div class="p-6 flex flex-col items-center justify-center gap-4" style="background: var(--yellow); border: 3px solid var(--black);">
+            <p class="section-label" style="padding-bottom: 0; color: var(--muted-on-yellow);">Versão amarela</p>
+            <svg viewBox="0 0 120 56" width="120" height="56" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="52" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="58" fill="#0D0D0D">W</text>
+              <text x="45" y="22" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="28" fill="#0D0D0D">2</text>
+              <rect x="44" y="4" width="3" height="20" fill="#E01A5A"/>
+              <rect x="0" y="54" width="120" height="4" fill="#0D0D0D"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo em negativo completo -->
+      <div class="mt-5 p-8 flex flex-col items-center gap-4" style="background: var(--black); border: 3px solid var(--black);">
+        <p class="section-label" style="padding-bottom: 0; color: rgba(255,255,255,0.3);">Versão negativa completa</p>
+        <svg viewBox="0 0 420 90" width="420" height="90" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+          <text x="0" y="82" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="90" fill="#F5C100">W</text>
+          <text x="65" y="38" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="44" fill="#E01A5A">2</text>
+          <rect x="105" y="18" width="4" height="68" fill="#F5C100"/>
+          <text x="122" y="82" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="72" letter-spacing="3" fill="#FFFFFF">AGÊNCIA</text>
+        </svg>
+        <div style="width: 100%; max-width: 540px; height: 4px; background: var(--yellow);"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PALETA -->
+    <section>
+      <p class="section-label">Paleta de Cores</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div>
+          <div class="swatch" style="background: #F5C100;">
+            <span style="font-size: 10px; color: rgba(0,0,0,0.5); font-family: monospace; font-weight: 700;">#F5C100</span>
+          </div>
+          <p class="font-heading font-black text-sm mt-2.5 tracking-wide" style="color: var(--black);">Amarelo Elétrico</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-on-yellow);">Background / Primária</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #E01A5A;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.7); font-family: monospace; font-weight: 700;">#E01A5A</span>
+          </div>
+          <p class="font-heading font-black text-sm mt-2.5 tracking-wide" style="color: var(--black);">Magenta</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-on-yellow);">Accent / Destaque</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #0D0D0D;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace; font-weight: 700;">#0D0D0D</span>
+          </div>
+          <p class="font-heading font-black text-sm mt-2.5 tracking-wide" style="color: var(--black);">Preto Total</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-on-yellow);">Texto / Contraste</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #1A1A1A;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.35); font-family: monospace; font-weight: 700;">#1A1A1A</span>
+          </div>
+          <p class="font-heading font-black text-sm mt-2.5 tracking-wide" style="color: var(--black);">Grafite</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-on-yellow);">Surface escura</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #FFFFFF; border: 2px solid #0D0D0D;">
+            <span style="font-size: 10px; color: rgba(0,0,0,0.4); font-family: monospace; font-weight: 700;">#FFFFFF</span>
+          </div>
+          <p class="font-heading font-black text-sm mt-2.5 tracking-wide" style="color: var(--black);">Branco</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted-on-yellow);">Fundo alternativo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ TIPOGRAFIA -->
+    <section>
+      <p class="section-label">Tipografia</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="p-8" style="background: var(--black); border: 3px solid var(--black);">
+          <p class="section-label" style="padding-bottom: 20px; color: rgba(255,255,255,0.3);">Barlow Condensed — Títulos</p>
+          <div class="font-heading" style="color: var(--white);">
+            <p style="font-size: 80px; font-weight: 900; line-height: 0.9; color: var(--yellow);">Aa</p>
+            <p style="font-size: 36px; font-weight: 900; margin-top: 16px; text-transform: uppercase; letter-spacing: 1px;">Presença digital</p>
+            <p style="font-size: 28px; font-weight: 700; font-style: italic; margin-top: 4px; color: var(--magenta); text-transform: uppercase;">que coloca no mapa</p>
+            <p style="font-size: 11px; font-weight: 700; margin-top: 20px; letter-spacing: 0.2em; color: rgba(255,255,255,0.3);">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+            <p style="font-size: 11px; font-weight: 600; margin-top: 4px; color: rgba(255,255,255,0.3);">abcdefghijklmnopqrstuvwxyz 0123</p>
+          </div>
+        </div>
+        <div class="p-8" style="background: var(--white); border: 3px solid var(--black);">
+          <p class="section-label" style="padding-bottom: 20px; color: rgba(13,13,13,0.4);">Barlow — Corpo de Texto</p>
+          <div style="color: var(--black);">
+            <p style="font-size: 18px; font-weight: 600; line-height: 1.3;">Você fala com quem faz.</p>
+            <p style="font-size: 14px; line-height: 1.75; margin-top: 12px; color: rgba(13,13,13,0.65);">
+              De MEI a pequena empresa — construímos sua identidade digital do zero, com velocidade e atenção personalizada que grandes agências simplesmente não conseguem oferecer.
+            </p>
+            <div style="margin-top: 20px; display: flex; gap: 12px; font-size: 12px; color: rgba(13,13,13,0.4);">
+              <span>400 Regular</span>
+              <span>·</span>
+              <span style="font-weight: 500;">500 Medium</span>
+              <span>·</span>
+              <span style="font-weight: 600;">600 Semibold</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ MOCKUP LANDING PAGE -->
+    <section>
+      <p class="section-label">Mockup — Landing Page</p>
+      <div class="overflow-hidden" style="border: 3px solid var(--black);">
+
+        <!-- Navbar -->
+        <div class="px-8 py-4 flex items-center justify-between" style="background: var(--black); border-bottom: 4px solid var(--yellow);">
+          <svg viewBox="0 0 80 40" width="80" height="40" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="36" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="38" fill="#F5C100">W</text>
+            <text x="29" y="16" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="20" fill="#E01A5A">2</text>
+          </svg>
+          <div class="hidden md:flex gap-7 text-sm font-heading font-bold tracking-wider" style="color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.1em;">
+            <span>Serviços</span><span>Cases</span><span>Sobre</span>
+          </div>
+          <button class="px-5 py-2.5 font-heading font-black text-sm tracking-wider" style="background: var(--yellow); color: var(--black); text-transform: uppercase; letter-spacing: 0.05em;">Diagnóstico gratuito</button>
+        </div>
+
+        <!-- Hero -->
+        <div class="relative overflow-hidden" style="background: var(--yellow);">
+          <!-- Textura / pattern de fundo -->
+          <div style="position: absolute; top: -30px; right: -30px; width: 280px; height: 280px; border: 40px solid rgba(13,13,13,0.06); border-radius: 0; transform: rotate(15deg); pointer-events: none;"></div>
+          <div style="position: absolute; bottom: -50px; left: 40%; width: 200px; height: 200px; background: rgba(224,26,90,0.08); pointer-events: none;"></div>
+
+          <div class="px-10 py-16 relative">
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: var(--black); padding: 8px 16px; margin-bottom: 24px;">
+              <div style="width: 6px; height: 6px; background: var(--magenta);"></div>
+              <span class="font-heading font-black text-xs tracking-widest" style="color: var(--yellow); text-transform: uppercase; letter-spacing: 0.2em;">Você fala com quem faz</span>
+            </div>
+
+            <h1 class="font-heading font-black" style="font-size: clamp(48px, 7vw, 80px); line-height: 0.95; text-transform: uppercase; color: var(--black); max-width: 580px; letter-spacing: -1px;">
+              PRESENÇA<br/>
+              DIGITAL QUE<br/>
+              <span style="color: var(--magenta); font-style: italic;">VENDE.</span>
+            </h1>
+
+            <p style="font-size: 16px; line-height: 1.6; margin-top: 24px; margin-bottom: 32px; color: rgba(13,13,13,0.7); max-width: 460px; font-family: 'Barlow', sans-serif; font-weight: 500;">
+              Branding, site e redes para MEIs e pequenas empresas. Entrega em metade do prazo. Sem enrolação.
+            </p>
+
+            <div style="display: flex; gap: 0; flex-wrap: wrap;">
+              <button class="font-heading font-black" style="padding: 16px 32px; background: var(--black); color: var(--yellow); font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em; border: none;">AGENDAR DIAGNÓSTICO →</button>
+              <button class="font-heading font-black" style="padding: 16px 28px; background: transparent; color: var(--black); font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em; border: 3px solid var(--black);">VER CASES</button>
+            </div>
+
+            <!-- Stats -->
+            <div style="display: flex; gap: 0; margin-top: 48px;">
+              <div style="padding: 20px 32px; background: var(--black); text-align: center;">
+                <p class="font-heading font-black" style="font-size: 28px; color: var(--yellow); line-height: 1;">100%</p>
+                <p class="font-heading font-bold" style="font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.15em; margin-top: 6px; text-transform: uppercase;">Aprovação</p>
+              </div>
+              <div style="padding: 20px 32px; background: var(--magenta); text-align: center;">
+                <p class="font-heading font-black" style="font-size: 28px; color: white; line-height: 1;">2×</p>
+                <p class="font-heading font-bold" style="font-size: 11px; color: rgba(255,255,255,0.7); letter-spacing: 0.15em; margin-top: 6px; text-transform: uppercase;">Mais rápido</p>
+              </div>
+              <div style="padding: 20px 32px; background: rgba(13,13,13,0.08); border: 3px solid var(--black); text-align: center;">
+                <p class="font-heading font-black" style="font-size: 28px; color: var(--black); line-height: 1;">ZERO</p>
+                <p class="font-heading font-bold" style="font-size: 11px; color: rgba(13,13,13,0.5); letter-spacing: 0.15em; margin-top: 6px; text-transform: uppercase;">Retrabalho</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="px-8 py-14" style="background: var(--black);">
+          <h2 class="font-heading font-black text-center mb-2 tracking-tight" style="font-size: 48px; color: var(--white); text-transform: uppercase;">O que a w² entrega</h2>
+          <div style="width: 60px; height: 5px; background: var(--yellow); margin: 0 auto 36px;"></div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-0" style="border: 3px solid rgba(255,255,255,0.15);">
+            <div class="p-6" style="border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div class="font-heading font-black text-4xl mb-2" style="color: var(--yellow); line-height: 1;">01</div>
+              <p class="font-heading font-black text-lg tracking-wide" style="color: var(--white); text-transform: uppercase; margin-bottom: 8px;">Branding</p>
+              <p style="font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; font-family: 'Barlow', sans-serif;">Naming, logo e identidade visual completa</p>
+            </div>
+            <div class="p-6" style="border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <div class="font-heading font-black text-4xl mb-2" style="color: var(--magenta); line-height: 1;">02</div>
+              <p class="font-heading font-black text-lg tracking-wide" style="color: var(--white); text-transform: uppercase; margin-bottom: 8px;">Landing Page</p>
+              <p style="font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; font-family: 'Barlow', sans-serif;">Site que representa e converte</p>
+            </div>
+            <div class="p-6" style="border-right: 1px solid rgba(255,255,255,0.1);">
+              <div class="font-heading font-black text-4xl mb-2" style="color: var(--yellow); line-height: 1;">03</div>
+              <p class="font-heading font-black text-lg tracking-wide" style="color: var(--white); text-transform: uppercase; margin-bottom: 8px;">Kit Digital</p>
+              <p style="font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; font-family: 'Barlow', sans-serif;">WhatsApp Business + redes configuradas</p>
+            </div>
+            <div class="p-6">
+              <div class="font-heading font-black text-4xl mb-2" style="color: var(--magenta); line-height: 1;">04</div>
+              <p class="font-heading font-black text-lg tracking-wide" style="color: var(--white); text-transform: uppercase; margin-bottom: 8px;">Gestão Mensal</p>
+              <p style="font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; font-family: 'Barlow', sans-serif;">Conteúdo e presença mês a mês</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="px-8 py-10 flex items-center justify-between flex-wrap gap-6" style="background: var(--magenta);">
+          <h3 class="font-heading font-black" style="font-size: 36px; color: white; text-transform: uppercase; letter-spacing: -0.5px;">Pronto pra começar?</h3>
+          <button class="font-heading font-black" style="padding: 16px 36px; background: white; color: var(--magenta); font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em;">DIAGNÓSTICO GRATUITO →</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-8 py-5 flex items-center justify-between" style="background: var(--black); border-top: 4px solid var(--yellow);">
+          <span class="font-heading font-black tracking-wide" style="color: var(--yellow); font-size: 16px; text-transform: uppercase;">w² agência</span>
+          <span class="font-heading font-bold text-xs tracking-wider" style="color: rgba(255,255,255,0.3); text-transform: uppercase;">© 2026 · contato@w2agencia.com.br</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ APLICAÇÕES -->
+    <section>
+      <p class="section-label">Aplicações</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- IG Avatar -->
+        <div class="p-8 flex flex-col items-center gap-5" style="background: var(--white); border: 3px solid var(--black);">
+          <p class="section-label" style="padding-bottom: 0; color: rgba(13,13,13,0.4);">Avatar Instagram</p>
+          <div class="relative">
+            <div class="w-28 h-28 rounded-full flex items-center justify-center" style="background: var(--black);">
+              <svg viewBox="0 0 58 44" width="46" height="35" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="38" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="42" fill="#F5C100">W</text>
+                <text x="32" y="16" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="22" fill="#E01A5A">2</text>
+              </svg>
+            </div>
+            <div style="position: absolute; bottom: 0; right: 0; width: 28px; height: 28px; background: var(--yellow); border: 3px solid var(--white); border-radius: 50%;"></div>
+          </div>
+          <p class="text-xs font-heading font-bold tracking-wider" style="color: rgba(13,13,13,0.4); text-transform: uppercase; letter-spacing: 0.1em;">@w2agencia · 200×200px</p>
+        </div>
+
+        <!-- IG Post -->
+        <div class="p-8 flex flex-col items-center gap-5" style="background: var(--white); border: 3px solid var(--black);">
+          <p class="section-label" style="padding-bottom: 0; color: rgba(13,13,13,0.4);">Post Instagram</p>
+          <div style="width: 180px; height: 180px; background: var(--yellow); position: relative; overflow: hidden; border: 3px solid var(--black);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--black);"></div>
+            <div style="padding: 14px;">
+              <svg viewBox="0 0 60 34" width="46" height="26" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="28" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="30" fill="#0D0D0D">W</text>
+                <text x="23" y="13" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="16" fill="#E01A5A">2</text>
+              </svg>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: var(--black); padding: 12px;">
+              <p class="font-heading font-black" style="font-size: 16px; color: var(--yellow); text-transform: uppercase; line-height: 1.1; letter-spacing: 0.5px;">QUEM SE DIFERENCIA<br/>VENDE MAIS.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Favicon -->
+        <div class="p-8 flex flex-col items-center gap-6" style="background: var(--white); border: 3px solid var(--black);">
+          <p class="section-label" style="padding-bottom: 0; color: rgba(13,13,13,0.4);">Favicon</p>
+          <div class="flex items-end gap-5">
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 48px; height: 48px; background: var(--black); display: flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--yellow);">
+                <svg viewBox="0 0 46 34" width="36" height="27" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="28" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="30" fill="#F5C100">W</text>
+                  <text x="23" y="13" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="16" fill="#E01A5A">2</text>
+                </svg>
+              </div>
+              <p class="text-xs font-heading font-bold" style="color: rgba(13,13,13,0.4);">48px</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 32px; height: 32px; background: var(--black); display: flex; align-items: center; justify-content: center; border-bottom: 3px solid var(--yellow);">
+                <svg viewBox="0 0 46 34" width="24" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="28" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="30" fill="#F5C100">W</text>
+                  <text x="23" y="13" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="16" fill="#E01A5A">2</text>
+                </svg>
+              </div>
+              <p class="text-xs font-heading font-bold" style="color: rgba(13,13,13,0.4);">32px</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 16px; height: 16px; background: var(--yellow); display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 46 34" width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="28" font-family="Barlow Condensed, sans-serif" font-weight="900" font-size="30" fill="#0D0D0D">W</text>
+                </svg>
+              </div>
+              <p class="text-xs font-heading font-bold" style="color: rgba(13,13,13,0.4);">16px</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mood keywords -->
+    <div class="flex flex-wrap gap-0">
+      <span class="px-5 py-2.5 font-heading font-black text-xs tracking-widest" style="background: var(--black); color: var(--yellow); text-transform: uppercase; letter-spacing: 0.15em;">Ousado</span>
+      <span class="px-5 py-2.5 font-heading font-black text-xs tracking-widest" style="background: var(--magenta); color: white; text-transform: uppercase; letter-spacing: 0.15em;">Disruptivo</span>
+      <span class="px-5 py-2.5 font-heading font-black text-xs tracking-widest" style="background: var(--black); color: var(--yellow); text-transform: uppercase; letter-spacing: 0.15em;">Energético</span>
+      <span class="px-5 py-2.5 font-heading font-black text-xs tracking-widest" style="background: var(--yellow); color: var(--black); text-transform: uppercase; letter-spacing: 0.15em; border: 3px solid var(--black);">Brasileiro</span>
+      <span class="px-5 py-2.5 font-heading font-black text-xs tracking-widest" style="background: var(--black); color: white; text-transform: uppercase; letter-spacing: 0.15em;">Direto</span>
+    </div>
+
+  </div>
+</body>
+</html>

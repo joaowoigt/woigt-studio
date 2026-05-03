@@ -1,0 +1,121 @@
+/*
+ * ============================================================
+ * w² Agência — Design Tokens
+ * Versão 1.0 · Maio 2026
+ * ============================================================
+ * Copie este arquivo para o seu projeto e importe no root.
+ * Todos os valores da marca estão aqui — use sempre os tokens,
+ * nunca hardcode valores de cor, espaçamento ou tipografia.
+ * ============================================================
+ */
+
+:root {
+
+  /* ── CORES ──────────────────────────────────────────────── */
+  --w2-yellow:     #F5C100;   /* Cor primária. Hero, fundos principais, logo sobre escuro. */
+  --w2-magenta:    #E01A5A;   /* Acento cirúrgico. O "²", itálicos, CTAs em fundo escuro. */
+  --w2-black:      #0D0D0D;   /* Texto, bordas, superfícies escuras principais. */
+  --w2-graphite:   #1A1A1A;   /* Superfícies escuras secundárias. Navbar, seções. */
+  --w2-white:      #FFFFFF;   /* Fundos claros, espaço negativo, texto sobre preto. */
+
+  /* Aliases semânticos */
+  --w2-primary:    var(--w2-yellow);
+  --w2-accent:     var(--w2-magenta);
+  --w2-bg-dark:    var(--w2-black);
+  --w2-bg-dark2:   var(--w2-graphite);
+  --w2-bg-light:   var(--w2-white);
+  --w2-text-main:  var(--w2-black);
+  --w2-text-light: var(--w2-white);
+
+  /* Texto com opacidade (não usar rgba manual — use estas) */
+  --w2-text-muted-dark:  rgba(13,13,13,0.72);   /* Subtexto sobre fundo claro */
+  --w2-text-muted-light: rgba(255,255,255,0.55); /* Subtexto sobre fundo escuro */
+  --w2-text-dim-light:   rgba(255,255,255,0.35); /* Labels secundários sobre escuro */
+  --w2-yellow-dim:       rgba(245,193,0,0.15);   /* Amarelo fantasma — borders, bg sutil */
+
+
+  /* ── TIPOGRAFIA ─────────────────────────────────────────── */
+  --w2-font-display: 'Barlow Condensed', sans-serif;  /* Títulos, headlines, labels de UI */
+  --w2-font-body:    'Barlow', sans-serif;             /* Corpo, parágrafos, legendas */
+
+  /* Google Fonts import necessário:
+     https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600;700&display=swap
+  */
+
+  /* Escala tipográfica */
+  --w2-type-display:  96px;   /* Hero, capas de carrossel — weight 900, lh 0.9 */
+  --w2-type-h1:       64px;   /* Títulos de seção, posts principais — weight 900, lh 0.95 */
+  --w2-type-h2:       40px;   /* Subtítulos, slides de carrossel — weight 900, lh 1.0 */
+  --w2-type-h3:       32px;   /* Seções menores — weight 900 */
+  --w2-type-label:    13px;   /* Eyebrows, tags, rótulos — weight 700, tracking 0.2em */
+  --w2-type-body:     16px;   /* Parágrafos — weight 400/500, lh 1.65 */
+  --w2-type-small:    13px;   /* Metadados, legendas — weight 400 */
+
+  /* Tracking (letter-spacing) */
+  --w2-tracking-tight:  -0.02em;  /* Grandes headlines */
+  --w2-tracking-normal: 0;
+  --w2-tracking-wide:   0.1em;    /* Labels secundários */
+  --w2-tracking-wider:  0.2em;    /* Eyebrows, tags */
+
+
+  /* ── BORDAS ─────────────────────────────────────────────── */
+  --w2-border:        3px solid var(--w2-black);     /* Padrão — cards, botões */
+  --w2-border-accent: 4px solid var(--w2-magenta);   /* Destaque — selos, badges especiais */
+  --w2-border-dim:    1px solid rgba(245,193,0,0.12); /* Separadores internos sobre escuro */
+  --w2-radius:        0px;    /* SEM border-radius — é regra de marca. Exceto avatares circulares. */
+
+
+  /* ── ESPAÇAMENTO ────────────────────────────────────────── */
+  --w2-space-xs:   4px;    /* Separadores internos, ícones */
+  --w2-space-sm:   8px;    /* Gap entre label e valor */
+  --w2-space-md:   16px;   /* Padding de badges, gap de colunas */
+  --w2-space-lg:   24px;   /* Padding de cards, gap de grid */
+  --w2-space-xl:   40px;   /* Padding lateral de seções */
+  --w2-space-2xl:  80px;   /* Padding vertical de seções */
+
+
+  /* ── TEXTURAS (como background shorthand) ───────────────── */
+  /* Uso: background-image: var(--w2-tex-halftone) */
+  --w2-tex-halftone:  radial-gradient(circle, rgba(13,13,13,0.15) 1.5px, transparent 1.5px);
+  --w2-tex-halftone-size: 18px 18px; /* background-size */
+
+  --w2-tex-grid:      linear-gradient(rgba(13,13,13,0.08) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(13,13,13,0.08) 1px,transparent 1px);
+  --w2-tex-grid-size: 28px 28px;
+
+  --w2-tex-scanlines: repeating-linear-gradient(
+    0deg,
+    rgba(13,13,13,0.06) 0px, rgba(13,13,13,0.06) 1px,
+    transparent 1px, transparent 6px
+  );
+
+  /* Halftone sobre fundo claro (para stories/posts amarelos) */
+  --w2-tex-halftone-light: radial-gradient(circle, rgba(13,13,13,0.16) 1.5px, transparent 1.5px);
+  --w2-tex-halftone-dark:  radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.5px);
+
+
+  /* ── SOMBRAS ────────────────────────────────────────────── */
+  /* Regra de marca: NÃO usar box-shadow. Bordas fazem o trabalho. */
+  /* Exceção: painéis flutuantes (modais, tooltips) */
+  --w2-shadow-panel: 0 16px 56px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.07);
+
+
+  /* ── TRANSIÇÕES ─────────────────────────────────────────── */
+  --w2-transition-fast: 0.15s ease;
+  --w2-transition-med:  0.2s ease;
+
+
+  /* ── Z-INDEX ────────────────────────────────────────────── */
+  --w2-z-navbar:  100;
+  --w2-z-panel:   9999;
+
+
+  /* ── LAYOUT ─────────────────────────────────────────────── */
+  --w2-max-width: 1280px;   /* Container principal */
+  --w2-navbar-h:  64px;     /* Altura fixa da navbar */
+
+  /* Social media */
+  --w2-post-size:   1080px;  /* Post quadrado */
+  --w2-story-w:     1080px;  /* Story — largura */
+  --w2-story-h:     1920px;  /* Story — altura (ratio 9:16) */
+}

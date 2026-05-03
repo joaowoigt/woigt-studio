@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w² — Opção A: Confiança</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --surface: #F8FAFC;
+      --surface2: #EFF4FB;
+      --border: #E2EAF4;
+      --primary: #1B4FD8;
+      --primary-dark: #1540B0;
+      --primary-dim: rgba(27,79,216,0.08);
+      --accent: #F97316;
+      --accent-dim: rgba(249,115,22,0.10);
+      --accent-dark: #EA580C;
+      --text: #0F172A;
+      --muted: #64748B;
+      --muted-light: #94A3B8;
+      --dark-band: #0F1D3D;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; }
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+    .swatch {
+      height: 88px;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-end;
+      padding: 10px 12px;
+    }
+    .section-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 28px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRESENTATION HEADER -->
+  <div style="background: var(--dark-band);">
+    <div class="max-w-5xl mx-auto px-8 py-7 flex items-start justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="px-2.5 py-1 rounded text-xs font-heading font-semibold tracking-wider" style="background: rgba(249,115,22,0.2); color: #FB923C;">OPÇÃO A</div>
+          <div class="h-px w-8" style="background: rgba(255,255,255,0.1);"></div>
+        </div>
+        <h1 class="font-heading font-bold text-3xl tracking-tight" style="color: #FFFFFF;">Confiança</h1>
+        <p class="mt-2 max-w-lg text-sm leading-relaxed" style="color: rgba(255,255,255,0.5);">
+          Azul royal sólido com acento laranja âmbar — paleta que transmite credibilidade profissional sem intimidar. Para uma agência que é séria sobre resultado e acessível para quem está começando.
+        </p>
+      </div>
+      <div class="text-right hidden md:block pt-1">
+        <p class="text-xs font-heading" style="color: rgba(255,255,255,0.25);">w² agência</p>
+        <p class="text-xs mt-1 font-heading" style="color: rgba(255,255,255,0.25);">Brand Presentation · 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-8 py-14 space-y-20">
+
+    <!-- ═══════════════════════════════════════ LOGO -->
+    <section>
+      <p class="section-label">Identidade — Logo</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+
+        <!-- Logo principal -->
+        <div class="md:col-span-3 card p-10 flex flex-col items-center justify-center gap-6 relative overflow-hidden">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+          <p class="section-label" style="padding-bottom: 0;">Logo principal</p>
+
+          <svg viewBox="0 0 400 80" width="400" height="80" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+            <!-- W em azul royal -->
+            <text x="0" y="70" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="74" fill="#1B4FD8">w</text>
+            <!-- 2 em laranja -->
+            <text x="60" y="30" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="36" fill="#F97316">2</text>
+            <!-- Divisor -->
+            <rect x="95" y="16" width="2" height="52" fill="#E2EAF4"/>
+            <!-- Wordmark -->
+            <text x="112" y="70" font-family="Space Grotesk, sans-serif" font-weight="500" font-size="40" letter-spacing="1" fill="#0F172A">agência</text>
+          </svg>
+
+          <div style="width: 100%; max-width: 360px; height: 3px; background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 60%, transparent 100%);"></div>
+          <p class="text-xs" style="color: var(--muted);">Marca + wordmark · fundo claro</p>
+        </div>
+
+        <!-- Ícone + Escuro -->
+        <div class="md:col-span-2 flex flex-col gap-5">
+
+          <!-- Ícone compacto -->
+          <div class="card p-7 flex flex-col items-center justify-center gap-5 flex-1">
+            <p class="section-label" style="padding-bottom: 0;">Ícone / Avatar</p>
+            <svg viewBox="0 0 80 80" width="88" height="88" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="iconGradConf" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#1B4FD8"/>
+                  <stop offset="100%" style="stop-color:#1540B0"/>
+                </linearGradient>
+              </defs>
+              <rect width="80" height="80" rx="16" fill="url(#iconGradConf)"/>
+              <rect x="0" y="72" width="80" height="8" rx="0" fill="#F97316"/>
+              <text x="7" y="60" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="56" fill="white">w</text>
+              <text x="53" y="26" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="28" fill="rgba(255,255,255,0.92)">2</text>
+            </svg>
+            <p class="text-xs" style="color: var(--muted);">@w2agencia</p>
+          </div>
+
+          <!-- Versão escura -->
+          <div class="p-6 flex flex-col items-center justify-center gap-4 rounded-2xl" style="background: var(--dark-band);">
+            <p class="section-label" style="padding-bottom: 0; color: rgba(255,255,255,0.3);">Versão escura</p>
+            <svg viewBox="0 0 130 58" width="130" height="58" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="52" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="58" fill="white">w</text>
+              <text x="49" y="22" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="30" fill="#F97316">2</text>
+              <rect x="0" y="56" width="130" height="3" fill="rgba(255,255,255,0.08)"/>
+              <rect x="0" y="56" width="76" height="3" fill="#F97316"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PALETA -->
+    <section>
+      <p class="section-label">Paleta de Cores</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div>
+          <div class="swatch" style="background: #1B4FD8;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.6); font-family: monospace;">#1B4FD8</span>
+          </div>
+          <p class="font-heading font-semibold text-sm mt-2.5" style="color: var(--text);">Azul Royal</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted);">Primária</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #F97316;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.7); font-family: monospace;">#F97316</span>
+          </div>
+          <p class="font-heading font-semibold text-sm mt-2.5" style="color: var(--text);">Laranja Âmbar</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted);">Accent</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #0F1D3D;">
+            <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">#0F1D3D</span>
+          </div>
+          <p class="font-heading font-semibold text-sm mt-2.5" style="color: var(--text);">Azul Noite</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted);">Contraste / Dark</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #FFFFFF; border: 1px solid #E2EAF4;">
+            <span style="font-size: 10px; color: #94A3B8; font-family: monospace;">#FFFFFF</span>
+          </div>
+          <p class="font-heading font-semibold text-sm mt-2.5" style="color: var(--text);">Branco</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted);">Background</p>
+        </div>
+        <div>
+          <div class="swatch" style="background: #F8FAFC; border: 1px solid #E2EAF4;">
+            <span style="font-size: 10px; color: #94A3B8; font-family: monospace;">#F8FAFC</span>
+          </div>
+          <p class="font-heading font-semibold text-sm mt-2.5" style="color: var(--text);">Cinza Frio</p>
+          <p class="text-xs mt-0.5" style="color: var(--muted);">Surface</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ TIPOGRAFIA -->
+    <section>
+      <p class="section-label">Tipografia</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="card p-8">
+          <p class="section-label" style="padding-bottom: 20px;">Space Grotesk — Títulos</p>
+          <div class="font-heading" style="color: var(--text);">
+            <p style="font-size: 60px; font-weight: 700; line-height: 1; letter-spacing: -2px; color: var(--primary);">Aa</p>
+            <p class="font-bold text-3xl mt-4" style="letter-spacing: -0.5px;">Presença digital</p>
+            <p class="font-medium text-xl mt-2" style="color: var(--accent);">que coloca no mapa</p>
+            <p class="font-normal text-sm mt-4" style="color: var(--muted); letter-spacing: 0.1em;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+            <p class="font-normal text-sm mt-1" style="color: var(--muted);">abcdefghijklmnopqrstuvwxyz 0123</p>
+          </div>
+        </div>
+        <div class="card p-8">
+          <p class="section-label" style="padding-bottom: 20px;">Outfit — Corpo de Texto</p>
+          <div style="color: var(--text);">
+            <p style="font-size: 18px; font-weight: 600; line-height: 1.3;">Você fala com quem faz.</p>
+            <p style="font-size: 14px; line-height: 1.75; margin-top: 12px; color: var(--muted);">
+              De MEI a pequena empresa — construímos sua identidade digital do zero, com velocidade e atenção personalizada que grandes agências simplesmente não conseguem oferecer.
+            </p>
+            <div style="margin-top: 20px; display: flex; gap: 12px; font-size: 12px; color: var(--muted-light);">
+              <span>400 Regular</span>
+              <span>·</span>
+              <span style="font-weight: 500;">500 Medium</span>
+              <span>·</span>
+              <span style="font-weight: 600;">600 Semibold</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ MOCKUP LANDING PAGE -->
+    <section>
+      <p class="section-label">Mockup — Landing Page</p>
+      <div class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(27,79,216,0.06);">
+
+        <!-- Navbar -->
+        <div class="px-8 py-4 flex items-center justify-between" style="background: var(--bg); border-bottom: 1px solid var(--border);">
+          <svg viewBox="0 0 92 34" width="92" height="34" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="28" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="30" fill="#1B4FD8">w</text>
+            <text x="24" y="12" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="17" fill="#F97316">2</text>
+          </svg>
+          <div class="hidden md:flex gap-7 text-sm font-heading font-medium" style="color: var(--muted);">
+            <span>Serviços</span><span>Cases</span><span>Sobre</span>
+          </div>
+          <button class="px-5 py-2.5 rounded-xl text-sm font-heading font-semibold" style="background: var(--primary); color: white;">Diagnóstico gratuito</button>
+        </div>
+
+        <!-- Hero -->
+        <div class="relative overflow-hidden" style="background: var(--dark-band);">
+          <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 48%; background: linear-gradient(135deg, transparent 0%, rgba(27,79,216,0.15) 100%);"></div>
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent), transparent);"></div>
+          <div style="position: absolute; top: 36px; right: 48px; width: 120px; height: 120px; border: 2px solid rgba(249,115,22,0.15); border-radius: 50%;"></div>
+          <div style="position: absolute; top: 80px; right: 80px; width: 48px; height: 48px; border: 2px solid rgba(249,115,22,0.25); border-radius: 50%;"></div>
+
+          <div class="px-10 py-16 relative">
+            <p class="font-heading font-bold" style="font-size: clamp(22px, 3vw, 32px); color: var(--accent); letter-spacing: -0.3px; margin-bottom: 12px;">Você fala com quem faz.</p>
+
+            <h1 class="font-heading font-bold" style="font-size: clamp(34px, 5vw, 54px); line-height: 1.1; color: #FFFFFF; max-width: 560px; letter-spacing: -1px;">
+              Presença digital que<br/>
+              <span style="color: var(--accent);">coloca seu negócio</span><br/>
+              no mapa
+            </h1>
+
+            <p style="font-size: 15px; line-height: 1.7; margin-top: 20px; margin-bottom: 32px; color: rgba(255,255,255,0.55); max-width: 460px;">
+              Branding, site e gestão de redes para MEIs e pequenas empresas. Entregamos em metade do prazo com atenção que grandes agências não têm.
+            </p>
+
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button class="font-heading font-semibold" style="padding: 14px 28px; background: var(--accent); color: white; font-size: 14px; border-radius: 10px;">Agendar diagnóstico gratuito →</button>
+              <button class="font-heading font-medium" style="padding: 14px 24px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); font-size: 14px; border-radius: 10px; background: transparent;">Ver cases</button>
+            </div>
+
+            <!-- Stats -->
+            <div style="display: flex; gap: 36px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);">
+              <div>
+                <p class="font-heading font-bold" style="font-size: 26px; color: white;">100%</p>
+                <p style="font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; font-family: 'Outfit', sans-serif;">Aprovação</p>
+              </div>
+              <div style="width: 1px; background: rgba(255,255,255,0.08);"></div>
+              <div>
+                <p class="font-heading font-bold" style="font-size: 26px; color: var(--accent);">2×</p>
+                <p style="font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; font-family: 'Outfit', sans-serif;">Mais rápido</p>
+              </div>
+              <div style="width: 1px; background: rgba(255,255,255,0.08);"></div>
+              <div>
+                <p class="font-heading font-bold" style="font-size: 26px; color: white;">Zero</p>
+                <p style="font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; font-family: 'Outfit', sans-serif;">Retrabalho</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="px-8 py-14" style="background: var(--bg);">
+          <h2 class="font-heading font-bold text-2xl text-center mb-10" style="color: var(--text); letter-spacing: -0.5px;">O que a w² entrega</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div class="rounded-xl p-5" style="background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--primary);">
+              <p class="font-heading font-semibold text-sm mb-2" style="color: var(--text);">Branding</p>
+              <p style="font-size: 13px; line-height: 1.6; color: var(--muted);">Naming, logo e identidade visual completa</p>
+            </div>
+            <div class="rounded-xl p-5" style="background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--accent);">
+              <p class="font-heading font-semibold text-sm mb-2" style="color: var(--text);">Landing Page</p>
+              <p style="font-size: 13px; line-height: 1.6; color: var(--muted);">Site que representa e converte</p>
+            </div>
+            <div class="rounded-xl p-5" style="background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--primary);">
+              <p class="font-heading font-semibold text-sm mb-2" style="color: var(--text);">Kit Digital</p>
+              <p style="font-size: 13px; line-height: 1.6; color: var(--muted);">WhatsApp Business + redes configuradas</p>
+            </div>
+            <div class="rounded-xl p-5" style="background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--accent);">
+              <p class="font-heading font-semibold text-sm mb-2" style="color: var(--text);">Gestão Mensal</p>
+              <p style="font-size: 13px; line-height: 1.6; color: var(--muted);">Conteúdo e presença mês a mês</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento -->
+        <div class="px-10 py-10" style="background: var(--surface2); border-top: 1px solid var(--border);">
+          <div style="max-width: 560px;">
+            <div style="width: 32px; height: 4px; background: var(--accent); margin-bottom: 16px; border-radius: 2px;"></div>
+            <p class="font-heading font-semibold" style="font-size: 19px; color: var(--text); line-height: 1.4; letter-spacing: -0.3px;">
+              "Entregaram além do que eu esperava — e em metade do prazo."
+            </p>
+            <p style="margin-top: 12px; font-size: 12px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase;">— Andreza, Entrelaçada Crochê</p>
+          </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="px-10 py-12 flex items-center justify-between flex-wrap gap-6" style="background: var(--accent);">
+          <div>
+            <p class="font-heading font-bold" style="font-size: 28px; color: white; letter-spacing: -0.5px;">Pronto pra colocar seu negócio no mapa?</p>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.8); margin-top: 6px;">Diagnóstico gratuito, sem compromisso. Você fala com quem faz.</p>
+          </div>
+          <button class="font-heading font-semibold" style="padding: 14px 32px; background: var(--dark-band); color: white; font-size: 15px; border-radius: 10px; white-space: nowrap;">Agendar agora →</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-8 py-5 flex items-center justify-between" style="background: var(--dark-band); border-top: 3px solid var(--primary);">
+          <span class="font-heading font-semibold text-sm" style="color: rgba(255,255,255,0.4);">w² agência</span>
+          <span style="font-size: 12px; color: rgba(255,255,255,0.25);">© 2026 · contato@w2agencia.com.br</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ APLICAÇÕES -->
+    <section>
+      <p class="section-label">Aplicações</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- IG Avatar -->
+        <div class="card p-8 flex flex-col items-center gap-5">
+          <p class="section-label" style="padding-bottom: 0;">Avatar Instagram</p>
+          <div class="relative">
+            <div class="w-28 h-28 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #1B4FD8, #1540B0); padding: 3px;">
+              <div class="w-full h-full rounded-full flex items-center justify-center" style="background: var(--dark-band);">
+                <svg viewBox="0 0 58 36" width="46" height="29" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="30" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" fill="white">w</text>
+                  <text x="26" y="13" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="18" fill="#F97316">2</text>
+                </svg>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 2px; right: 2px; width: 22px; height: 22px; background: var(--accent); border: 2px solid white; border-radius: 50%;"></div>
+          </div>
+          <p class="text-xs" style="color: var(--muted);">@w2agencia · 200×200px</p>
+        </div>
+
+        <!-- IG Post -->
+        <div class="card p-8 flex flex-col items-center gap-5">
+          <p class="section-label" style="padding-bottom: 0;">Post Instagram</p>
+          <div style="width: 180px; height: 180px; background: var(--dark-band); position: relative; overflow: hidden; border-radius: 8px;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+            <div style="padding: 14px;">
+              <svg viewBox="0 0 58 34" width="44" height="26" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="28" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="30" fill="white">w</text>
+                <text x="24" y="12" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="17" fill="#F97316">2</text>
+              </svg>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 14px;">
+              <p class="font-heading font-semibold" style="font-size: 14px; color: white; line-height: 1.3;">Presença digital que vende de verdade.</p>
+              <div style="width: 28px; height: 2px; background: var(--accent); margin: 8px 0 4px;"></div>
+              <p style="font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase;">W² Agência</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Favicon -->
+        <div class="card p-8 flex flex-col items-center gap-6">
+          <p class="section-label" style="padding-bottom: 0;">Favicon</p>
+          <div class="flex items-end gap-5">
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 48px; height: 48px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--accent);">
+                <svg viewBox="0 0 46 30" width="34" height="22" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="26" fill="white">w</text>
+                  <text x="20" y="10" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="14" fill="rgba(255,255,255,0.9)">2</text>
+                </svg>
+              </div>
+              <p class="text-xs" style="color: var(--muted);">48px</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 6px; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid var(--accent);">
+                <svg viewBox="0 0 46 30" width="22" height="15" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="26" fill="white">w</text>
+                  <text x="20" y="10" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="14" fill="white">2</text>
+                </svg>
+              </div>
+              <p class="text-xs" style="color: var(--muted);">32px</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <div style="width: 16px; height: 16px; background: var(--accent); border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 46 30" width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="26" fill="white">w</text>
+                </svg>
+              </div>
+              <p class="text-xs" style="color: var(--muted);">16px</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mood keywords -->
+    <div class="flex flex-wrap gap-3">
+      <span class="px-4 py-2 rounded-full text-xs font-heading font-semibold" style="background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(27,79,216,0.15);">Confiável</span>
+      <span class="px-4 py-2 rounded-full text-xs font-heading font-semibold" style="background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(27,79,216,0.15);">Profissional</span>
+      <span class="px-4 py-2 rounded-full text-xs font-heading font-semibold" style="background: var(--accent-dim); color: var(--accent-dark); border: 1px solid rgba(249,115,22,0.2);">Acessível</span>
+      <span class="px-4 py-2 rounded-full text-xs font-heading font-semibold" style="background: var(--accent-dim); color: var(--accent-dark); border: 1px solid rgba(249,115,22,0.2);">Energético</span>
+      <span class="px-4 py-2 rounded-full text-xs font-heading font-semibold" style="background: var(--surface); color: var(--muted); border: 1px solid var(--border);">Resolutivo</span>
+    </div>
+
+  </div>
+</body>
+</html>

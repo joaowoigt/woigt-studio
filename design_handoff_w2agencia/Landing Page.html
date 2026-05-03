@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w² Agência — Presença Digital que Funciona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: #0D0D0D; color: #0D0D0D; overflow-x: hidden; }
+
+    /* ── TOKENS ── */
+    :root {
+      --y: #F5C100;
+      --m: #E01A5A;
+      --b: #0D0D0D;
+      --g: #1A1A1A;
+      --w: #FFFFFF;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--g);
+      border-bottom: 3px solid var(--y);
+    }
+    .navbar-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 32px; height: 64px;
+      display: table; width: 100%; border-collapse: collapse;
+    }
+    .navbar-logo { display: table-cell; vertical-align: middle; width: 1%; white-space: nowrap; }
+    .navbar-links { display: table-cell; vertical-align: middle; text-align: right; white-space: nowrap; }
+    .nav-link {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 12px; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      text-transform: uppercase; padding: 0 10px;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: var(--y); }
+    .nav-cta {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 12px; letter-spacing: 0.06em;
+      color: var(--b); background: var(--y);
+      padding: 8px 14px; text-decoration: none;
+      text-transform: uppercase; border: 3px solid var(--y);
+      margin-left: 4px; white-space: nowrap;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .nav-cta:hover { background: var(--m); border-color: var(--m); color: var(--w); }
+
+    /* ── LOGO ── */
+    .logo { display: inline-block; }
+    .logo-w {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 28px; line-height: 1;
+      color: var(--y); letter-spacing: -1px;
+    }
+    .logo-sup { color: var(--m); font-size: 17px; vertical-align: super; line-height: 0; }
+    .logo-sep {
+      display: inline-block; width: 1.5px; height: 22px;
+      background: rgba(255,255,255,0.25); vertical-align: middle;
+      margin: 0 10px;
+    }
+    .logo-ag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px; letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.9); text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .logo-light .logo-w { color: var(--b); }
+    .logo-light .logo-sep { background: rgba(13,13,13,0.25); }
+    .logo-light .logo-ag { color: var(--b); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--y);
+      padding-top: 64px;
+      background-image: radial-gradient(circle, rgba(13,13,13,0.15) 1.5px, transparent 1.5px);
+      background-size: 18px 18px;
+    }
+    .hero-inner {
+      max-width: 1280px; margin: 0 auto; padding: 80px 40px 0;
+      display: flex; align-items: flex-start; gap: 48px;
+    }
+    .hero-content { flex: 1; min-width: 0; max-width: 620px; }
+    .hero-eyebrow {
+      display: inline-block;
+      border: 3px solid var(--b);
+      padding: 6px 14px; margin-bottom: 28px;
+    }
+    .hero-eyebrow-dot {
+      display: inline-block; width: 8px; height: 8px;
+      background: var(--m); vertical-align: middle; margin-right: 10px;
+    }
+    .hero-eyebrow-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--b);
+      vertical-align: middle; white-space: nowrap;
+      text-decoration: none;
+    }
+    .hero-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: clamp(36px, 3.8vw, 58px); line-height: 1;
+      letter-spacing: -2px; text-transform: uppercase; color: var(--b);
+      margin-bottom: 32px;
+    }
+    .hero-headline-line { display: block; padding-bottom: 6px; }
+    .hero-headline-accent { color: var(--m); }
+    .hero-body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 18px; font-weight: 400; line-height: 1.6;
+      color: rgba(13,13,13,0.72); max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero-actions { margin-bottom: 64px; }
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 17px; letter-spacing: 0.08em;
+      color: var(--w); background: var(--b);
+      padding: 16px 28px; text-decoration: none;
+      text-transform: uppercase; border: 3px solid var(--b);
+      margin-right: 12px; margin-bottom: 10px; white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-primary:hover { background: var(--m); border-color: var(--m); }
+    .btn-secondary {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 17px; letter-spacing: 0.08em;
+      color: var(--b); background: transparent;
+      padding: 16px 24px; text-decoration: none;
+      text-transform: uppercase; border: 3px solid var(--b);
+      margin-bottom: 10px; white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-secondary:hover { background: rgba(13,13,13,0.1); }
+
+    /* ── PROJECT SHOWCASE ── */
+    .showcase-wrap {
+      width: 360px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 8px;
+    }
+    @media (max-width: 900px) { .showcase-wrap { display: none; } }
+
+    .showcase-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(13,13,13,0.4);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .showcase-label::before {
+      content: ''; display: inline-block; width: 20px; height: 2px; background: var(--m);
+    }
+
+    .showcase-stage {
+      width: 100%;
+      height: 320px;
+      perspective: 900px;
+      position: relative;
+    }
+
+    .showcase-card {
+      width: 100%;
+      height: 100%;
+      position: absolute; inset: 0;
+      outline: 3px solid var(--b);
+      outline-offset: -3px;
+      overflow: hidden;
+      transform-origin: center center;
+      animation: sc-float 3.2s ease-in-out infinite;
+      will-change: transform;
+      backface-visibility: visible;
+    }
+
+    @keyframes sc-float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-9px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .showcase-card.spinning {
+      animation: sc-spin 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes sc-spin {
+      0%   { transform: rotateY(0deg)   translateY(0px); }
+      45%  { transform: rotateY(360deg) translateY(-4px); }
+      70%  { transform: rotateY(500deg) translateY(-2px); }
+      100% { transform: rotateY(540deg) translateY(0px); }
+    }
+
+    .sc-bg {
+      position: absolute; inset: 0;
+    }
+    .sc-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.78) 25%, transparent 70%);
+      z-index: 1;
+    }
+    .sc-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      z-index: 2; padding: 20px 20px 18px 18px;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 10px;
+    }
+    .sc-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 22px; line-height: 1;
+      text-transform: uppercase; color: #fff;
+      letter-spacing: 0.01em; flex: 1; min-width: 0;
+    }
+    .sc-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 11px; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--y); color: var(--b);
+      padding: 4px 8px; white-space: nowrap; flex-shrink: 0;
+    }
+    .sc-tag.accent { background: var(--m); color: #fff; }
+
+    .showcase-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .showcase-dots {
+      display: flex; gap: 6px;
+    }
+    .showcase-dot {
+      width: 20px; height: 3px; background: rgba(13,13,13,0.18);
+      transition: background 0.3s, width 0.3s;
+    }
+    .showcase-dot.active { background: var(--b); width: 32px; }
+    .showcase-idx {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(13,13,13,0.3);
+      white-space: nowrap;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: var(--b); border-top: 3px solid var(--b); }
+    .stats-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 40px;
+      display: table; width: 100%; border-collapse: collapse;
+    }
+    .stat {
+      display: table-cell; padding: 28px 24px;
+      border-right: 1px solid rgba(245,193,0,0.12);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 42px; color: var(--y); line-height: 1; letter-spacing: -1px;
+      display: block;
+    }
+    .stat-label {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; display: block;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header { margin-bottom: 48px; }
+    .eyebrow-row { margin-bottom: 16px; }
+    .eyebrow-line {
+      display: inline-block; width: 24px; height: 3px;
+      background: var(--y); vertical-align: middle; margin-right: 10px;
+    }
+    .eyebrow-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px; letter-spacing: 0.22em;
+      text-transform: uppercase; vertical-align: middle;
+    }
+    .eyebrow-text.light { color: rgba(255,255,255,0.4); }
+    .eyebrow-text.dark { color: rgba(13,13,13,0.45); }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 58px; line-height: 1;
+      text-transform: uppercase; letter-spacing: -0.5px;
+    }
+    .section-title.light { color: var(--w); }
+    .section-title em { font-style: italic; color: var(--m); }
+    .section-title.yellow em { font-style: italic; color: var(--y); }
+
+    /* ── SERVICES ── */
+    .services { background: var(--g); padding: 80px 0; }
+    .services-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    .services-grid {
+      display: table; width: 100%; border-collapse: collapse;
+      border: 3px solid rgba(245,193,0,0.15);
+    }
+    .service-card {
+      display: table-cell; width: 25%; padding: 36px 24px;
+      border-right: 1px solid rgba(245,193,0,0.1);
+      vertical-align: top;
+      transition: background 0.2s;
+      cursor: default;
+      position: relative; overflow: hidden;
+    }
+    .service-card:last-child { border-right: none; }
+    .service-card:hover { background: var(--y); }
+    .service-card.highlight { background: rgba(224,26,90,0.08); }
+    .service-card.highlight:hover { background: var(--m); }
+    .service-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 44px; line-height: 1;
+      color: rgba(245,193,0,0.2); margin-bottom: 10px; display: block;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-num { color: rgba(13,13,13,0.25); }
+    .service-card.highlight:hover .service-num { color: rgba(255,255,255,0.2); }
+    .service-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 34px; line-height: 0.95;
+      text-transform: uppercase; color: var(--y);
+      margin-bottom: 8px; display: block;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-title { color: var(--b); }
+    .service-card.highlight:hover .service-title { color: var(--w); }
+    .service-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 12px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.35);
+      margin-bottom: 14px; display: block;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-sub { color: rgba(13,13,13,0.5); }
+    .service-card.highlight:hover .service-sub { color: rgba(255,255,255,0.6); }
+    .service-desc {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.5);
+      margin-bottom: 16px; display: block;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-desc { color: rgba(13,13,13,0.65); }
+    .service-card.highlight:hover .service-desc { color: rgba(255,255,255,0.8); }
+    .service-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px;
+      color: rgba(245,193,0,0.45); display: block;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-price { color: var(--m); }
+    .service-card.highlight:hover .service-price { color: rgba(255,255,255,0.6); }
+    .popular-badge {
+      position: absolute; top: 14px; right: -28px;
+      background: var(--m); color: var(--w);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 36px;
+      transform: rotate(45deg) translateX(8px);
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--b); padding: 80px 0; }
+    .how-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    .how-grid { display: table; width: 100%; border-collapse: collapse; margin-top: 56px; }
+    .how-step {
+      display: table-cell; width: 33.33%; padding: 36px 32px;
+      border-top: 3px solid var(--y);
+      border-right: 1px solid rgba(245,193,0,0.12);
+      vertical-align: top;
+    }
+    .how-step:last-child { border-right: none; }
+    .how-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 88px; line-height: 1;
+      color: rgba(245,193,0,0.07); display: block; margin-bottom: -14px;
+    }
+    .how-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 34px; line-height: 1;
+      text-transform: uppercase; color: var(--y);
+      margin-bottom: 14px; display: block;
+    }
+    .how-desc {
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.55);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--g); padding: 80px 0; }
+    .testimonials-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    .testi-grid {
+      display: table; width: 100%; border-collapse: collapse;
+      border: 3px solid rgba(245,193,0,0.15); margin-top: 48px;
+    }
+    .testi-card {
+      display: table-cell; width: 33.33%; padding: 32px 24px;
+      border-right: 1px solid rgba(245,193,0,0.1);
+      vertical-align: top;
+    }
+    .testi-card:last-child { border-right: none; }
+    .testi-quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 48px; color: var(--y);
+      opacity: 0.3; line-height: 1; display: block; margin-bottom: 12px;
+    }
+    .testi-text {
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.7);
+      margin-bottom: 20px; display: block;
+    }
+    .testi-avatar {
+      display: inline-block; width: 44px; height: 44px;
+      background: var(--y); border-radius: 50%; text-align: center; line-height: 44px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 20px; color: var(--b);
+      vertical-align: middle; margin-right: 12px;
+    }
+    .testi-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 15px; color: var(--w);
+      text-transform: uppercase; letter-spacing: 0.05em; display: block;
+    }
+    .testi-biz {
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px; color: rgba(255,255,255,0.35);
+      display: block;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner { background: var(--m); padding: 80px 40px; text-align: center; overflow: hidden; position: relative; }
+    .cta-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-eyebrow {
+      display: inline-block; border: 3px solid rgba(255,255,255,0.35);
+      padding: 6px 16px; margin-bottom: 28px;
+    }
+    .cta-dot {
+      display: inline-block; width: 8px; height: 8px;
+      background: var(--y); vertical-align: middle; margin-right: 10px;
+    }
+    .cta-eyebrow-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 13px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+      vertical-align: middle;
+    }
+    .cta-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 80px; line-height: 1;
+      text-transform: uppercase; color: var(--w);
+      letter-spacing: -1px; margin-bottom: 24px;
+    }
+    .cta-title-yellow { color: var(--y); }
+    .cta-body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 18px; color: rgba(255,255,255,0.75);
+      line-height: 1.6; margin-bottom: 40px;
+    }
+    .btn-cta-primary {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 18px; letter-spacing: 0.08em;
+      color: var(--b); background: var(--y);
+      padding: 18px 36px; text-decoration: none;
+      text-transform: uppercase; border: 3px solid var(--y);
+      margin-right: 14px; margin-bottom: 10px;
+      transition: transform 0.15s;
+    }
+    .btn-cta-primary:hover { transform: translateY(-2px); }
+    .btn-cta-secondary {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 18px; letter-spacing: 0.08em;
+      color: var(--w); background: transparent;
+      padding: 18px 28px; text-decoration: none;
+      text-transform: uppercase; border: 3px solid rgba(255,255,255,0.45);
+      margin-bottom: 10px;
+      transition: border-color 0.15s;
+    }
+    .btn-cta-secondary:hover { border-color: var(--w); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--b); border-top: 3px solid rgba(245,193,0,0.2); padding: 48px 40px 32px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top { display: table; width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+    .footer-brand { display: table-cell; vertical-align: top; width: 35%; }
+    .footer-brand-desc {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px; color: rgba(255,255,255,0.3);
+      max-width: 260px; line-height: 1.6; margin-top: 12px;
+    }
+    .footer-cols { display: table-cell; vertical-align: top; text-align: right; }
+    .footer-col { display: inline-block; vertical-align: top; margin-left: 48px; text-align: left; }
+    .footer-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 12px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--y); margin-bottom: 14px; display: block;
+    }
+    .footer-link {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px; color: rgba(255,255,255,0.35);
+      display: block; margin-bottom: 8px; text-decoration: none;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 24px;
+    }
+    .footer-copy {
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px; color: rgba(255,255,255,0.18);
+      display: inline-block;
+    }
+    .footer-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 12px; letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.13); text-transform: uppercase;
+      float: right;
+    }
+
+    /* ── TWEAKS PANEL ── */
+    #tweaks-panel {
+      display: none;
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      background: rgba(14,14,16,0.97); border-radius: 16px;
+      width: 304px; overflow: hidden;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.07);
+      color: #fff; font-family: 'Barlow', sans-serif; font-size: 13px;
+    }
+    #tweaks-panel.open { display: block; }
+    .tweaks-header {
+      display: table; width: 100%; border-collapse: collapse;
+      padding: 13px 16px; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .tweaks-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+      display: table-cell; vertical-align: middle;
+    }
+    .tweaks-close {
+      display: table-cell; vertical-align: middle; text-align: right;
+      background: none; border: none; color: rgba(255,255,255,0.25);
+      font-size: 20px; cursor: pointer; line-height: 1; padding: 0;
+    }
+    .tweaks-close:hover { color: rgba(255,255,255,0.6); }
+    .tweaks-body { padding: 14px 16px 18px; }
+    .tweak-section-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255,255,255,0.25); display: block;
+      margin-top: 16px; margin-bottom: 10px;
+    }
+    .tweak-section-title:first-child { margin-top: 0; }
+    /* Theme grid */
+    .theme-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; }
+    .theme-btn {
+      border-radius: 8px; overflow: hidden; cursor: pointer;
+      border: 2px solid transparent; transition: border-color 0.15s, transform 0.1s;
+      position: relative; background: none; padding: 0;
+    }
+    .theme-btn:hover { transform: scale(1.04); }
+    .theme-btn.active { border-color: rgba(255,255,255,0.8); }
+    .theme-btn-top { height: 30px; display: block; }
+    .theme-btn-bottom { height: 12px; display: block; }
+    .theme-btn-name {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,0.55); padding: 3px 4px;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); text-align: center;
+    }
+    /* Color pickers */
+    .color-row { display: table; width: 100%; margin-bottom: 9px; }
+    .color-label { display: table-cell; vertical-align: middle; color: rgba(255,255,255,0.5); font-size: 12px; }
+    .color-ctrl { display: table-cell; vertical-align: middle; text-align: right; white-space: nowrap; }
+    .color-hex-val { font-size: 11px; color: rgba(255,255,255,0.25); margin-right: 7px; vertical-align: middle; }
+    .color-pick-wrap {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 1.5px solid rgba(255,255,255,0.15); cursor: pointer;
+      display: inline-block; vertical-align: middle; position: relative; overflow: hidden;
+    }
+    .color-pick-wrap input[type=color] {
+      position: absolute; inset: -6px; width: calc(100%+12px); height: calc(100%+12px);
+      opacity: 0; cursor: pointer; border: none; padding: 0;
+    }
+    /* Toggles & segs */
+    .tweak-row { display: table; width: 100%; margin-bottom: 10px; }
+    .tweak-label { display: table-cell; vertical-align: middle; color: rgba(255,255,255,0.5); font-size: 12px; }
+    .tweak-ctrl { display: table-cell; vertical-align: middle; text-align: right; }
+    .tweak-toggle {
+      width: 36px; height: 20px; background: rgba(255,255,255,0.12);
+      border-radius: 10px; cursor: pointer; position: relative;
+      display: inline-block; vertical-align: middle; border: none;
+      transition: background 0.2s;
+    }
+    .tweak-toggle.on { background: var(--y, #F5C100); }
+    .tweak-toggle::after {
+      content: ''; position: absolute; top: 2px; left: 2px;
+      width: 16px; height: 16px; border-radius: 50%; background: #fff;
+      transition: left 0.2s;
+    }
+    .tweak-toggle.on::after { left: 18px; }
+    .tweak-seg { display: inline-flex; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; overflow: hidden; }
+    .tweak-seg-btn {
+      background: transparent; color: rgba(255,255,255,0.38);
+      border: none; padding: 4px 9px; cursor: pointer; font-size: 11px;
+      font-family: 'Barlow', sans-serif; transition: background 0.15s, color 0.15s;
+    }
+    .tweak-seg-btn.active { background: rgba(255,255,255,0.12); color: #fff; }
+    .tweak-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 12px 0; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-headline { font-size: 52px; }
+      .services-grid, .how-grid, .testi-grid, .stats-inner, .footer-top { display: block; }
+      .service-card, .how-step, .testi-card, .stat { display: block; width: 100%; border-right: none; border-bottom: 1px solid rgba(245,193,0,0.1); }
+      .footer-brand, .footer-cols { display: block; width: 100%; text-align: left; }
+      .footer-cols { margin-top: 24px; }
+      .footer-col { margin-left: 0; margin-right: 32px; }
+      .cta-title { font-size: 48px; }
+      .section-title { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <div class="navbar-logo">
+      <a href="#" class="logo">
+        <span class="logo-w">W<sup class="logo-sup">²</sup></span>
+        <span class="logo-sep"></span>
+        <span class="logo-ag">Agência</span>
+      </a>
+    </div>
+    <div class="navbar-links">
+      <a href="#servicos" class="nav-link">Serviços</a>
+      <a href="#como-funciona" class="nav-link">Como Funciona</a>
+      <a href="#resultados" class="nav-link">Resultados</a>
+      <a href="#contato" class="nav-cta">Diagnóstico</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+
+    <!-- Left: text content -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span class="hero-eyebrow-text">Agência Digital · São Paulo</span>
+      </div>
+
+      <div class="hero-headline">
+        <span class="hero-headline-line">PRESENÇA DIGITAL</span>
+        <span class="hero-headline-line">QUE OCUPA <span class="hero-headline-accent">ESPAÇO.</span></span>
+      </div>
+
+      <p class="hero-body">
+        Para MEIs e pequenas empresas que querem aparecer, vender mais e não depender de agências que demoram meses.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Falar agora</a>
+        <a href="#servicos" class="btn-secondary">Ver serviços →</a>
+      </div>
+    </div><!-- /.hero-content -->
+
+    <!-- Right: animated project showcase -->
+    <div class="showcase-wrap">
+      <div class="showcase-label">Nossos projetos</div>
+
+      <div class="showcase-stage" id="showcase-stage">
+        <div class="showcase-card" id="showcase-card">
+          <div class="sc-bg" id="sc-bg"></div>
+          <div class="sc-overlay"></div>
+          <div class="sc-content">
+            <span class="sc-name" id="sc-name"></span>
+            <span class="sc-tag" id="sc-tag"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-footer">
+        <div class="showcase-dots" id="showcase-dots"></div>
+        <span class="showcase-idx" id="showcase-idx"></span>
+      </div>
+    </div><!-- /.showcase-wrap -->
+
+  </div><!-- /.hero-inner -->
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <span class="stat-num">+200</span>
+        <span class="stat-label">Clientes ativos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">48h</span>
+        <span class="stat-label">Para ir ao ar</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3×</span>
+        <span class="stat-label">Mais leads em média</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Feito por quem faz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="eyebrow-row">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text light">O que fazemos</span>
+      </div>
+      <div class="section-title light">SERVIÇOS QUE<br><em>ENTREGAM</em> RESULTADO</div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <span class="service-title">BRANDING</span>
+        <span class="service-sub">Identidade Visual</span>
+        <span class="service-desc">Logo, paleta, tipografia e aplicações. Uma marca que seu cliente não esquece.</span>
+        <span class="service-price">A partir de R$ 890</span>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <span class="service-title">LANDING<br>PAGE</span>
+        <span class="service-sub">Página de Alta Conversão</span>
+        <span class="service-desc">Uma página que trabalha por você 24h. Rápida, mobile-first, otimizada.</span>
+        <span class="service-price">A partir de R$ 1.290</span>
+      </div>
+      <div class="service-card highlight">
+        <div class="popular-badge">POPULAR</div>
+        <span class="service-num">03</span>
+        <span class="service-title">KIT<br>DIGITAL</span>
+        <span class="service-sub">Presença Completa</span>
+        <span class="service-desc">Branding + Landing Page + Google Meu Negócio. Tudo de uma vez.</span>
+        <span class="service-price">A partir de R$ 1.990</span>
+      </div>
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <span class="service-title">GESTÃO<br>MENSAL</span>
+        <span class="service-sub">Conteúdo e Crescimento</span>
+        <span class="service-desc">Posts, stories, anúncios e relatório mensal. Você faz o negócio, a gente faz o digital.</span>
+        <span class="service-price">A partir de R$ 690/mês</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como-funciona">
+  <div class="how-inner">
+    <div class="section-header">
+      <div class="eyebrow-row">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text light">Processo</span>
+      </div>
+      <div class="section-title light yellow">VOCÊ FALA COM<br><em>QUEM FAZ.</em></div>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <span class="how-num">01</span>
+        <span class="how-title">DIAGNÓSTICO<br>GRÁTIS</span>
+        <p class="how-desc">Você faz uma chamada de 20 min com quem vai fazer o trabalho. Sem vendedor, sem apresentação de empresa.</p>
+      </div>
+      <div class="how-step">
+        <span class="how-num">02</span>
+        <span class="how-title">PROPOSTA<br>EM 24H</span>
+        <p class="how-desc">Recebe uma proposta clara, com escopo, prazo e preço. Sem surpresas no caminho.</p>
+      </div>
+      <div class="how-step">
+        <span class="how-num">03</span>
+        <span class="how-title">ENTREGA<br>E RESULTADO</span>
+        <p class="how-desc">Aprovado, partimos pro trabalho. A maioria dos projetos vai ao ar em até 48 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="resultados">
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <div class="eyebrow-row">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text light">Resultados</span>
+      </div>
+      <div class="section-title light">QUEM JÁ<br><em>OCUPA ESPAÇO.</em></div>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <span class="testi-quote">"</span>
+        <span class="testi-text">Em 2 dias minha landing page estava no ar. No primeiro mês, 3 clientes novos vieram direto do site.</span>
+        <div>
+          <span class="testi-avatar">M</span>
+          <span style="display: inline-block; vertical-align: middle;">
+            <span class="testi-name">Marcela T.</span>
+            <span class="testi-biz">Studio de Estética · SP</span>
+          </span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-quote">"</span>
+        <span class="testi-text">Antes do kit digital, minha pizzaria não aparecia nem no Google. Hoje é diferente.</span>
+        <div>
+          <span class="testi-avatar">R</span>
+          <span style="display: inline-block; vertical-align: middle;">
+            <span class="testi-name">Ricardo O.</span>
+            <span class="testi-biz">Pizzaria Familiar · SP</span>
+          </span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-quote">"</span>
+        <span class="testi-text">A marca ficou exatamente como eu imaginava. E o prazo foi cumprido, o que é raro.</span>
+        <div>
+          <span class="testi-avatar">C</span>
+          <span style="display: inline-block; vertical-align: middle;">
+            <span class="testi-name">Camila N.</span>
+            <span class="testi-biz">Personal Trainer · SP</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contato">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">
+      <span class="cta-dot"></span>
+      <span class="cta-eyebrow-text">Próximos passos</span>
+    </div>
+
+    <div class="cta-title">
+      PRONTO PARA<br>
+      <span class="cta-title-yellow">OCUPAR ESPAÇO?</span>
+    </div>
+
+    <p class="cta-body">Diagnóstico gratuito. Sem compromisso. Você fala direto com quem vai fazer.</p>
+
+    <div>
+      <a href="https://wa.me/5511999999999" class="btn-cta-primary">Falar no WhatsApp</a>
+      <a href="mailto:oi@w2agencia.com.br" class="btn-cta-secondary">Enviar e-mail</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-w">W<sup class="logo-sup">²</sup></span>
+          <span class="logo-sep"></span>
+          <span class="logo-ag">Agência</span>
+        </a>
+        <p class="footer-brand-desc">Presença digital para quem quer resultado, não reunião.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="footer-col-title">Serviços</span>
+          <a href="#" class="footer-link">Branding</a>
+          <a href="#" class="footer-link">Landing Page</a>
+          <a href="#" class="footer-link">Kit Digital</a>
+          <a href="#" class="footer-link">Gestão Mensal</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Contato</span>
+          <a href="#" class="footer-link">WhatsApp</a>
+          <a href="#" class="footer-link">E-mail</a>
+          <a href="#" class="footer-link">Instagram</a>
+          <a href="#" class="footer-link">São Paulo, SP</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 w² Agência · CNPJ 00.000.000/0001-00</span>
+      <span class="footer-tag">Opção C · Explosão · Abril 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- TWEAKS PANEL -->
+<div id="tweaks-panel">
+  <div class="tweaks-header">
+    <span class="tweaks-title">Tweaks</span>
+    <button class="tweaks-close" onclick="closeTweaks()">×</button>
+  </div>
+  <div class="tweaks-body">
+
+    <span class="tweak-section-title">Tema de Cores</span>
+    <div class="theme-grid" id="theme-grid"></div>
+
+    <div class="tweak-divider"></div>
+
+    <span class="tweak-section-title">Tokens individuais</span>
+    <div class="color-row">
+      <span class="color-label">Primária (amarelo)</span>
+      <span class="color-ctrl">
+        <span class="color-hex-val" id="hex-y">#F5C100</span>
+        <span class="color-pick-wrap" style="background:#F5C100" id="wrap-y">
+          <input type="color" value="#F5C100" oninput="setToken('--y',this.value,'wrap-y','hex-y'); clearTheme()">
+        </span>
+      </span>
+    </div>
+    <div class="color-row">
+      <span class="color-label">Acento (magenta)</span>
+      <span class="color-ctrl">
+        <span class="color-hex-val" id="hex-m">#E01A5A</span>
+        <span class="color-pick-wrap" style="background:#E01A5A" id="wrap-m">
+          <input type="color" value="#E01A5A" oninput="setToken('--m',this.value,'wrap-m','hex-m'); clearTheme()">
+        </span>
+      </span>
+    </div>
+    <div class="color-row">
+      <span class="color-label">Preto / fundos</span>
+      <span class="color-ctrl">
+        <span class="color-hex-val" id="hex-b">#0D0D0D</span>
+        <span class="color-pick-wrap" style="background:#0D0D0D;border-color:rgba(255,255,255,0.25)" id="wrap-b">
+          <input type="color" value="#0D0D0D" oninput="setToken('--b',this.value,'wrap-b','hex-b'); setToken('--g',shiftDark(this.value),'',''); clearTheme()">
+        </span>
+      </span>
+    </div>
+
+    <div class="tweak-divider"></div>
+
+    <span class="tweak-section-title">Estilo</span>
+    <div class="tweak-row">
+      <span class="tweak-label">Textura do hero</span>
+      <span class="tweak-ctrl">
+        <div class="tweak-seg">
+          <button class="tweak-seg-btn active" onclick="setTexture('halftone',this)">Dots</button>
+          <button class="tweak-seg-btn" onclick="setTexture('grid',this)">Grid</button>
+          <button class="tweak-seg-btn" onclick="setTexture('none',this)">Off</button>
+        </div>
+      </span>
+    </div>
+    <div class="tweak-row">
+      <span class="tweak-label">Headline itálico</span>
+      <span class="tweak-ctrl">
+        <button class="tweak-toggle" id="toggle-italic" onclick="toggleItalic(this)"></button>
+      </span>
+    </div>
+    <div class="tweak-row">
+      <span class="tweak-label">Showcase projetos</span>
+      <span class="tweak-ctrl">
+        <button class="tweak-toggle on" id="toggle-stamp" onclick="toggleStamp(this)"></button>
+      </span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── THEMES ──────────────────────────────────────────────────────────────
+  const THEMES = [
+    { id:'explosao', name:'Explosão',   y:'#F5C100', m:'#E01A5A', b:'#0D0D0D', g:'#1A1A1A' },
+    { id:'fogo',     name:'Fogo',       y:'#FF5C00', m:'#FF2D55', b:'#0D0D0D', g:'#1A1A1A' },
+    { id:'neon',     name:'Neon',       y:'#00FF87', m:'#E01A5A', b:'#050D0A', g:'#0A1810' },
+    { id:'eletrico', name:'Elétrico',   y:'#00CFFF', m:'#7B2FFF', b:'#050510', g:'#0D0D1E' },
+    { id:'coral',    name:'Coral',      y:'#FF6B6B', m:'#F5C100', b:'#0D0805', g:'#1A1008' },
+    { id:'bordeaux', name:'Bordeaux',   y:'#E8C547', m:'#9B1B5A', b:'#120608', g:'#1E0A10' },
+  ];
+  let activeThemeId = 'explosao';
+
+  function applyTheme(t) {
+    const root = document.documentElement;
+    root.style.setProperty('--y', t.y);
+    root.style.setProperty('--m', t.m);
+    root.style.setProperty('--b', t.b);
+    root.style.setProperty('--g', t.g);
+    document.body.style.background = t.b;
+    // sync pickers
+    syncPicker('wrap-y','hex-y', t.y);
+    syncPicker('wrap-m','hex-m', t.m);
+    syncPicker('wrap-b','hex-b', t.b);
+    // navbar
+    document.getElementById('navbar').style.background = t.g;
+    activeThemeId = t.id;
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.id === t.id);
+    });
+  }
+
+  function syncPicker(wrapId, hexId, val) {
+    const wrap = document.getElementById(wrapId);
+    const hexEl = document.getElementById(hexId);
+    if (wrap) { wrap.style.background = val; const inp = wrap.querySelector('input'); if(inp) inp.value = val; }
+    if (hexEl) hexEl.textContent = val;
+  }
+
+  function setToken(prop, val, wrapId, hexId) {
+    document.documentElement.style.setProperty(prop, val);
+    if (prop === '--b') document.body.style.background = val;
+    if (wrapId) { const w = document.getElementById(wrapId); if(w) w.style.background = val; }
+    if (hexId) { const h = document.getElementById(hexId); if(h) h.textContent = val; }
+  }
+
+  function clearTheme() {
+    activeThemeId = null;
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+  }
+
+  function shiftDark(hex) {
+    // lighten the base dark color slightly for --g
+    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    const shift = 14;
+    const clamp = v => Math.min(255, v+shift);
+    return '#'+[r,g,b].map(v => clamp(v).toString(16).padStart(2,'0')).join('');
+  }
+
+  function buildThemeGrid() {
+    const grid = document.getElementById('theme-grid');
+    if (!grid) return;
+    grid.innerHTML = THEMES.map(t => `
+      <button class="theme-btn${t.id===activeThemeId?' active':''}" data-id="${t.id}" onclick="applyTheme(THEMES.find(x=>x.id==='${t.id}'))">
+        <span class="theme-btn-top" style="background:${t.y}"></span>
+        <span class="theme-btn-bottom" style="background:${t.m}"></span>
+        <span class="theme-btn-name">${t.name}</span>
+      </button>
+    `).join('');
+  }
+
+  // ── EXISTING FUNCTIONS ───────────────────────────────────────────────────
+  function closeTweaks() {
+    document.getElementById('tweaks-panel').classList.remove('open');
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+  }
+
+  function setTexture(t, btn) {
+    const hero = document.querySelector('.hero');
+    hero.style.backgroundImage = t === 'halftone'
+      ? 'radial-gradient(circle, rgba(13,13,13,0.15) 1.5px, transparent 1.5px)'
+      : t === 'grid'
+        ? 'linear-gradient(rgba(13,13,13,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(13,13,13,0.07) 1px,transparent 1px)'
+        : 'none';
+    hero.style.backgroundSize = t === 'halftone' ? '18px 18px' : t === 'grid' ? '40px 40px' : '';
+    document.querySelectorAll('.tweak-seg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function toggleItalic(btn) {
+    btn.classList.toggle('on');
+    document.querySelector('.hero-headline').style.fontStyle = btn.classList.contains('on') ? 'italic' : 'normal';
+  }
+
+  function toggleStamp(btn) {
+    btn.classList.toggle('on');
+    const showcase = document.querySelector('.showcase-wrap');
+    if (showcase) showcase.style.display = btn.classList.contains('on') ? '' : 'none';
+  }
+
+  // ── SHOWCASE ENGINE ──────────────────────────────────────────────────────
+  const PROJECTS = [
+    { name: 'Studio Marcela',    tag: 'Landing Page', accent: false, bg: '#1a1a2e', pattern: 'repeating-linear-gradient(45deg,rgba(245,193,0,0.08) 0,rgba(245,193,0,0.08) 1px,transparent 0,transparent 44px)' },
+    { name: 'Pizzaria Familiar', tag: 'Kit Digital',   accent: true,  bg: '#2d1a0e', pattern: 'repeating-linear-gradient(135deg,rgba(255,92,0,0.12) 0,rgba(255,92,0,0.12) 1px,transparent 0,transparent 36px)' },
+    { name: 'Camila Fit',        tag: 'Branding',      accent: false, bg: '#0a1f14', pattern: 'radial-gradient(rgba(245,193,0,0.14) 1.5px,transparent 1.5px) 0 0 / 18px 18px' },
+    { name: 'Cl\u00ednica Torres',    tag: 'Gest. Mensal', accent: true,  bg: '#12051a', pattern: 'repeating-linear-gradient(90deg,rgba(224,26,90,0.09) 0,rgba(224,26,90,0.09) 1px,transparent 0,transparent 30px)' },
+    { name: 'Adv. Ramos',        tag: 'Landing Page', accent: false, bg: '#1c1800', pattern: 'repeating-linear-gradient(0deg,rgba(245,193,0,0.1) 0,rgba(245,193,0,0.1) 1px,transparent 0,transparent 26px)' },
+    { name: 'Barbearia 23',      tag: 'Kit Digital',   accent: true,  bg: '#0d0d0d', pattern: 'radial-gradient(rgba(224,26,90,0.18) 1.5px,transparent 1.5px) 0 0 / 20px 20px' },
+  ];
+
+  let scIdx = 0;
+  let scTimer = null;
+  let scSpinning = false;
+
+  function scBuildDots() {
+    const dots = document.getElementById('showcase-dots');
+    if (!dots) return;
+    dots.innerHTML = PROJECTS.map(function(_, i) {
+      return '<div class="showcase-dot' + (i === 0 ? ' active' : '') + '"></div>';
+    }).join('');
+  }
+
+  function scSetContent(idx) {
+    const p    = PROJECTS[idx];
+    const bg   = document.getElementById('sc-bg');
+    const name = document.getElementById('sc-name');
+    const tag  = document.getElementById('sc-tag');
+    const idxEl= document.getElementById('showcase-idx');
+    const dots = document.getElementById('showcase-dots');
+    if (!bg || !name || !tag) return;
+    bg.style.cssText = 'position:absolute;inset:0;background:' + p.bg + ';background-image:' + p.pattern + ';';
+    name.textContent = p.name;
+    tag.textContent  = p.tag;
+    tag.className    = 'sc-tag' + (p.accent ? ' accent' : '');
+    if (idxEl) idxEl.textContent = (idx + 1 < 10 ? '0' : '') + (idx + 1) + ' / ' + (PROJECTS.length < 10 ? '0' : '') + PROJECTS.length;
+    if (dots) {
+      var dotEls = dots.querySelectorAll('.showcase-dot');
+      dotEls.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+    }
+  }
+
+  function scAdvance() {
+    if (scSpinning) return;
+    scSpinning = true;
+    var card = document.getElementById('showcase-card');
+    if (!card) { scSpinning = false; return; }
+    card.classList.add('spinning');
+    setTimeout(function() {
+      scIdx = (scIdx + 1) % PROJECTS.length;
+      scSetContent(scIdx);
+    }, 380);
+    setTimeout(function() {
+      card.classList.remove('spinning');
+      card.style.animation = 'none';
+      void card.offsetWidth;
+      card.style.animation = '';
+      scSpinning = false;
+    }, 850);
+  }
+
+  function scStart() {
+    scBuildDots();
+    scSetContent(0);
+    scTimer = setInterval(scAdvance, 4200);
+  }
+
+  var scStage = document.getElementById('showcase-stage');
+  if (scStage) {
+    scStage.addEventListener('mouseenter', function() { clearInterval(scTimer); });
+    scStage.addEventListener('mouseleave', function() { scTimer = setInterval(scAdvance, 4200); });
+  }
+
+  scStart();
+
+  // ── NAVBAR SCROLL ────────────────────────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    const t = THEMES.find(x => x.id === activeThemeId);
+    const g = t ? t.g : '#1A1A1A';
+    document.getElementById('navbar').style.background =
+      window.scrollY > 40 ? 'rgba(13,13,13,0.97)' : g;
+  });
+
+  // ── TWEAKS PROTOCOL ──────────────────────────────────────────────────────
+  window.addEventListener('message', e => {
+    if (e.data && e.data.type === '__activate_edit_mode') document.getElementById('tweaks-panel').classList.add('open');
+    if (e.data && e.data.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').classList.remove('open');
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+  // ── INIT ─────────────────────────────────────────────────────────────────
+  buildThemeGrid();
+</script>
+
+</body>
+</html>
