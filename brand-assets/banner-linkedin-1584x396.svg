@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <defs>
+    <pattern id="halftone" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1.5" fill="#F5C100" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Fundo preto -->
+  <rect width="1584" height="396" fill="#0D0D0D"/>
+
+  <!-- Textura halftone -->
+  <rect width="1584" height="396" fill="url(#halftone)"/>
+
+  <!-- Barra amarela topo -->
+  <rect x="0" y="0" width="1584" height="5" fill="#F5C100"/>
+
+  <!-- Acento geométrico esquerda -->
+  <rect x="60" y="60" width="120" height="120" fill="none" stroke="#F5C100" stroke-width="2" opacity="0.12"/>
+  <rect x="80" y="80" width="80" height="80" fill="none" stroke="#E01A5A" stroke-width="1.5" opacity="0.15"/>
+
+  <!-- Logo W² — área esquerda -->
+  <text
+    x="200"
+    y="260"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="220"
+    fill="#F5C100"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="-8"
+  >W</text>
+
+  <!-- ² sobrescrito magenta -->
+  <text
+    x="336"
+    y="140"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="100"
+    fill="#E01A5A"
+    text-anchor="middle"
+    dominant-baseline="auto"
+  >2</text>
+
+  <!-- Divisor vertical -->
+  <rect x="420" y="80" width="3" height="240" fill="#F5C100" opacity="0.3"/>
+
+  <!-- Lado direito — nome + tagline -->
+  <text
+    x="480"
+    y="165"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="28"
+    fill="rgba(255,255,255,0.35)"
+    letter-spacing="6"
+    text-transform="uppercase"
+  >AGÊNCIA</text>
+
+  <text
+    x="480"
+    y="230"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="72"
+    fill="#FFFFFF"
+    letter-spacing="-2"
+  >PRESENÇA</text>
+
+  <text
+    x="480"
+    y="305"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="72"
+    fill="#F5C100"
+    font-style="italic"
+    letter-spacing="-2"
+  >DIGITAL.</text>
+
+  <!-- Tagline -->
+  <text
+    x="482"
+    y="348"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="400"
+    font-size="20"
+    fill="rgba(255,255,255,0.4)"
+    letter-spacing="0.5"
+  >Para quem quer resultado, não reunião.</text>
+
+  <!-- Acento geométrico direita -->
+  <rect x="1464" y="60" width="80" height="80" fill="none" stroke="#F5C100" stroke-width="2" opacity="0.1"/>
+  <rect x="1484" y="80" width="48" height="48" fill="none" stroke="#E01A5A" stroke-width="1.5" opacity="0.12"/>
+
+  <!-- Barra amarela bottom -->
+  <rect x="0" y="391" width="1584" height="5" fill="#F5C100" opacity="0.3"/>
+</svg>

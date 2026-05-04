@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <defs>
+    <pattern id="grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#0D0D0D" stroke-width="0.5" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <!-- Fundo amarelo -->
+  <rect width="1500" height="500" fill="#F5C100"/>
+
+  <!-- Textura grid -->
+  <rect width="1500" height="500" fill="url(#grid)"/>
+
+  <!-- Barra preta topo -->
+  <rect x="0" y="0" width="1500" height="10" fill="#0D0D0D"/>
+
+  <!-- Barra preta bottom -->
+  <rect x="0" y="490" width="1500" height="10" fill="#0D0D0D"/>
+
+  <!-- Acento geométrico esquerda -->
+  <rect x="40" y="80" width="100" height="100" fill="none" stroke="#0D0D0D" stroke-width="2" opacity="0.15"/>
+  <rect x="56" y="96" width="68" height="68" fill="none" stroke="#E01A5A" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- W² grande lado esquerdo -->
+  <text
+    x="230"
+    y="380"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="320"
+    fill="#0D0D0D"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="-10"
+  >W</text>
+
+  <!-- ² sobrescrito magenta -->
+  <text
+    x="412"
+    y="175"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="130"
+    fill="#E01A5A"
+    text-anchor="middle"
+    dominant-baseline="auto"
+  >2</text>
+
+  <!-- Divisor vertical -->
+  <rect x="500" y="100" width="4" height="300" fill="#0D0D0D" opacity="0.2"/>
+
+  <!-- Lado direito -->
+  <text
+    x="560"
+    y="210"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="30"
+    fill="rgba(13,13,13,0.4)"
+    letter-spacing="6"
+  >AGÊNCIA</text>
+
+  <text
+    x="558"
+    y="300"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="96"
+    fill="#0D0D0D"
+    letter-spacing="-3"
+  >PRESENÇA</text>
+
+  <text
+    x="558"
+    y="395"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="96"
+    fill="#E01A5A"
+    font-style="italic"
+    letter-spacing="-3"
+  >DIGITAL.</text>
+
+  <!-- Tagline -->
+  <text
+    x="560"
+    y="445"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="400"
+    font-size="22"
+    fill="rgba(13,13,13,0.5)"
+    letter-spacing="0.3"
+  >Para quem quer resultado, não reunião.</text>
+
+  <!-- Acento geométrico direita -->
+  <rect x="1380" y="80" width="80" height="80" fill="none" stroke="#0D0D0D" stroke-width="2" opacity="0.12"/>
+  <rect x="1398" y="98" width="48" height="48" fill="none" stroke="#E01A5A" stroke-width="1.5" opacity="0.15"/>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Fundo preto -->
+  <rect width="400" height="400" fill="#0D0D0D"/>
+
+  <!-- Borda amarela sutil -->
+  <rect x="12" y="12" width="376" height="376" fill="none" stroke="#F5C100" stroke-width="3" opacity="0.3"/>
+
+  <!-- W² centralizado -->
+  <text
+    x="200"
+    y="240"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="200"
+    fill="#F5C100"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="-6"
+  >W</text>
+
+  <!-- ² sobrescrito (magenta) -->
+  <text
+    x="308"
+    y="148"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="90"
+    fill="#E01A5A"
+    text-anchor="middle"
+    dominant-baseline="auto"
+  >2</text>
+
+  <!-- Acento geométrico bottom-right -->
+  <rect x="320" y="320" width="48" height="48" fill="none" stroke="#F5C100" stroke-width="2" opacity="0.2"/>
+  <rect x="336" y="336" width="32" height="32" fill="none" stroke="#E01A5A" stroke-width="1.5" opacity="0.2"/>
+</svg>
