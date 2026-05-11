@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  w² Agência — Wordmark "AGÊNCIA" isolado (fundo escuro)
+  Uso: assinatura em rodapé dark, faixa decorativa em fundo preto, sobreposição em foto
+  Cor: branco sobre transparente
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&amp;display=swap');
+      .agencia { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 700; font-size: 64px; letter-spacing: 8px; }
+    </style>
+  </defs>
+
+  <text x="20" y="68" class="agencia" fill="#FFFFFF">AGÊNCIA</text>
+</svg>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  w² Agência — Favicon (16x16 a 64x64)
+  Uso: favicon do site, ícone de app, badge em browser tab
+  Construção: quadrado preto + W amarelo (centralizado, sem ²) — em tamanhos pequenos o ² some, então simplifica
+  Versão simbólica reduzida pra preservar reconhecimento em 16px
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Quadrado preto (sem rounded corners — coerente com regra "no border-radius") -->
+  <rect width="64" height="64" fill="#0D0D0D"/>
+
+  <!-- W amarelo grande, centralizado -->
+  <text
+    x="32"
+    y="50"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="56"
+    fill="#F5C100"
+    text-anchor="middle"
+    letter-spacing="-2"
+  >W</text>
+
+  <!-- ² superscript magenta, mantém em tamanhos >= 32px (em 16x16 vira ponto) -->
+  <text
+    x="50"
+    y="20"
+    font-family="'Barlow Condensed', 'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="20"
+    fill="#E01A5A"
+    text-anchor="middle"
+  >2</text>
+</svg>

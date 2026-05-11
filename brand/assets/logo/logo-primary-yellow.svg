@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  w² Agência — Logo Principal (fundo amarelo)
+  Uso: hero da landing (que é fundo amarelo), banners de campanha, capas de carrossel
+  Cores: tudo preto sobre amarelo (regra: nunca amarelo em branco — aqui o amarelo é fundo, não letra)
+  Acento magenta no ² preservado — único toque de cor que sobrevive sobre amarelo
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&amp;display=swap');
+      .w-letter { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 900; font-size: 180px; }
+      .sup { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 900; font-size: 88px; }
+      .agencia { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 700; font-size: 64px; letter-spacing: 8px; }
+    </style>
+  </defs>
+
+  <rect width="720" height="200" fill="#F5C100"/>
+
+  <!-- W (preto) -->
+  <text x="40" y="158" class="w-letter" fill="#0D0D0D" letter-spacing="-4">W</text>
+
+  <!-- ² superscript (magenta) -->
+  <text x="178" y="78" class="sup" fill="#E01A5A">2</text>
+
+  <!-- Separador vertical (preto) -->
+  <line x1="280" y1="50" x2="280" y2="155" stroke="#0D0D0D" stroke-width="2"/>
+
+  <!-- AGÊNCIA (preto, tracked wide) -->
+  <text x="312" y="128" class="agencia" fill="#0D0D0D">AGÊNCIA</text>
+
+  <!-- Underline preto sutil sob AGÊNCIA — assina visualmente -->
+  <line x1="312" y1="148" x2="650" y2="148" stroke="#0D0D0D" stroke-width="3"/>
+</svg>

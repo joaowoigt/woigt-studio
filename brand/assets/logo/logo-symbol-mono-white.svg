@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  w² Agência — Símbolo W² monocromático branco
+  Uso: contextos single-color em fundos escuros (overlay em foto, watermark em vídeo, estampa em camiseta preta)
+  Cor: branco sobre transparente
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&amp;display=swap');
+      .w-letter { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 900; font-size: 220px; }
+      .sup { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 900; font-size: 110px; }
+    </style>
+  </defs>
+
+  <text x="20" y="200" class="w-letter" fill="#FFFFFF" letter-spacing="-6">W</text>
+  <text x="180" y="100" class="sup" fill="#FFFFFF">2</text>
+</svg>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>w² Agência — Brand Assets · Preview Completo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --amarelo: #F5C100;
+      --magenta: #E01A5A;
+      --preto: #0D0D0D;
+      --grafite: #1A1A1A;
+      --branco: #FFFFFF;
+    }
+    body {
+      background: var(--grafite);
+      font-family: 'Barlow', sans-serif;
+      color: var(--branco);
+      padding: 48px 64px;
+      min-height: 100vh;
+    }
+    .header {
+      border-bottom: 4px solid var(--magenta);
+      padding-bottom: 24px;
+      margin-bottom: 56px;
+    }
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 56px;
+      color: var(--amarelo);
+      letter-spacing: -1px;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+    .subtitle { color: rgba(255,255,255,0.4); font-size: 14px; margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; }
+    .section { margin-bottom: 72px; }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(245,193,0,0.2);
+      padding-bottom: 10px;
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .card {
+      background: var(--preto);
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card.light { background: var(--branco); }
+    .card.yellow { background: var(--amarelo); }
+    .card.transparent {
+      background: repeating-conic-gradient(rgba(255,255,255,0.05) 0% 25%, rgba(255,255,255,0.02) 0% 50%) 50% / 24px 24px;
+    }
+    .card-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
+    }
+    .card.light .card-label, .card.yellow .card-label { color: rgba(0,0,0,0.55); }
+    .card img { width: 100%; height: auto; display: block; }
+    .meta { margin-top: 14px; font-size: 11px; color: rgba(255,255,255,0.35); }
+    .card.light .meta, .card.yellow .meta { color: rgba(0,0,0,0.5); }
+    .symbol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .symbol-card { padding: 28px; min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .symbol-card img { width: 120px; height: auto; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .favicon-row { display: flex; align-items: center; gap: 32px; }
+    .favicon-row img { display: block; }
+    .fav-64 { width: 64px; height: 64px; }
+    .fav-32 { width: 32px; height: 32px; }
+    .fav-16 { width: 16px; height: 16px; }
+    .fav-label { font-size: 11px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 4px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 1px; }
+    .fav-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>w² Brand Assets</h1>
+    <div class="subtitle">Logo system · Maio 2026</div>
+  </div>
+
+  <!-- Logo principal -->
+  <div class="section">
+    <div class="section-title">Logo principal · Sistema completo</div>
+    <div class="row">
+      <div class="card">
+        <div class="card-label">Fundo escuro · primary-dark</div>
+        <img src="logo/logo-primary-dark.svg" alt="Logo principal fundo escuro">
+        <div class="meta">Hero da landing · Navbar dark · OG image · Banner LinkedIn</div>
+      </div>
+      <div class="card light">
+        <div class="card-label">Fundo claro · primary-light</div>
+        <img src="logo/logo-primary-light.svg" alt="Logo principal fundo claro">
+        <div class="meta">Papelaria branca · Propostas · Slides claros</div>
+      </div>
+      <div class="card yellow" style="grid-column: span 2;">
+        <div class="card-label">Fundo amarelo · primary-yellow</div>
+        <img src="logo/logo-primary-yellow.svg" alt="Logo principal fundo amarelo">
+        <div class="meta">Hero da landing (amarelo) · Capas de carrossel · Banner de campanha</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Símbolo isolado -->
+  <div class="section">
+    <div class="section-title">Símbolo W² · Isolado</div>
+    <div class="symbol-grid">
+      <div class="card transparent symbol-card">
+        <img src="logo/logo-symbol-color.svg" alt="Símbolo colorido">
+        <div class="card-label" style="margin-top: 16px;">Color · transparente</div>
+      </div>
+      <div class="card light symbol-card">
+        <img src="logo/logo-symbol-mono-black.svg" alt="Símbolo monocromático preto">
+        <div class="card-label" style="margin-top: 16px;">Mono preto</div>
+      </div>
+      <div class="card symbol-card">
+        <img src="logo/logo-symbol-mono-white.svg" alt="Símbolo monocromático branco">
+        <div class="card-label" style="margin-top: 16px;">Mono branco</div>
+      </div>
+    </div>
+    <div class="meta" style="margin-top: 12px;">Avatar de perfil sem frame · Watermark · Marcação em peças visuais · Ícone de app</div>
+  </div>
+
+  <!-- Wordmark -->
+  <div class="section">
+    <div class="section-title">Wordmark "AGÊNCIA" · Isolado</div>
+    <div class="pair">
+      <div class="card light">
+        <div class="card-label">Wordmark light</div>
+        <img src="logo/logo-wordmark-light.svg" alt="Wordmark light">
+      </div>
+      <div class="card">
+        <div class="card-label">Wordmark dark</div>
+        <img src="logo/logo-wordmark-dark.svg" alt="Wordmark dark">
+      </div>
+    </div>
+    <div class="meta" style="margin-top: 12px;">Assinatura em rodapé · Faixa decorativa onde W² já apareceu</div>
+  </div>
+
+  <!-- Favicon -->
+  <div class="section">
+    <div class="section-title">Favicon · Versão simplificada</div>
+    <div class="card">
+      <div class="favicon-row">
+        <div class="fav-item">
+          <img src="logo/favicon.svg" class="fav-64" alt="Favicon 64">
+          <div class="fav-label">64×64</div>
+        </div>
+        <div class="fav-item">
+          <img src="logo/favicon.svg" class="fav-32" alt="Favicon 32">
+          <div class="fav-label">32×32</div>
+        </div>
+        <div class="fav-item">
+          <img src="logo/favicon.svg" class="fav-16" alt="Favicon 16">
+          <div class="fav-label">16×16</div>
+        </div>
+      </div>
+      <div class="meta" style="margin-top: 20px;">Favicon do site (w2agencia.com.br) · Ícone de app · Badge de browser tab</div>
+    </div>
+  </div>
+
+  <!-- Pattern -->
+  <div class="section">
+    <div class="section-title">Pattern repetitivo W²</div>
+    <div class="card" style="padding: 0;">
+      <img src="logo/pattern-w2-tile.svg" alt="Pattern W²" style="display: block;">
+    </div>
+    <div class="meta" style="margin-top: 12px;">Tile-friendly: faz repetição perfeita horizontal e vertical · Fundo de slide · Textura de carrossel · Watermark de capa</div>
+  </div>
+
+  <!-- Paleta -->
+  <div class="section">
+    <div class="section-title">Paleta de marca · Reference</div>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+      <div style="background: #F5C100; padding: 32px 16px; color: #0D0D0D;">
+        <div style="font-family: 'Barlow Condensed'; font-weight: 900; font-size: 18px; text-transform: uppercase;">Amarelo</div>
+        <div style="font-size: 12px; margin-top: 4px; opacity: 0.7;">#F5C100</div>
+      </div>
+      <div style="background: #E01A5A; padding: 32px 16px; color: #FFFFFF;">
+        <div style="font-family: 'Barlow Condensed'; font-weight: 900; font-size: 18px; text-transform: uppercase;">Magenta</div>
+        <div style="font-size: 12px; margin-top: 4px; opacity: 0.7;">#E01A5A</div>
+      </div>
+      <div style="background: #0D0D0D; padding: 32px 16px; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family: 'Barlow Condensed'; font-weight: 900; font-size: 18px; text-transform: uppercase;">Preto</div>
+        <div style="font-size: 12px; margin-top: 4px; opacity: 0.7;">#0D0D0D</div>
+      </div>
+      <div style="background: #1A1A1A; padding: 32px 16px; color: #FFFFFF;">
+        <div style="font-family: 'Barlow Condensed'; font-weight: 900; font-size: 18px; text-transform: uppercase;">Grafite</div>
+        <div style="font-size: 12px; margin-top: 4px; opacity: 0.7;">#1A1A1A</div>
+      </div>
+      <div style="background: #FFFFFF; padding: 32px 16px; color: #0D0D0D;">
+        <div style="font-family: 'Barlow Condensed'; font-weight: 900; font-size: 18px; text-transform: uppercase;">Branco</div>
+        <div style="font-size: 12px; margin-top: 4px; opacity: 0.7;">#FFFFFF</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

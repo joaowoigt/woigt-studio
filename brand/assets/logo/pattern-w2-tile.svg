@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  w² Agência — Pattern repetitivo W²
+  Uso: fundo de slide, banner secundário, textura de carrossel, watermark de capa
+  Construção: tile 200x200 com símbolo W² em ângulos alternados
+  Tile-friendly: faz repetição perfeita horizontal e vertical via CSS background-repeat
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&amp;display=swap');
+      .w-tile { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 900; font-size: 100px; }
+      .sup-tile { font-family: 'Barlow Condensed', 'Arial Black', sans-serif; font-weight: 900; font-size: 50px; }
+    </style>
+
+    <!-- Pattern unit: 200x200 (1/4 do canvas pra mostrar o tile completo) -->
+    <pattern id="w2-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <!-- Símbolo W² em opacidade reduzida, repetido -->
+      <text x="20" y="120" class="w-tile" fill="#F5C100" opacity="0.18" letter-spacing="-3">W</text>
+      <text x="100" y="80" class="sup-tile" fill="#E01A5A" opacity="0.22">2</text>
+    </pattern>
+  </defs>
+
+  <!-- Fundo preto com pattern aplicado -->
+  <rect width="400" height="400" fill="#0D0D0D"/>
+  <rect width="400" height="400" fill="url(#w2-pattern)"/>
+</svg>

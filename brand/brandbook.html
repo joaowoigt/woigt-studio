@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>w² Agência — Brand Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --amarelo: #F5C100;
+      --magenta: #E01A5A;
+      --preto: #0D0D0D;
+      --grafite: #1A1A1A;
+      --branco: #FFFFFF;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--preto);
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      position: relative;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* Shared atoms */
+    .chapter-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--magenta);
+    }
+    .divider {
+      width: 48px;
+      height: 4px;
+      background: var(--magenta);
+      margin: 14px 0 20px;
+    }
+    .divider.dark { background: var(--preto); }
+    .display {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: -2px;
+    }
+    .ghost {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 260px;
+      line-height: 1;
+      position: absolute;
+      right: -10px;
+      bottom: -30px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      opacity: 0.04;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* ================================================
+       01 — CAPA
+    ================================================ */
+    .capa {
+      background: var(--preto);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .capa-inner {
+      flex: 1;
+      padding: 52px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .capa-logo { width: 160px; height: auto; }
+    .capa-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 130px;
+      line-height: 0.85;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+      color: var(--branco);
+    }
+    .capa-headline span { color: var(--amarelo); display: block; }
+    .capa-meta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+    .capa-bar {
+      height: 8px;
+      background: linear-gradient(90deg, var(--amarelo) 0%, var(--amarelo) 62%, var(--magenta) 62%);
+    }
+
+    /* ================================================
+       02 — MANIFESTO
+    ================================================ */
+    .manifesto { background: var(--preto); }
+    .manifesto-img {
+      width: 100%;
+      height: 168mm;
+      object-fit: cover;
+      display: block;
+    }
+    .manifesto-bottom {
+      padding: 28px 60px 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .manifesto-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      text-transform: uppercase;
+      line-height: 0.88;
+      color: var(--amarelo);
+      letter-spacing: -1px;
+    }
+    .manifesto-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.65);
+      padding-top: 4px;
+    }
+
+    /* ================================================
+       03 — MISSÃO, VISÃO, VALORES
+    ================================================ */
+    .mvv {
+      background: var(--grafite);
+      padding: 52px 60px;
+    }
+    .mvv-section { margin-bottom: 28px; }
+    .mvv-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 8px;
+    }
+    .mvv-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+    }
+    .valores-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 6px;
+    }
+    .valor {
+      border-top: 3px solid var(--amarelo);
+      padding-top: 10px;
+    }
+    .valor-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      margin-bottom: 4px;
+    }
+    .valor-desc {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+    }
+
+    /* ================================================
+       04 — POSICIONAMENTO
+    ================================================ */
+    .taglines-page { background: var(--preto); padding: 52px 60px; }
+    .t1-big {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 88px;
+      text-transform: uppercase;
+      line-height: 0.86;
+      letter-spacing: -3px;
+      color: var(--amarelo);
+      margin-bottom: 36px;
+    }
+    .t1-big .dot { color: var(--magenta); }
+    .tagline-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 130px;
+      gap: 16px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .t-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--magenta);
+      padding-top: 4px;
+    }
+    .t-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--branco);
+      line-height: 1.05;
+    }
+    .t-where {
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.4;
+    }
+
+    /* ================================================
+       05 — PERSONALIDADE
+    ================================================ */
+    .personalidade { background: var(--amarelo); padding: 52px 60px; }
+    .pers-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 80px;
+      text-transform: uppercase;
+      line-height: 0.86;
+      letter-spacing: -3px;
+      color: var(--preto);
+      margin-bottom: 28px;
+    }
+    .arqueotipo {
+      background: var(--preto);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .arq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      margin-bottom: 8px;
+    }
+    .arq-text { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .persona-item { border-top: 2px solid var(--preto); padding-top: 8px; }
+    .persona-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.45);
+      margin-bottom: 3px;
+    }
+    .persona-value { font-size: 12px; color: var(--preto); line-height: 1.4; }
+
+    /* ================================================
+       06 — TOM DE VOZ
+    ================================================ */
+    .tom { background: var(--preto); padding: 52px 60px; }
+    .tom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .tom-col { background: var(--grafite); padding: 20px 24px; }
+    .tom-col-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .tom-col-label.yes { color: var(--amarelo); }
+    .tom-col-label.no { color: var(--magenta); }
+    .tom-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .tom-list li { font-size: 12px; color: rgba(255,255,255,0.75); }
+    .tom-examples { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; }
+    .tom-ex-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 14px;
+    }
+    .ex-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+    .ex-ctx {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--magenta);
+      padding-top: 2px;
+    }
+    .ex-text { font-size: 12px; color: rgba(255,255,255,0.75); font-style: italic; line-height: 1.45; }
+
+    /* ================================================
+       07 — SISTEMA DE LOGO
+    ================================================ */
+    .logo-page { background: #EBEBEB; padding: 52px 60px; }
+    .logo-page .chapter-label { color: rgba(0,0,0,0.4); }
+    .logo-page .divider { background: var(--preto); }
+    .logo-page-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 48px;
+      text-transform: uppercase;
+      color: var(--preto);
+      line-height: 0.88;
+      margin-bottom: 28px;
+    }
+    .logo-page-title span { color: var(--magenta); }
+    .logo-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .logo-card {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .logo-card.dark { background: var(--preto); }
+    .logo-card.light { background: var(--branco); border: 1px solid #ddd; }
+    .logo-card.yellow { background: var(--amarelo); }
+    .logo-card img { width: 100%; max-width: 220px; height: auto; }
+    .logo-card-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .logo-card.light .logo-card-label,
+    .logo-card.yellow .logo-card-label { color: rgba(0,0,0,0.4); }
+    .logo-sym-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .sym-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .sym-card img { width: 72px; height: auto; }
+    .sym-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ================================================
+       08 — PALETA
+    ================================================ */
+    .paleta { background: var(--preto); padding: 52px 60px; }
+    .cor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .cor-block {}
+    .cor-swatch {
+      height: 110px;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px 18px;
+    }
+    .cor-swatch.am { background: var(--amarelo); }
+    .cor-swatch.mg { background: var(--magenta); }
+    .cor-swatch.pt { background: var(--preto); border: 1px solid rgba(255,255,255,0.1); }
+    .cor-swatch.br { background: var(--branco); }
+    .cor-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: var(--preto);
+      line-height: 1;
+    }
+    .cor-swatch.mg .cor-name,
+    .cor-swatch.pt .cor-name { color: var(--branco); }
+    .cor-specs {
+      background: var(--grafite);
+      padding: 12px 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .spec {}
+    .spec-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .spec-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--branco);
+    }
+    .cor-role {
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      padding: 6px 18px 0;
+    }
+
+    /* ================================================
+       09 — TIPOGRAFIA
+    ================================================ */
+    .tipo { background: var(--preto); padding: 52px 60px; }
+    .tipo-aa {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 180px;
+      line-height: 0.85;
+      color: var(--amarelo);
+      letter-spacing: -6px;
+      text-transform: uppercase;
+    }
+    .tipo-chars {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: -0.5px;
+      margin-top: 8px;
+    }
+    .tipo-weights {
+      margin-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tipo-w-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      align-items: center;
+      gap: 16px;
+    }
+    .tipo-w-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--magenta);
+    }
+
+    /* ================================================
+       10 — ELEMENTOS GRÁFICOS
+    ================================================ */
+    .elementos { background: var(--preto); padding: 52px 60px; }
+    .elem-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .elem-sub-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 8px;
+    }
+    .elem-col-right { display: flex; flex-direction: column; gap: 20px; }
+    .elem-uses {
+      margin-top: 24px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .elem-use-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      margin-bottom: 5px;
+    }
+    .elem-use-text { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+    /* ================================================
+       11 — NORMAS
+    ================================================ */
+    .normas { background: var(--grafite); padding: 52px 60px; }
+    .normas-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .n-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .n-col-title.yes { color: var(--amarelo); }
+    .n-col-title.no { color: var(--magenta); }
+    .n-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .n-list li {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.4;
+      display: flex;
+      gap: 8px;
+    }
+    .n-list.yes li::before {
+      content: '✓';
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      color: var(--amarelo);
+      flex-shrink: 0;
+    }
+    .n-list.no li::before {
+      content: '✕';
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      color: var(--magenta);
+      flex-shrink: 0;
+    }
+
+    /* ================================================
+       12 — APLICAÇÕES DIGITAIS
+    ================================================ */
+    .digital { background: var(--preto); }
+    .digital-header { padding: 40px 60px 24px; }
+    .digital-big-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .digital-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .digital-post-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+    .digital-caption {
+      background: var(--amarelo);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .digital-cap-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: var(--preto);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .digital-cap-body { font-size: 11px; color: rgba(0,0,0,0.65); line-height: 1.5; }
+
+    /* ================================================
+       13 — APLICAÇÕES FÍSICAS
+    ================================================ */
+    .fisico { background: var(--preto); }
+    .fisico-header { padding: 40px 60px 20px; }
+    .fisico-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .fisico-footer {
+      padding: 18px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    .fisico-item-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      margin-bottom: 4px;
+    }
+    .fisico-item-text { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+    /* ================================================
+       14 — LIFESTYLE
+    ================================================ */
+    .lifestyle { background: var(--preto); }
+    .lifestyle-img {
+      width: 100%;
+      height: 170mm;
+      object-fit: cover;
+      display: block;
+    }
+    .lifestyle-content { padding: 32px 60px; }
+    .lifestyle-quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      text-transform: uppercase;
+      color: var(--amarelo);
+      line-height: 0.88;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+    .lifestyle-body { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.55; max-width: 380px; }
+
+    /* ================================================
+       15 — CONTRACAPA
+    ================================================ */
+    .contracapa {
+      background: var(--preto);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .contra-logo { width: 100px; height: auto; margin-bottom: 20px; }
+    .contra-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 72px;
+      text-transform: uppercase;
+      color: var(--branco);
+      letter-spacing: -2px;
+    }
+    .contra-url {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-top: 10px;
+    }
+    .contra-version {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.12);
+      margin-top: 36px;
+    }
+    .contra-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--amarelo) 62%, var(--magenta) 62%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       CAPA
+  ============================================= -->
+  <div class="page capa">
+    <div class="capa-inner">
+      <div>
+        <img src="assets/logo/logo-primary-dark.svg" class="capa-logo" alt="w² Agência">
+      </div>
+      <div>
+        <div class="capa-headline">
+          BRAND<span>BOOK</span>
+        </div>
+        <div class="capa-meta" style="margin-top:20px;">Identidade de marca · Versão 1.0 · Maio 2026</div>
+      </div>
+    </div>
+    <div class="capa-bar"></div>
+  </div>
+
+  <!-- =============================================
+       01 — MANIFESTO
+  ============================================= -->
+  <div class="page manifesto">
+    <img src="assets/images/01-hero-manifesto.png" class="manifesto-img" alt="Manifesto hero">
+    <div class="manifesto-bottom">
+      <div>
+        <div class="chapter-label">01 · Manifesto</div>
+        <div class="divider"></div>
+        <div class="manifesto-title">Sobre<br>a Marca</div>
+      </div>
+      <div class="manifesto-body">
+        A w² Agência existe para democratizar a presença digital para pequenos negócios brasileiros — com IA, sem jargão, sem enrolação, ao preço que seu negócio cabe.<br><br>
+        Você existe. O mundo precisa te achar.
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       02 — MISSÃO, VISÃO, VALORES
+  ============================================= -->
+  <div class="page mvv">
+    <div class="chapter-label">02 · Missão, Visão & Valores</div>
+    <div class="divider"></div>
+    <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:#FFFFFF; margin-bottom:32px; letter-spacing:-1px;">
+      Missão<br><span style="color:var(--amarelo);">Visão<br>Valores</span>
+    </div>
+
+    <div class="mvv-section">
+      <div class="mvv-label">Missão</div>
+      <div class="mvv-text">Democratizar a tecnologia e a presença digital para pequenos negócios brasileiros — com IA, sem jargão, sem enrolação, ao preço que seu negócio cabe.</div>
+    </div>
+
+    <div class="mvv-section">
+      <div class="mvv-label">Visão</div>
+      <div class="mvv-text">Ser a referência em presença digital acessível no Brasil — a agência que pequeno negócio indica pra outro pequeno negócio porque entregou exatamente o necessário, com agilidade e transparência.</div>
+    </div>
+
+    <div class="mvv-section">
+      <div class="mvv-label">Valores</div>
+      <div class="valores-grid">
+        <div class="valor">
+          <div class="valor-name">Objetividade</div>
+          <div class="valor-desc">Entregamos o que faz sentido. Sem inflação de escopo, sem floreio.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Agilidade</div>
+          <div class="valor-desc">IA + processo enxuto = velocidade real.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Acessibilidade</div>
+          <div class="valor-desc">Preço pensado pra MEI, não pra empresa média.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Transparência</div>
+          <div class="valor-desc">Cliente vê o processo. Sabe o que paga. Sem surpresa.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Resultado</div>
+          <div class="valor-desc">Visual bonito que não vende, não passa.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Proximidade</div>
+          <div class="valor-desc">Você fala com quem faz. Sempre.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ghost">02</div>
+  </div>
+
+  <!-- =============================================
+       03 — POSICIONAMENTO & TAGLINES
+  ============================================= -->
+  <div class="page taglines-page">
+    <div class="chapter-label">03 · Posicionamento</div>
+    <div class="divider"></div>
+
+    <div class="t1-big">
+      VOCÊ<br>EXISTE<span class="dot">.</span><br>NINGUÉM<br>TE ACHA<span class="dot">.</span>
+    </div>
+
+    <div>
+      <div class="tagline-row">
+        <div class="t-role">Hero · Manifesto</div>
+        <div class="t-text">"VOCÊ EXISTE. NINGUÉM TE ACHA."</div>
+        <div class="t-where">Hero da landing · post manifesto · OG image</div>
+      </div>
+      <div class="tagline-row">
+        <div class="t-role">Provocação</div>
+        <div class="t-text">"SEU CONCORRENTE JÁ APARECE."</div>
+        <div class="t-where">Ads pra varejo · hero secundário</div>
+      </div>
+      <div class="tagline-row">
+        <div class="t-role">Preço</div>
+        <div class="t-text">"Agência grande, preço de quem cabe."</div>
+        <div class="t-where">Proposta · segunda dobra da landing</div>
+      </div>
+      <div class="tagline-row">
+        <div class="t-role">Assinatura</div>
+        <div class="t-text">"Você fala com quem faz."</div>
+        <div class="t-where">Footer · sobre · email · WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="ghost">03</div>
+  </div>
+
+  <!-- =============================================
+       04 — PERSONALIDADE
+  ============================================= -->
+  <div class="page personalidade">
+    <div class="chapter-label" style="color:rgba(0,0,0,0.4);">04 · Personalidade</div>
+    <div class="divider dark"></div>
+
+    <div class="pers-headline">OUTLAW<br>COM<br>SUBSTÂNCIA</div>
+
+    <div class="arqueotipo">
+      <div class="arq-title">Arquétipo: Outlaw + Sage</div>
+      <div class="arq-text">A w² rompe com o modelo elitista de agência cara. Não joga o jogo das grandes — joga o seu. Mas não é caos pelo caos: tem substância técnica para entregar. Rebelde contra o mercado caro, com resultado pra provar.</div>
+    </div>
+
+    <div class="persona-grid">
+      <div class="persona-item">
+        <div class="persona-label">Idade</div>
+        <div class="persona-value">30–35 anos</div>
+      </div>
+      <div class="persona-item">
+        <div class="persona-label">Estilo</div>
+        <div class="persona-value">Camiseta de qualidade, sneaker discreto. Nunca terno.</div>
+      </div>
+      <div class="persona-item">
+        <div class="persona-label">Como fala</div>
+        <div class="persona-value">Frases curtas. Olha no olho. Caso real em vez de teoria.</div>
+      </div>
+      <div class="persona-item">
+        <div class="persona-label">Bebida</div>
+        <div class="persona-value">Café preto.</div>
+      </div>
+    </div>
+
+    <div style="position:absolute; right:-10px; bottom:-30px; font-family:'Barlow Condensed'; font-weight:900; font-size:260px; text-transform:uppercase; color:var(--preto); opacity:0.06; user-select:none;">04</div>
+  </div>
+
+  <!-- =============================================
+       05 — TOM DE VOZ
+  ============================================= -->
+  <div class="page tom">
+    <div class="chapter-label">05 · Tom de Voz</div>
+    <div class="divider"></div>
+    <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:var(--amarelo); margin-bottom:28px; letter-spacing:-1px;">Tom &<br><span style="color:#FFFFFF;">Linguagem</span></div>
+
+    <div class="tom-grid">
+      <div class="tom-col">
+        <div class="tom-col-label yes">Sempre use</div>
+        <ul class="tom-list">
+          <li>"a gente" — nunca "a empresa"</li>
+          <li>"pequeno negócio" — nunca "PME"</li>
+          <li>"primeira conversa" — nunca "diagnóstico"</li>
+          <li>"presença digital" — nunca "online presence"</li>
+          <li>"site" — nunca "website"</li>
+          <li>Acentuação correta em 100% do conteúdo</li>
+        </ul>
+      </div>
+      <div class="tom-col">
+        <div class="tom-col-label no">Nunca use</div>
+        <ul class="tom-list">
+          <li>Emojis (qualquer um)</li>
+          <li>"Soluções inovadoras"</li>
+          <li>"Alavancar seu negócio"</li>
+          <li>"No próximo nível"</li>
+          <li>"Resultados garantidos"</li>
+          <li>Prazos fixos em copy pública</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tom-examples">
+      <div class="tom-ex-label">Exemplos de tom por contexto</div>
+      <div class="ex-row">
+        <div class="ex-ctx">Hero</div>
+        <div class="ex-text">"Você existe. Ninguém te acha."</div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-ctx">Instagram</div>
+        <div class="ex-text">"Sua agência te cobra R$5k/mês pra postar 3x. A gente entrega o site inteiro nesse valor."</div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-ctx">WhatsApp</div>
+        <div class="ex-text">"Show, posso te chamar agora? Manda o link do seu Insta e a gente já dá uma olhada."</div>
+      </div>
+      <div class="ex-row">
+        <div class="ex-ctx">Email</div>
+        <div class="ex-text">"Recebido. A gente volta em até 24h com uma análise inicial. — w²"</div>
+      </div>
+    </div>
+
+    <div class="ghost">05</div>
+  </div>
+
+  <!-- =============================================
+       06 — SISTEMA DE LOGO
+  ============================================= -->
+  <div class="page logo-page">
+    <div class="chapter-label">06 · Sistema de Logo</div>
+    <div class="divider"></div>
+    <div class="logo-page-title">Identidade<br><span>Visual</span></div>
+
+    <div class="logo-main-grid">
+      <div class="logo-card dark">
+        <div class="logo-card-label">Fundo escuro · primary</div>
+        <img src="assets/logo/logo-primary-dark.svg" alt="Logo fundo escuro">
+      </div>
+      <div class="logo-card light">
+        <div class="logo-card-label">Fundo claro</div>
+        <img src="assets/logo/logo-primary-light.svg" alt="Logo fundo claro">
+      </div>
+      <div class="logo-card yellow" style="grid-column:span 2; padding:20px 24px;">
+        <div class="logo-card-label">Fundo amarelo</div>
+        <img src="assets/logo/logo-primary-yellow.svg" alt="Logo fundo amarelo" style="max-width:300px;">
+      </div>
+    </div>
+
+    <div class="logo-sym-grid">
+      <div class="sym-card" style="background:#ccc;">
+        <img src="assets/logo/logo-symbol-color.svg" alt="Symbol color">
+        <div class="sym-label" style="color:rgba(0,0,0,0.4);">Color</div>
+      </div>
+      <div class="sym-card" style="background:var(--preto);">
+        <img src="assets/logo/logo-symbol-mono-white.svg" alt="Symbol white">
+        <div class="sym-label">Mono white</div>
+      </div>
+      <div class="sym-card" style="background:var(--branco);">
+        <img src="assets/logo/logo-symbol-mono-black.svg" alt="Symbol black">
+        <div class="sym-label" style="color:rgba(0,0,0,0.4);">Mono black</div>
+      </div>
+    </div>
+
+    <div style="position:absolute; right:-10px; bottom:-30px; font-family:'Barlow Condensed'; font-weight:900; font-size:260px; text-transform:uppercase; color:var(--preto); opacity:0.05; user-select:none;">06</div>
+  </div>
+
+  <!-- =============================================
+       07 — PALETA DE CORES
+  ============================================= -->
+  <div class="page paleta">
+    <div class="chapter-label">07 · Paleta de Cores</div>
+    <div class="divider"></div>
+    <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:var(--amarelo); letter-spacing:-1px;">Cores<br><span style="color:#FFFFFF;">da Marca</span></div>
+
+    <div class="cor-grid">
+
+      <div class="cor-block">
+        <div class="cor-swatch am">
+          <div class="cor-name">Amarelo<br>Elétrico</div>
+        </div>
+        <div class="cor-specs">
+          <div class="spec"><div class="spec-label">HEX</div><div class="spec-val">#F5C100</div></div>
+          <div class="spec"><div class="spec-label">RGB</div><div class="spec-val">245 · 193 · 0</div></div>
+          <div class="spec"><div class="spec-label">CMYK</div><div class="spec-val">2 · 21 · 100 · 0</div></div>
+          <div class="spec"><div class="spec-label">PANTONE</div><div class="spec-val">7549 C</div></div>
+        </div>
+        <div class="cor-role">Cor primária — energia, urgência, explosão</div>
+      </div>
+
+      <div class="cor-block">
+        <div class="cor-swatch mg">
+          <div class="cor-name" style="color:#FFF;">Magenta<br>Cirúrgico</div>
+        </div>
+        <div class="cor-specs">
+          <div class="spec"><div class="spec-label">HEX</div><div class="spec-val">#E01A5A</div></div>
+          <div class="spec"><div class="spec-label">RGB</div><div class="spec-val">224 · 26 · 90</div></div>
+          <div class="spec"><div class="spec-label">CMYK</div><div class="spec-val">0 · 88 · 59 · 12</div></div>
+          <div class="spec"><div class="spec-label">PANTONE</div><div class="spec-val">205 C</div></div>
+        </div>
+        <div class="cor-role">Acento cirúrgico — atenção crítica, pontuação</div>
+      </div>
+
+      <div class="cor-block">
+        <div class="cor-swatch pt" style="height:80px;">
+          <div class="cor-name" style="font-size:20px;">Preto Total</div>
+        </div>
+        <div class="cor-specs" style="grid-template-columns:1fr 1fr;">
+          <div class="spec"><div class="spec-label">HEX</div><div class="spec-val">#0D0D0D</div></div>
+          <div class="spec"><div class="spec-label">RGB</div><div class="spec-val">13 · 13 · 13</div></div>
+          <div class="spec"><div class="spec-label">CMYK</div><div class="spec-val">0 · 0 · 0 · 95</div></div>
+          <div class="spec"><div class="spec-label">PANTONE</div><div class="spec-val">Black C</div></div>
+        </div>
+      </div>
+
+      <div class="cor-block">
+        <div class="cor-swatch br" style="height:80px;">
+          <div class="cor-name">Branco</div>
+        </div>
+        <div class="cor-specs" style="grid-template-columns:1fr 1fr;">
+          <div class="spec"><div class="spec-label">HEX</div><div class="spec-val">#FFFFFF</div></div>
+          <div class="spec"><div class="spec-label">RGB</div><div class="spec-val">255 · 255 · 255</div></div>
+          <div class="spec"><div class="spec-label">CMYK</div><div class="spec-val">0 · 0 · 0 · 0</div></div>
+          <div class="spec"><div class="spec-label">PANTONE</div><div class="spec-val">—</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ghost">07</div>
+  </div>
+
+  <!-- =============================================
+       08 — TIPOGRAFIA
+  ============================================= -->
+  <div class="page tipo">
+    <div class="chapter-label">08 · Tipografia</div>
+    <div class="divider"></div>
+
+    <div style="font-family:'Barlow Condensed'; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:6px;">Barlow Condensed · família única</div>
+    <div class="tipo-aa">Aa</div>
+    <div class="tipo-chars">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+
+    <div class="tipo-weights">
+      <div class="tipo-w-row">
+        <div class="tipo-w-label">Display · 900</div>
+        <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:44px; text-transform:uppercase; color:var(--amarelo); letter-spacing:-1px; line-height:1;">VOCÊ EXISTE</div>
+      </div>
+      <div class="tipo-w-row">
+        <div class="tipo-w-label">Headline · 700</div>
+        <div style="font-family:'Barlow Condensed'; font-weight:700; font-size:32px; text-transform:uppercase; color:var(--branco);">Presença Digital</div>
+      </div>
+      <div class="tipo-w-row">
+        <div class="tipo-w-label">Label · 400</div>
+        <div style="font-family:'Barlow Condensed'; font-weight:400; font-size:24px; text-transform:uppercase; color:rgba(255,255,255,0.6);">Agência de marca</div>
+      </div>
+      <div class="tipo-w-row">
+        <div class="tipo-w-label">Body · Barlow</div>
+        <div style="font-family:'Barlow'; font-size:14px; color:rgba(255,255,255,0.55); line-height:1.5;">Texto corrido em propostas, emails e landing page. Legível, sem ornamento, direto.</div>
+      </div>
+      <div class="tipo-w-row">
+        <div class="tipo-w-label">Itálico magenta</div>
+        <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:32px; text-transform:uppercase; color:var(--magenta); font-style:italic;">Ênfase cirúrgica</div>
+      </div>
+    </div>
+
+    <div class="ghost">08</div>
+  </div>
+
+  <!-- =============================================
+       09 — ELEMENTOS GRÁFICOS
+  ============================================= -->
+  <div class="page elementos">
+    <div class="chapter-label">09 · Elementos Gráficos</div>
+    <div class="divider"></div>
+    <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:var(--amarelo); letter-spacing:-1px; margin-bottom:0;">Padrão<br><span style="color:#FFFFFF;">&amp; Símbolo</span></div>
+
+    <div class="elem-grid">
+      <div>
+        <div class="elem-sub-label">Pattern W² — tile 200×200 · tile-friendly</div>
+        <img src="assets/logo/pattern-w2-tile.svg" style="width:100%; display:block;" alt="Pattern W²">
+      </div>
+      <div class="elem-col-right">
+        <div>
+          <div class="elem-sub-label">Favicon · 64×64</div>
+          <img src="assets/logo/favicon.svg" style="width:80px; height:80px; display:block;" alt="Favicon">
+        </div>
+        <div>
+          <div class="elem-sub-label">Símbolo · color</div>
+          <img src="assets/logo/logo-symbol-color.svg" style="width:110px; height:auto; display:block;" alt="Símbolo W²">
+        </div>
+      </div>
+    </div>
+
+    <div class="elem-uses">
+      <div>
+        <div class="elem-use-title">Pattern</div>
+        <div class="elem-use-text">Fundo de slide, banner, textura de carrossel, watermark de capa</div>
+      </div>
+      <div>
+        <div class="elem-use-title">Favicon</div>
+        <div class="elem-use-text">Site w2agencia.com.br, ícone de app, tab do browser</div>
+      </div>
+      <div>
+        <div class="elem-use-title">Símbolo</div>
+        <div class="elem-use-text">Avatar sem frame, watermark, marcação em peças visuais</div>
+      </div>
+    </div>
+
+    <div class="ghost">09</div>
+  </div>
+
+  <!-- =============================================
+       10 — NORMAS DE APLICAÇÃO
+  ============================================= -->
+  <div class="page normas">
+    <div class="chapter-label">10 · Normas de Aplicação</div>
+    <div class="divider"></div>
+    <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:var(--branco); letter-spacing:-1px; margin-bottom:0;">Como<br><span style="color:var(--amarelo);">Usar</span><br>a Marca</div>
+
+    <div class="normas-cols">
+      <div>
+        <div class="n-col-title yes">Correto</div>
+        <ul class="n-list yes">
+          <li>Alto contraste — amarelo sobre preto, preto sobre amarelo</li>
+          <li>Tipografia Barlow Condensed 900 em todos os headlines</li>
+          <li>Bordas retas — zero border-radius em elementos de marca</li>
+          <li>Magenta como acento pontual, nunca fundo de área grande</li>
+          <li>Frases curtas e afirmativas em copy</li>
+          <li>Logo com espaço de respiro adequado ao redor</li>
+          <li>Pattern SVG para texturas e fundos de slide</li>
+          <li>Acentuação correta em 100% do conteúdo público</li>
+        </ul>
+      </div>
+      <div>
+        <div class="n-col-title no">Proibido</div>
+        <ul class="n-list no">
+          <li>Border-radius em qualquer elemento de marca</li>
+          <li>Sombra suave, glassmorphism ou blur</li>
+          <li>Gradiente pastel</li>
+          <li>Ilustrações decorativas "fofas"</li>
+          <li>Stock photo corporativa (handshake, pessoa sorrindo)</li>
+          <li>Mais de 2 variações de fonte</li>
+          <li>Amarelo sobre branco (baixo contraste)</li>
+          <li>Emojis em qualquer comunicação</li>
+          <li>Prazos fixos em copy pública</li>
+          <li>"Diagnóstico grátis" — usar "primeira conversa"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ghost">10</div>
+  </div>
+
+  <!-- =============================================
+       11 — APLICAÇÕES DIGITAIS
+  ============================================= -->
+  <div class="page digital">
+    <div class="digital-header">
+      <div class="chapter-label">11 · Aplicações Digitais</div>
+      <div class="divider"></div>
+      <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:var(--amarelo); letter-spacing:-1px;">Digital</div>
+    </div>
+
+    <img src="assets/images/02-aplicacao-devices.png" class="digital-big-img" alt="Aplicação em devices">
+
+    <div class="digital-bottom">
+      <img src="assets/images/04-post-manifesto.png" class="digital-post-img" alt="Post manifesto Instagram">
+      <div class="digital-caption">
+        <div class="digital-cap-title">Instagram<br>Feed · 1:1</div>
+        <div class="digital-cap-body">Post manifesto · Fundo preto · Barlow Condensed 900 · Amarelo + magenta. Site hero com logo e CTA "Fala com a gente".</div>
+      </div>
+    </div>
+
+    <div class="ghost">11</div>
+  </div>
+
+  <!-- =============================================
+       12 — APLICAÇÕES FÍSICAS
+  ============================================= -->
+  <div class="page fisico">
+    <div class="fisico-header">
+      <div class="chapter-label">12 · Aplicações Físicas</div>
+      <div class="divider"></div>
+      <div style="font-family:'Barlow Condensed'; font-weight:900; font-size:52px; text-transform:uppercase; line-height:0.88; color:var(--amarelo); letter-spacing:-1px;">Papelaria</div>
+    </div>
+
+    <img src="assets/images/03-papelaria.png" class="fisico-img" alt="Papelaria w²">
+
+    <div class="fisico-footer">
+      <div>
+        <div class="fisico-item-title">Cartão de Visita</div>
+        <div class="fisico-item-text">Fundo preto · logo amarelo/magenta · Barlow Condensed</div>
+      </div>
+      <div>
+        <div class="fisico-item-title">Folder · Proposta</div>
+        <div class="fisico-item-text">Fundo amarelo · tipografia preta · manifesto na capa</div>
+      </div>
+      <div>
+        <div class="fisico-item-title">Consistência</div>
+        <div class="fisico-item-text">Papelaria coerente com identidade digital — mesmas cores, mesma tipografia</div>
+      </div>
+    </div>
+
+    <div class="ghost">12</div>
+  </div>
+
+  <!-- =============================================
+       13 — ESTILO VISUAL / LIFESTYLE
+  ============================================= -->
+  <div class="page lifestyle">
+    <div style="position:absolute; top:40px; left:60px; z-index:2;">
+      <div class="chapter-label">13 · Estilo Visual</div>
+    </div>
+    <img src="assets/images/05-lifestyle.png" class="lifestyle-img" alt="Lifestyle w²">
+    <div class="lifestyle-content">
+      <div class="lifestyle-quote">Dois sócios.<br>Um processo.<br>Resultado real.</div>
+      <div class="lifestyle-body">O estilo visual da w² mostra o trabalho acontecendo — ambiente urbano, alta energia, sem pose. A marca vive onde o trabalho vive.</div>
+    </div>
+
+    <div class="ghost">13</div>
+  </div>
+
+  <!-- =============================================
+       CONTRACAPA
+  ============================================= -->
+  <div class="page contracapa">
+    <img src="assets/logo/logo-symbol-color.svg" class="contra-logo" alt="w² símbolo">
+    <div class="contra-name">w² Agência</div>
+    <div class="contra-url">w2agencia.com.br</div>
+    <div class="contra-version">Brand Book · Versão 1.0 · Maio 2026</div>
+    <div class="contra-bar"></div>
+  </div>
+
+</body>
+</html>
