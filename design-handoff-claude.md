@@ -64,6 +64,29 @@ W²  |  AGÊNCIA
 3. **Yellow background:** W in Black, ² in Black (or small Magenta accent), underline in Black
 4. **Icon/Avatar:** Black square, W in Yellow, ² in Magenta — for social profiles
 
+### Canvas Specs (woigt-studio assets)
+
+| Asset | Arquivo | Canvas | W font-size | ² posição |
+|-------|---------|--------|------------|-----------|
+| Símbolo colorido | `logo-symbol-color.svg` | 320×260 | 220px | x=240 y=82 |
+| Símbolo mono preto | `logo-symbol-mono-black.svg` | 320×260 | 220px | x=240 y=82 |
+| Símbolo mono branco | `logo-symbol-mono-white.svg` | 320×260 | 220px | x=240 y=82 |
+| Logo principal dark | `logo-primary-dark.svg` | 720×200 | 180px | x=218 y=64 |
+| Logo principal light | `logo-primary-light.svg` | 720×200 | 180px | x=218 y=64 |
+| Logo principal yellow | `logo-primary-yellow.svg` | 720×200 | 180px | x=218 y=64 |
+| Favicon | `favicon.svg` | 64×64 | 56px | x=57 y=20 |
+
+### Canvas Specs (w2-project assets)
+
+| Asset | Arquivo | Canvas | W font-size | ² posição |
+|-------|---------|--------|------------|-----------|
+| Logo dark | `public/brand/logo-dark.svg` | 364×80 | 68px | x=78 y=21 |
+| Logo light | `public/brand/logo-light.svg` | 364×80 | 68px | x=78 y=21 |
+| Ícone | `public/brand/logo-icon.svg` | 200×200 | 148px | x=152 y=50 |
+| Favicon | `public/brand/favicon.svg` | 32×32 | 26px | x=24 y=8 |
+
+**Regra de posicionamento do ²:** o "2" deve ser um elemento independente, nunca sobreposto ao "W". Gap mínimo visível entre borda direita do W e borda esquerda do ² — os dois elementos ficam próximos mas apartados.
+
 ---
 
 ## Design Principles (from approved direction)

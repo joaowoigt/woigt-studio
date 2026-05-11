@@ -29,7 +29,7 @@
 
   <!-- ² superscript magenta, mantém em tamanhos >= 32px (em 16x16 vira ponto) -->
   <text
-    x="50"
+    x="57"
     y="20"
     font-family="'Barlow Condensed', 'Arial Black', sans-serif"
     font-weight="900"

@@ -17,7 +17,7 @@
     <pattern id="w2-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
       <!-- Símbolo W² em opacidade reduzida, repetido -->
       <text x="20" y="120" class="w-tile" fill="#F5C100" opacity="0.18" letter-spacing="-3">W</text>
-      <text x="100" y="80" class="sup-tile" fill="#E01A5A" opacity="0.22">2</text>
+      <text x="128" y="65" class="sup-tile" fill="#E01A5A" opacity="0.22">2</text>
     </pattern>
   </defs>
 

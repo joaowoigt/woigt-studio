@@ -20,7 +20,7 @@
   <text x="40" y="158" class="w-letter" fill="#F5C100" letter-spacing="-4">W</text>
 
   <!-- ² superscript (magenta) -->
-  <text x="178" y="78" class="sup" fill="#E01A5A">2</text>
+  <text x="218" y="64" class="sup" fill="#E01A5A">2</text>
 
   <!-- Separador vertical -->
   <line x1="280" y1="50" x2="280" y2="155" stroke="#FFFFFF" stroke-width="2"/>

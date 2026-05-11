@@ -5,7 +5,7 @@
   Cor: preto sobre transparente
   Mantém ² superscript pra preservar a identidade — sem o destaque magenta
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" width="320" height="260">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&amp;display=swap');
@@ -15,5 +15,5 @@
   </defs>
 
   <text x="20" y="200" class="w-letter" fill="#0D0D0D" letter-spacing="-6">W</text>
-  <text x="180" y="100" class="sup" fill="#0D0D0D">2</text>
+  <text x="240" y="82" class="sup" fill="#0D0D0D">2</text>
 </svg>
